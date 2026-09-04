@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b0c14;
+  background-image: radial-gradient(ellipse 55% 45% at 12% 8%, rgba(232, 93, 143, 0.18), transparent 62%),
+    radial-gradient(ellipse 50% 40% at 92% 4%, rgba(242, 136, 75, 0.16), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 50% 100%, rgba(122, 90, 248, 0.12), transparent 65%);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  color: #f2f1f6;
+}
+
+::selection {
+  background: rgba(242, 136, 75, 0.35);
+  color: #f2f1f6;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #f2884b;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hairline underline-grow link */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise-in {
+  animation: riseIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 136, 75, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(242, 136, 75, 0);
+  }
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 340;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.draw-line {
+  stroke-dasharray: 340;
+  animation: drawLine 1.6s ease-out forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.pop-in {
+  animation: popIn 0.5s ease-out both;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(2%, 3%);
+  }
+}
+.ambient-glow {
+  animation: drift 16s ease-in-out infinite;
+}
+.ambient-glow-slow {
+  animation: drift 22s ease-in-out infinite reverse;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow,
+  .ambient-glow-slow {
+    animation: none;
+  }
+}

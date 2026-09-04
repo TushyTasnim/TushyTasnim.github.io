@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tushy Tasnim | Academic Portfolio</title>
+<meta name="description" content="Academic portfolio of Tushy Tasnim, Industrial and Production Engineering graduate interested in supply chain analytics, smart manufacturing, sustainable operations, and data-driven industrial systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0b0c14; --panel:#161a2c; --line:rgba(255,255,255,.10); --lineStrong:rgba(255,255,255,.20);
+    --ink:#f2f1f6; --muted:#a3a8ba; --faint:#787f92; --copper:#f2884b; --copperSoft:rgba(242,136,75,.12);
+    --teal:#e85d8f; --tealSoft:rgba(232,93,143,.12);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background-color:var(--deep);background-image:radial-gradient(ellipse 55% 45% at 12% 8%,rgba(232,93,143,.18),transparent 62%),radial-gradient(ellipse 50% 40% at 92% 4%,rgba(242,136,75,.16),transparent 60%),radial-gradient(ellipse 60% 45% at 50% 100%,rgba(122,90,248,.12),transparent 65%);background-repeat:no-repeat,no-repeat,no-repeat;color:var(--ink);font-family:"IBM Plex Sans",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:"Fraunces",serif;font-weight:500;margin:0}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .wrap{max-width:1024px;margin:0 auto;padding:0 24px}
+  ::selection{background:rgba(242,136,75,.25);color:#f2f1f6}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* one-shot entrance keyframes */
+  @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .rise-in{animation:riseIn .7s cubic-bezier(.16,1,.3,1) both}
+  @keyframes drawLine{from{stroke-dashoffset:340}to{stroke-dashoffset:0}}
+  .draw-line{stroke-dasharray:340;animation:drawLine 1.6s ease-out forwards}
+  @keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+  .pop-in{animation:popIn .5s ease-out both}
+  @keyframes softPulse{0%,100%{box-shadow:0 0 0 0 rgba(242,136,75,.4)}50%{box-shadow:0 0 0 6px rgba(242,136,75,0)}}
+  .pulse-dot{animation:softPulse 2.6s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(2%,3%)}}
+  .ambient-glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(110px);animation:drift 16s ease-in-out infinite}
+  .ambient-glow.slow{animation:drift 22s ease-in-out infinite reverse}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+  /* scroll progress */
+  #scroll-progress{position:fixed;left:0;top:0;z-index:60;height:2px;width:100%;background:transparent}
+  #scroll-progress .bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--copper));transition:width .15s ease-out}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,12,20,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+  header .brand{font-family:"Fraunces",serif;font-size:18px;font-weight:500}
+  nav.links{display:flex;gap:22px}
+  nav.links a{font-size:13px;font-weight:500;color:var(--muted);position:relative;transition:color .2s ease}
+  nav.links a:hover{color:var(--ink)}
+  nav.links a.active{color:var(--copper)}
+  @media(max-width:900px){nav.links{display:none}}
+
+  /* hero */
+  #hero{position:relative;overflow:hidden;border-top:none;border-bottom:2px solid rgba(242,136,75,.5)}
+  #hero .scrollcue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:var(--faint);transition:color .2s ease}
+  #hero .scrollcue:hover{color:var(--copper)}
+  #hero .scrollcue svg{animation:bounce 1.6s infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  @media(max-width:860px){#hero .scrollcue{display:none}}
+  #hero .glow-a{left:-96px;top:-128px;width:460px;height:460px;background:rgba(232,93,143,.25)}
+  #hero .glow-b{right:-128px;top:0;width:420px;height:420px;background:rgba(242,136,75,.2)}
+  #hero .glow-c{left:33%;bottom:0;width:320px;height:320px;background:rgba(122,90,248,.15)}
+  #hero .inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:112px 24px}
+  #hero .kicker{display:inline-flex;align-items:center;font-size:12px;color:var(--copper);margin-bottom:18px;border:1px solid var(--line);background:rgba(22,26,44,.6);backdrop-filter:blur(8px);border-radius:999px;padding:7px 16px}
+  #hero h1{font-size:56px;line-height:1.08;margin-top:20px}
+  #hero .name-a{color:var(--copper)}
+  #hero .name-b{background:linear-gradient(90deg,var(--teal),#7a5af8);-webkit-background-clip:text;background-clip:text;color:transparent}
+  #hero .role{max-width:60ch;font-size:20px;color:var(--muted);margin-top:16px}
+  .btn-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;height:44px;padding:0 20px;font-size:14px;font-weight:600;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}
+  .btn.primary{background:var(--copper);color:#fff}
+  .btn.primary:hover{transform:translateY(-2px);background:#d9683a;box-shadow:0 14px 30px -12px rgba(242,136,75,.45)}
+  .btn.outline{border:1px solid var(--lineStrong);color:var(--ink)}
+  .btn.outline:hover{transform:translateY(-2px);border-color:var(--copper);color:var(--copper)}
+  .soc{display:flex;gap:24px;margin-top:32px;font-size:12px;color:var(--muted)}
+  .soc a{position:relative}
+  .soc a:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
+  .soc a:hover:after{width:100%}
+  .soc a:hover{color:var(--ink)}
+  .mono-frame-wrap{position:relative;max-width:280px;margin:0 auto}
+  .mono-frame-wrap .offset{position:absolute;right:-16px;bottom:-16px;width:100%;aspect-ratio:1/1;border-radius:24px;border:2px solid rgba(242,136,75,.5)}
+  .mono-frame{position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;border-radius:24px;border:2px solid var(--line);background:var(--panel);box-shadow:0 30px 60px -25px rgba(0,0,0,.5);transition:border-color .5s ease,box-shadow .5s ease}
+  .mono-frame:hover{border-color:rgba(232,93,143,.6);box-shadow:0 30px 60px -20px rgba(232,93,143,.35)}
+  .mono-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+  .mono-frame:hover img{transform:scale(1.05)}
+  @media(min-width:861px){.mono-frame-wrap{max-width:none}}
+  @media(max-width:860px){#hero .inner{grid-template-columns:1fr;padding:64px 24px}#hero h1{font-size:38px}}
+
+  /* sections */
+  section{position:relative;overflow:hidden;border-top:2px solid var(--line)}
+  section.sec-copper{border-top-color:rgba(242,136,75,.5)}
+  section.sec-teal{border-top-color:rgba(232,93,143,.5)}
+  section.tint{background:rgba(22,26,44,.6)}
+  section .inner{position:relative;max-width:1024px;margin:0 auto;padding:88px 24px}
+  .sec-glow{position:absolute;left:-80px;top:-96px;width:288px;height:288px;border-radius:50%;pointer-events:none;filter:blur(100px);animation:drift 16s ease-in-out infinite}
+  .sec-glow.b{left:auto;right:-96px;top:auto;bottom:0;animation:drift 22s ease-in-out infinite reverse}
+  .corner{position:absolute;width:16px;height:16px;pointer-events:none;border-width:0;border-style:solid;border-color:rgba(242,136,75,.4)}
+  .sec-teal .corner{border-color:rgba(232,93,143,.4)}
+  .corner.tl{left:16px;top:16px;border-left-width:2px;border-top-width:2px}
+  .corner.tr{right:16px;top:16px;border-right-width:2px;border-top-width:2px}
+  .corner.bl{left:16px;bottom:16px;border-left-width:2px;border-bottom-width:2px}
+  .corner.br{right:16px;bottom:16px;border-right-width:2px;border-bottom-width:2px}
+  @media(max-width:860px){.corner{display:none}}
+  .stitle{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+  .stitle .tick{width:32px;height:2px;background:var(--copper);flex:none}
+  .stitle .num{font-family:"IBM Plex Mono";font-size:12px;color:var(--copper)}
+  .sec-teal .stitle .tick{background:var(--teal)}
+  .sec-teal .stitle .num{color:var(--teal)}
+  .stitle h2{font-size:34px}
+  .lede{max-width:68ch;color:var(--muted);font-size:15px;margin-bottom:40px}
+  @media(max-width:860px){section .inner{padding:56px 22px}}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+  .about-grid p{max-width:68ch;font-size:15px;color:rgba(242,241,246,.9);margin:0 0 18px}
+  .facts{border-top:1px solid var(--line);padding-top:28px}
+  @media(min-width:861px){.facts{border-top:0;border-left:1px solid var(--line);padding-top:0;padding-left:32px}}
+  .fact-label{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.02em;color:var(--faint);text-transform:uppercase;margin-bottom:12px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{border:1px solid var(--line);border-radius:2px;padding:5px 10px;font-size:12.5px}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+  /* timeline */
+  .tl{position:relative;padding-left:32px}
+  .tl:before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
+  .titem{position:relative;margin-bottom:40px}
+  .titem:last-child{margin-bottom:0}
+  .titem .dot{position:absolute;left:-32px;top:6px;width:11px;height:11px;border-radius:50%;border:2px solid var(--teal);background:var(--deep)}
+  .titem.current .dot{border-color:var(--copper);background:var(--copper)}
+  .titem .status{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
+  .titem h3{font-size:22px;margin-top:6px}
+  .titem .org{margin-top:4px;font-size:14.5px;font-weight:500;color:rgba(242,241,246,.8)}
+  .titem .date{margin-top:6px;font-family:"IBM Plex Mono";font-size:12.5px;color:var(--faint)}
+  .titem ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+  .titem ul li{margin:4px 0}
+  .titem .meta{margin:8px 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
+
+  /* research */
+  .pub{border-left:2px solid var(--teal);padding:4px 0 4px 24px;margin-bottom:28px}
+  .pub:nth-child(2){border-left-color:var(--copper)}
+  .pub .meta{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--muted)}
+  .pub h3{max-width:68ch;font-size:22px;margin-top:10px;line-height:1.3}
+  .pub p{max-width:68ch;font-size:14.5px;color:var(--muted);margin-top:12px}
+  .pub a{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--copper)}
+
+  /* projects */
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .pcard{border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .pcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(232,93,143,.35)}
+  .pmedia{aspect-ratio:16/9;border-bottom:1px solid var(--line);overflow:hidden;background:#0d1219}
+  .pmedia svg{display:block;width:100%;height:100%}
+  .pmedia img{transition:transform .5s ease}
+  .pcard:hover .pmedia img{transform:scale(1.05)}
+  .pcard .pbody{padding:24px;display:flex;flex-direction:column;flex:1}
+  .pcard h3{font-size:18px}
+  .pcard p{flex:1;font-size:14px;color:var(--muted);margin:12px 0 0}
+  .pcard .tags{margin-top:18px}
+  .pcard .tag{background:var(--tealSoft);color:var(--teal);border:none;font-family:"IBM Plex Mono";font-size:11px}
+  @media(max-width:860px){.pgrid{grid-template-columns:1fr}}
+
+  /* data & ml projects (icon-badge cards, no images) */
+  .mlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .dscard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);background:rgba(22,26,44,.3);backdrop-filter:blur(8px);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
+  .dscard:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(232,93,143,.5);background:rgba(22,26,44,.5);box-shadow:0 20px 44px -22px rgba(232,93,143,.4)}
+  .dscard a.dslink-main{display:flex;flex:1;flex-direction:column;padding:20px;color:inherit}
+  .dsbadgerow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .dsbadge{display:flex;flex:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--tealSoft);color:var(--teal);transition:transform .3s ease}
+  .dscard:hover .dsbadge{transform:scale(1.1)}
+  .dsrel{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
+  .dsrepo{margin-top:14px;font-family:"IBM Plex Mono";font-size:12px;color:rgba(242,241,246,.8)}
+  .dsdesc{margin-top:8px;flex:1;font-size:13.5px;line-height:1.5;color:var(--muted)}
+  .dstags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .dstag{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--muted)}
+  .dsfoot{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-top:1px solid var(--line);padding:16px 20px}
+  .dsfootlink{display:inline-block;font-size:12.5px;font-weight:600;color:var(--teal);position:relative}
+  .dsfootlink.demo{color:var(--copper)}
+  .dsfootlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
+  .dsfootlink:hover:after{width:100%}
+  @media(max-width:1100px){.mlgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:860px){.mlgrid{grid-template-columns:1fr}}
+
+  /* data & ml projects — dashboard section keeps the original image-card look */
+  .mlcard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .mlcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(232,93,143,.35)}
+  .mlcard a.mllink-main{display:block;color:inherit}
+  .mlimg{aspect-ratio:1200/630;overflow:hidden;border-bottom:1px solid var(--line);background:var(--panel)}
+  .mlimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .mlcard:hover .mlimg img{transform:scale(1.05)}
+  .mlbody{padding:24px 24px 0}
+  .mlrepo{font-family:"IBM Plex Mono";font-size:12px;color:rgba(242,241,246,.8)}
+  .mlrel{margin-top:8px;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--copper)}
+  .mldesc{margin-top:12px;font-size:14px;color:var(--muted)}
+  .mltags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .mltag{border:1px solid var(--line);border-radius:2px;padding:4px 8px;font-family:"IBM Plex Mono";font-size:11px;color:var(--muted)}
+  .mlfoot{display:flex;flex-wrap:wrap;align-items:center;gap:20px;padding:20px 24px 24px}
+  .mllink{display:inline-block;font-size:13px;font-weight:600;color:var(--teal);position:relative}
+  .mllink.demo{color:var(--copper)}
+  .mllink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
+  .mllink:hover:after{width:100%}
+
+  /* dashboard */
+  .dashgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .dashcard{border-top-color:rgba(242,136,75,.6)}
+  .dashcard:hover{box-shadow:0 24px 50px -22px rgba(242,136,75,.35)}
+  @media(max-width:1100px){.dashgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:860px){.dashgrid{grid-template-columns:1fr}}
+
+  /* skills */
+  .skillswrap{position:relative}
+  .skillswrap .ambient-glow{width:256px;height:256px;left:-64px;top:-64px;background:rgba(232,93,143,.1)}
+  .skillswrap .ambient-glow.slow{left:auto;right:-64px;top:auto;bottom:0;background:rgba(242,136,75,.1)}
+  .skillcard{position:relative;display:grid;grid-template-columns:1fr;gap:20px 32px;border:1px solid var(--line);background:rgba(22,26,44,.6);backdrop-filter:blur(20px);border-radius:24px;padding:20px}
+  @media(min-width:768px){.skillcard{grid-template-columns:1fr 1fr;padding:28px}}
+  .sgroup{padding-top:0;border-top:0}
+  .sgroup .label{font-size:13.5px;font-weight:600;color:var(--ink)}
+  .sgroup .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+  .sgroup .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:rgba(11,12,20,.4);backdrop-filter:blur(8px);padding:6px 12px;font-size:12.5px;font-weight:500;color:var(--muted);transition:transform .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+  .sgroup .tag:hover{transform:translateY(-2px) scale(1.05);border-color:var(--teal);color:var(--ink);box-shadow:0 10px 24px -14px rgba(232,93,143,.4)}
+  .sgroup .tag svg{flex:none;color:var(--teal)}
+
+  /* news */
+  .newslist{border-top:1px solid var(--line)}
+  .newsrow{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:16px 0 16px 16px;margin-left:-16px;border-left:2px solid transparent;border-bottom:1px solid var(--line);transition:border-color .3s ease,background .3s ease}
+  .newsrow:hover{border-left-color:var(--copper);background:rgba(22,26,44,.5)}
+  .newsrow time{font-family:"IBM Plex Mono";font-size:12.5px;color:var(--copper)}
+  .newsrow p{margin:0;font-size:14.5px;color:rgba(242,241,246,.9)}
+  .newsrow .certlink{display:inline-block;margin-top:6px;font-size:12.5px;font-weight:600;color:var(--teal);position:relative}
+  .newsrow .certlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
+  .newsrow .certlink:hover:after{width:100%}
+
+  /* service */
+  .svc-grid{display:grid;grid-template-columns:200px 1fr;gap:40px}
+  .count-card{border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);padding:24px;display:flex;align-items:center;gap:24px;transition:transform .3s ease,box-shadow .3s ease}
+  .count-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px -22px rgba(232,93,143,.3)}
+  .count-card .num{font-family:"Fraunces";font-size:48px;color:var(--copper)}
+  .count-card .lbl{font-size:13px;color:var(--muted)}
+  .svc-item{border-left:2px solid var(--line);padding-left:20px;padding-bottom:24px;margin-bottom:24px;transition:border-color .3s ease}
+  .svc-item:hover{border-left-color:var(--teal)}
+  .svc-item:last-child{margin:0;padding-bottom:0}
+  .svc-item h3{font-size:18px}
+  .svc-item p{font-size:14px;color:var(--muted);margin-top:6px}
+  .act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  .act-card{border:1px solid var(--line);padding:16px;display:flex;gap:12px;align-items:flex-start;transition:all .3s ease}
+  .act-card:hover{transform:translateY(-4px);border-color:rgba(232,93,143,.5);box-shadow:0 16px 36px -20px rgba(232,93,143,.35)}
+  .act-card svg{flex:none;color:var(--copper);margin-top:2px}
+  .act-card .d{display:block;font-family:"IBM Plex Mono";font-size:11px;color:var(--faint)}
+  .act-card .t{display:block;margin-top:6px;font-size:14px;font-weight:500}
+  .act-card .certlink{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--copper);position:relative}
+  .act-card .certlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
+  .act-card .certlink:hover:after{width:100%}
+  @media(max-width:860px){.svc-grid{grid-template-columns:1fr}.count-card{flex-direction:row}.act-grid{grid-template-columns:1fr}}
+
+  /* contact */
+  .cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
+  .cgrid h3{max-width:60ch;font-size:26px;line-height:1.3}
+  .cgrid > div:first-child > p{max-width:60ch;font-size:14.5px;color:var(--muted);margin-top:16px}
+  .dl{margin-top:32px}
+  .drow{display:flex;gap:16px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
+  .drow .dt{width:80px;flex:none;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--faint)}
+  .drow .dd{font-size:14.5px;font-weight:500}
+  .actions{display:flex;flex-direction:column;border:1px solid var(--line)}
+  .actions a{display:flex;justify-content:space-between;padding:16px 20px;font-size:14px;font-weight:500;border-bottom:1px solid var(--line);transition:background .2s ease}
+  .actions a span{transition:transform .2s ease}
+  .actions a:hover span{transform:translateX(4px)}
+  .actions a:last-child{border-bottom:0}
+  .actions a:first-child{background:var(--copper);color:#fff}
+  .actions a:first-child:hover{background:#d9683a}
+  .actions a:not(:first-child):hover{background:var(--panel)}
+  @media(max-width:860px){.cgrid{grid-template-columns:1fr}}
+
+  footer{border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;padding:32px 24px;font-size:12.5px;color:var(--faint)}
+  @media(max-width:600px){footer .wrap{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+  <div id="scroll-progress"><div class="bar"></div></div>
+  <header>
+    <div class="wrap">
+      <a href="#hero" class="brand">Tushy Tasnim</a>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#ml-projects">Data Projects</a>
+        <a href="#dashboards">Dashboard</a>
+        <a href="#projects">Academic Projects</a>
+        <a href="#news">News</a>
+        <a href="#service">Leadership</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="ambient-glow glow-a"></div>
+    <div class="ambient-glow slow glow-b"></div>
+    <div class="ambient-glow glow-c"></div>
+    <div class="inner">
+      <div>
+        <span class="kicker mono rise-in" style="animation-delay:0ms">Seeking Fall admission — MS / PhD, Industrial Engineering</span>
+        <h1 class="rise-in" style="animation-delay:90ms"><span class="name-a">Tushy</span> <span class="name-b">Tasnim</span></h1>
+        <p class="role rise-in" style="animation-delay:180ms">Industrial &amp; Production Engineering Graduate. Researching supply chain analytics, smart manufacturing, and sustainable operations.</p>
+        <div class="btn-row rise-in" style="animation-delay:270ms">
+          <a class="btn primary" href="#">View CV</a>
+          <a class="btn outline" href="#contact">Contact me</a>
+        </div>
+        <div class="soc mono rise-in" style="animation-delay:340ms">
+          <a href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+      <div class="mono-frame-wrap rise-in" style="animation-delay:200ms">
+        <div class="offset"></div>
+        <div class="mono-frame">
+          <img src="public/images/headshot.jpeg" alt="Tushy Tasnim" loading="eager">
+        </div>
+      </div>
+    </div>
+    <a class="scrollcue" href="#about" aria-label="Scroll to About section">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <section id="about" class="sec-copper">
+    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">01</span><h2>About</h2></div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I am an Industrial and Production Engineering graduate from Shahjalal University of Science and Technology, Bangladesh. My academic and research interests lie at the intersection of supply chain analytics, smart manufacturing, operations research, sustainable operations, and data-driven decision-making.</p>
+          <p>I have research experience in Industry 4.0 technology adoption, PLS-SEM, ISM-MICMAC, linear programming, simulation, and analytical reporting. I am particularly interested in how emerging technologies, analytics, and optimization methods can improve industrial systems, supply chain performance, and sustainable operations.</p>
+        </div>
+        <div class="facts reveal" style="transition-delay:.1s">
+          <div class="fact-label">Research areas</div>
+          <div class="tags">
+            <span class="tag">Industry 4.0</span><span class="tag">Smart Manufacturing</span><span class="tag">Supply Chain Analytics</span>
+            <span class="tag">Operations Research</span><span class="tag">Sustainable Operations</span><span class="tag">AI/Data-driven Industrial Systems</span>
+          </div>
+          <div class="fact-label" style="margin-top:24px">Research topics</div>
+          <div class="tags">
+            <span class="tag">Food Supply Chains</span><span class="tag">Technology Adoption</span><span class="tag">Optimization</span>
+            <span class="tag">PLS-SEM</span><span class="tag">ISM-MICMAC</span><span class="tag">Simulation</span><span class="tag">Decision Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">02</span><h2>Research &amp; Publications</h2></div>
+      <article class="pub reveal">
+        <p class="meta">Journal · December 2025 · Journal of Open Innovation: Technology, Market &amp; Complexity [Q1]</p>
+        <h3>Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh</h3>
+        <p>Studied Industry 4.0 adoption in Bangladesh's food processing sector and identified technology capability, information sharing, organizational performance, business growth, and insufficient capital as a critical driving barrier.</p>
+        <a href="https://doi.org/10.1016/j.joitmc.2025.100674" target="_blank" rel="noreferrer">Read the paper</a>
+      </article>
+      <article class="pub reveal" style="transition-delay:.11s">
+        <p class="meta">Conference · December 2021 · IMEOM 2022, Dhaka</p>
+        <h3>Development of a Linear Programming Model for the Diet Plan of University Students</h3>
+        <p>Developed a nutrition optimization model using linear programming and the simplex method, showing protein intake gaps and improved cost allocation toward protein-rich food items.</p>
+        <a href="https://doi.org/10.46254/BD05.20220175" target="_blank" rel="noreferrer">Read the paper</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="education" class="sec-copper">
+    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">03</span><h2>Education</h2></div>
+      <div class="tl">
+        <div class="titem current reveal">
+          <span class="dot pulse-dot"></span>
+          <p class="status">Graduated</p>
+          <h3>BSc in Industrial &amp; Production Engineering</h3>
+          <p class="org">Shahjalal University of Science and Technology, Bangladesh</p>
+          <p class="date">CGPA: 3.68 / 4.00</p>
+          <ul class="meta"><li><b>Merit Position:</b> 5th out of 71</li><li><b>IELTS:</b> 7.0</li></ul>
+        </div>
+        <div class="titem reveal" style="transition-delay:.11s">
+          <span class="dot"></span>
+          <p class="status">Graduate Applicant</p>
+          <h3>Prospective MS / PhD Student</h3>
+          <p class="org">Industrial Engineering — Supply Chain Analytics, Smart Manufacturing, Sustainable Operations</p>
+          <p class="date">Seeking Fall admission opportunities</p>
+          <ul class="meta"><li><b>Research fit:</b> data-driven industrial systems, optimization, and sustainable operations.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">04</span><h2>Work Experience</h2></div>
+      <div class="tl">
+        <div class="titem current reveal">
+          <span class="dot pulse-dot"></span>
+          <p class="status">Operations</p>
+          <h3>Associate Operations Engineer</h3>
+          <p class="org">Algorizin Inc.</p>
+          <p class="date">Jan 2023 – Nov 2024 · Remote</p>
+          <ul>
+            <li>Conducted data-driven process analysis to redesign workflows and reduce process cycle time by 70%.</li>
+            <li>Developed an automated expense tracking system, improving data accuracy, transparency, and reporting efficiency.</li>
+            <li>Analyzed operational and performance datasets to identify trends and support evidence-based decision-making.</li>
+            <li>Prepared analytical reports and presentations by converting complex data into actionable insights.</li>
+            <li>Coordinated cross-functional teams to implement process improvement initiatives and ensure timely project delivery.</li>
+          </ul>
+        </div>
+        <div class="titem reveal" style="transition-delay:.11s">
+          <span class="dot"></span>
+          <p class="status">Industrial Attachment</p>
+          <h3>Training Institute for Chemical Industries</h3>
+          <p class="date">Dec 2023</p>
+          <ul><li>Gained practical understanding of mechanical engineering principles in a manufacturing facility.</li></ul>
+        </div>
+        <div class="titem reveal" style="transition-delay:.22s">
+          <span class="dot"></span>
+          <p class="status">Industrial Attachment</p>
+          <h3>Bangladesh Industrial Technical Assistance Centre</h3>
+          <p class="date">Jan 2023</p>
+          <ul><li>Acquired practical skills in process improvement, product testing, and data analysis.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="sec-copper">
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">05</span><h2>Technical Skills</h2></div>
+      <p class="lede reveal">Tools and methods I use across data analysis, research, and industrial systems work — from statistical modeling to dashboards to simulation.</p>
+      <div class="skillswrap">
+        <div class="ambient-glow"></div>
+        <div class="ambient-glow slow"></div>
+        <div class="skillcard">
+          <div class="sgroup reveal"><div class="label">Data Analysis</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>MS Excel</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>Google Sheets</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Power BI</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>SmartPLS</span>
+          </div></div>
+          <div class="sgroup reveal" style="transition-delay:.06s"><div class="label">Research Methods</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>PLS-SEM</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>ISM-MICMAC</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg>Linear Programming</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Simulation</span>
+          </div></div>
+          <div class="sgroup reveal" style="transition-delay:.12s"><div class="label">Programming</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>Python</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>C Language</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>Analytical Reporting</span>
+          </div></div>
+          <div class="sgroup reveal" style="transition-delay:.15s"><div class="label">Python Libraries</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>NumPy</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Pandas</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>scikit-learn</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>Matplotlib</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>Seaborn</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Gurobipy</span>
+          </div></div>
+          <div class="sgroup reveal" style="transition-delay:.18s"><div class="label">Web Development</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>WordPress</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>Webflow</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Squarespace</span>
+          </div></div>
+          <div class="sgroup reveal" style="transition-delay:.24s"><div class="label">Automation Tools</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg>Zapier</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>Pabbly Connect</span>
+          </div></div>
+          <div class="sgroup reveal" style="transition-delay:.3s"><div class="label">Simulation &amp; Drafting</div><div class="tags">
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>Arena</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>AutoCAD</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>Adobe Illustrator</span>
+            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>Canva</span>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ml-projects" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">06</span><h2>Data &amp; ML Projects</h2></div>
+      <p class="lede reveal">Applied data science, machine learning, and business-intelligence projects I&rsquo;ve built end to end — predictive maintenance, demand forecasting, NLP, and dashboards. All published on my GitHub.</p>
+      <div class="mlgrid">
+        <article class="dscard reveal">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
+              <span class="dsrel">Predictive Maintenance · Industry 4.0</span>
+            </div>
+            <p class="dsrepo">XGBoost-Based-Predictive-Maintenance-System</p>
+            <p class="dsdesc">Predicts machine failure from sensor data using XGBoost, generating downtime risk scores and visualizing maintenance insights through an interactive Streamlit dashboard.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">XGBoost</span><span class="dstag">Streamlit</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:.06s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></span>
+              <span class="dsrel">Supply Chain Analytics · Optimization</span>
+            </div>
+            <p class="dsrepo">supply_chain_optimization_projects</p>
+            <p class="dsdesc">An end-to-end supply chain analytics project covering demand forecasting, inventory optimization, route optimization, Monte Carlo simulation, and cost optimization.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">Simulation</span><span class="dstag">Optimization</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:.12s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+              <span class="dsrel">Supply Chain Analytics · Predictive Modeling</span>
+            </div>
+            <p class="dsrepo">late-delivery-predictive-analytics&#8203;-in-supply-chain-using-ML-HistGradientBoostingModel</p>
+            <p class="dsdesc">Predicts late-delivery risk in supply chain logistics using a HistGradientBoosting model, with an interactive Streamlit dashboard exploring the drivers behind delivery delays.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">HistGradientBoosting</span><span class="dstag">Streamlit</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:.18s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg></span>
+              <span class="dsrel">NLP · Machine Learning</span>
+            </div>
+            <p class="dsrepo">Emotion-Detection-NLP-and-ML</p>
+            <p class="dsdesc">Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">NLP</span><span class="dstag">scikit-learn</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:.24s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
+              <span class="dsrel">Demand Forecasting · Retail Analytics</span>
+            </div>
+            <p class="dsrepo">Demand-Forecasting-App</p>
+            <p class="dsdesc">Forecasts product demand from historical retail data using XGBoost, deployed as an interactive Streamlit app with pricing, promotion, and inventory scenario inputs.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">XGBoost</span><span class="dstag">Streamlit</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:.3s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>
+              <span class="dsrel">Healthcare · Machine Learning</span>
+            </div>
+            <p class="dsrepo">heart-disease-prediction</p>
+            <p class="dsdesc">Predicts heart-disease risk from clinical data, comparing five classification algorithms and deploying a K-Nearest Neighbors model in a Streamlit web app.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">scikit-learn</span><span class="dstag">Streamlit</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboards" class="sec-copper">
+    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">07</span><h2>Dashboard</h2></div>
+      <p class="lede reveal">Business-intelligence dashboards built in Power BI and Excel — turning raw operational data into decision-ready visuals.</p>
+      <div class="dashgrid">
+        <article class="mlcard dashcard reveal">
+          <a class="mllink-main" href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer">
+            <div class="mlimg"><img src="https://opengraph.githubassets.com/1/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" alt="Hospital Monitoring Power BI dashboard preview" loading="lazy"></div>
+            <div class="mlbody">
+              <p class="mlrepo">Hospital-Monitoring-PowerBI-Dashboard</p>
+              <p class="mlrel">Business Intelligence · Healthcare Analytics</p>
+              <p class="mldesc">An interactive Power BI dashboard analyzing hospital operations and healthcare performance metrics from patient-level data.</p>
+              <div class="mltags"><span class="mltag">Power BI</span><span class="mltag">Dashboard</span><span class="mltag">DAX</span></div>
+            </div>
+          </a>
+          <div class="mlfoot">
+            <a class="mllink" href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="mllink demo" href="https://app.powerbi.com/view?r=eyJrIjoiZDY5NjdiMmYtMzQ0ZS00N2E4LWE4MTUtYjExMGE0OTQxMmEyIiwidCI6ImZkOGY0MWFiLWVlZDEtNDMwZC05ZTE0LTY3M2NhOGQ0NzBjNiIsImMiOjEwfQ%3D%3D" target="_blank" rel="noreferrer">Live Dashboard</a>
+          </div>
+        </article>
+
+        <article class="mlcard dashcard reveal" style="transition-delay:.06s">
+          <a class="mllink-main" href="https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard" target="_blank" rel="noreferrer">
+            <div class="mlimg"><img src="public/images/projects/dengue-dashboard.jpg" alt="Dengue Phenomenon in Bangladesh dashboard preview" loading="lazy"></div>
+            <div class="mlbody">
+              <p class="mlrepo">Dengue-Phenomenon-in-Bangladesh-Dashboard</p>
+              <p class="mlrel">Public Health Analytics · Dashboard</p>
+              <p class="mldesc">A dashboard visualizing dengue outbreak trends and patterns across Bangladesh to support public-health monitoring and awareness.</p>
+              <div class="mltags"><span class="mltag">Dashboard</span><span class="mltag">Data Visualization</span><span class="mltag">Public Health</span></div>
+            </div>
+          </a>
+          <div class="mlfoot">
+            <a class="mllink" href="https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="mlcard dashcard reveal" style="transition-delay:.12s">
+          <a class="mllink-main" href="https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard" target="_blank" rel="noreferrer">
+            <div class="mlimg"><img src="public/images/projects/hotel-dashboard.png" alt="Hotel Monitoring Excel dashboard preview" loading="lazy"></div>
+            <div class="mlbody">
+              <p class="mlrepo">Hotel-Monitoring-Excel-Dashboard</p>
+              <p class="mlrel">Business Intelligence · Hospitality Analytics</p>
+              <p class="mldesc">An Excel dashboard tracking hotel booking, occupancy, and revenue performance for hospitality management.</p>
+              <div class="mltags"><span class="mltag">Excel</span><span class="mltag">Dashboard</span><span class="mltag">Data Visualization</span></div>
+            </div>
+          </a>
+          <div class="mlfoot">
+            <a class="mllink" href="https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">08</span><h2>Academic Projects</h2></div>
+      <div class="pgrid">
+        <article class="pcard reveal">
+          <div class="pmedia">
+            <img src="public/images/projects/dust-detection.jpg" alt="Dust Detection using IR &amp; Photo Sensor prototype" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div class="pbody">
+            <h3>Dust Detection using IR &amp; Photo Sensor</h3>
+            <p>Designed an engineering prototype concept for dust accumulation detection using infrared and photo sensor behavior, with emphasis on sensing logic, calibration, and practical monitoring potential.</p>
+            <div class="tags"><span class="tag">Sensors</span><span class="tag">Prototype</span><span class="tag">Industrial Monitoring</span></div>
+          </div>
+        </article>
+        <article class="pcard reveal" style="transition-delay:.09s">
+          <div class="pmedia">
+            <img src="public/images/projects/portable-dishwasher.jpg" alt="Portable Dishwasher with Liquid Dispenser team" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
+          </div>
+          <div class="pbody">
+            <h3>Portable Dishwasher with Liquid Dispenser</h3>
+            <p>Developed a compact cleaning automation concept focused on dispensing control, ergonomic usability, product design, and manufacturability considerations.</p>
+            <div class="tags"><span class="tag">Product Design</span><span class="tag">Automation</span><span class="tag">Manufacturing</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="sec-copper">
+    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">09</span><h2>News</h2></div>
+      <div class="newslist">
+        <div class="newsrow reveal"><time>Apr 2026</time><div><p>Selected for the Aspire Leaders Program by Aspire Institute.</p><a class="certlink" href="public/images/certificates/aspire-leaders.png" target="_blank" rel="noreferrer">View certificate</a></div></div>
+        <div class="newsrow reveal" style="transition-delay:.05s"><time>Dec 2025</time><p>Journal article on Industry 4.0 adoption in Bangladesh's food processing sector scheduled in Journal of Open Innovation: Technology, Market &amp; Complexity.</p></div>
+        <div class="newsrow reveal" style="transition-delay:.1s"><time>May 2024</time><p>Received Government Board Scholarship from the Ministry of Education, Bangladesh.</p></div>
+        <div class="newsrow reveal" style="transition-delay:.15s"><time>Nov 2023</time><div><p>Earned Certified Supply Chain Analyst credential from the International Supply Chain Education Alliance.</p><a class="certlink" href="public/images/certificates/iscea-csca.jpg" target="_blank" rel="noreferrer">View certificate</a></div></div>
+        <div class="newsrow reveal" style="transition-delay:.2s"><time>Aug 2023</time><p>Awarded 70% scholarship for the Certified Supply Chain Analyst program through the 2023 ISCEA Prize Global Supply Chain Case Competition.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="service" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">10</span><h2>Leadership &amp; Service</h2></div>
+      <div class="svc-grid">
+        <div class="count-card reveal"><span class="num" id="award-count" data-target="2">0</span><span class="lbl">Honors &amp; scholarships</span></div>
+        <div>
+          <div class="svc-item reveal"><h3>ISCEA Scholarship</h3><p>70% scholarship for the Certified Supply Chain Analyst program through the 2023 ISCEA Prize Global Supply Chain Case Competition, Aug 2023.</p></div>
+          <div class="svc-item reveal" style="transition-delay:.09s"><h3>Government Board Scholarship</h3><p>Ministry of Education, Bangladesh, May 2024.</p></div>
+        </div>
+      </div>
+      <p style="margin:44px 0 0;font-size:14.5px;font-weight:600">Activities &amp; certifications</p>
+      <div class="act-grid">
+        <div class="act-card reveal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.8 5-4.4-2.3-4.4 2.3.8-5-3.6-3.5 5-.7L12 3z"/></svg>
+          <span><span class="d">Apr 2026</span><span class="t">Aspire Leaders Program</span><a class="certlink" href="public/images/certificates/aspire-leaders.png" target="_blank" rel="noreferrer">View certificate</a></span>
+        </div>
+        <div class="act-card reveal" style="transition-delay:.08s">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.3L17 21l-1.5-7.5"/></svg>
+          <span><span class="d">Nov 2023</span><span class="t">Certified Supply Chain Analyst</span><a class="certlink" href="public/images/certificates/iscea-csca.jpg" target="_blank" rel="noreferrer">View certificate</a></span>
+        </div>
+        <div class="act-card reveal" style="transition-delay:.16s">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+          <span><span class="d">Ongoing</span><span class="t">Data Analytics &amp; Power BI</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec-copper">
+    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><span class="num">11</span><h2>Contact</h2></div>
+      <div class="cgrid">
+        <div class="reveal">
+          <h3>Let&rsquo;s connect about graduate research, collaboration, or academic opportunities.</h3>
+          <p>I am open to professor outreach, MS/PhD research conversations, and opportunities related to supply chain analytics, smart manufacturing, sustainable operations, and data-driven industrial systems.</p>
+          <div class="dl">
+            <div class="drow"><span class="dt">Email</span><a class="dd" href="mailto:onomytasnim@gmail.com">onomytasnim@gmail.com</a></div>
+            <div class="drow"><span class="dt">Phone</span><a class="dd" href="tel:+8801725428973">+8801725428973</a></div>
+            <div class="drow"><span class="dt">Location</span><span class="dd">Bangladesh</span></div>
+          </div>
+        </div>
+        <div class="actions reveal" style="transition-delay:.12s">
+          <a href="mailto:onomytasnim@gmail.com">Send email <span>&#8594;</span></a>
+          <a href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar <span>&#8594;</span></a>
+          <a href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn <span>&#8594;</span></a>
+          <a href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub <span>&#8594;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; 2026 Tushy Tasnim. All rights reserved.</p>
+      <a href="#hero">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    var progressBar = document.querySelector('#scroll-progress .bar');
+    function updateProgress(){
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+      if(progressBar) progressBar.style.width = pct + '%';
+    }
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, {passive:true});
+    window.addEventListener('resize', updateProgress);
+
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav.links a'));
+    var navSections = navLinks
+      .map(function(a){ return document.querySelector(a.getAttribute('href')); })
+      .filter(Boolean);
+    var navIo = new IntersectionObserver(function(entries){
+      var visible = entries.filter(function(e){ return e.isIntersecting; });
+      if(visible.length === 0) return;
+      var topMost = visible.reduce(function(a, b){
+        return a.boundingClientRect.top < b.boundingClientRect.top ? a : b;
+      });
+      navLinks.forEach(function(a){
+        a.classList.toggle('active', a.getAttribute('href') === '#' + topMost.target.id);
+      });
+    }, {rootMargin:'-20% 0px -70% 0px', threshold:0});
+    navSections.forEach(function(el){ navIo.observe(el); });
+
+    var items = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){ io.observe(el); });
+
+    var countEl = document.getElementById('award-count');
+    if(countEl){
+      var target = parseInt(countEl.dataset.target, 10);
+      var done = false;
+      var cio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting && !done){
+            done = true;
+            var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if(reduced){ countEl.textContent = target; cio.disconnect(); return; }
+            var start = performance.now(), dur = 900;
+            function tick(now){
+              var p = Math.min((now - start) / dur, 1);
+              var eased = 1 - Math.pow(1 - p, 3);
+              countEl.textContent = Math.round(eased * target);
+              if(p < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+            cio.disconnect();
+          }
+        });
+      }, {threshold:.4});
+      cio.observe(countEl);
+    }
+  </script>
+</body>
+</html>
