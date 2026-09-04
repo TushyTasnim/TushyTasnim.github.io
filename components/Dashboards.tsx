@@ -6,10 +6,10 @@ export default function Dashboards() {
   return (
     <Section
       id="dashboards"
-      index="07"
-      title="Dashboard"
+      title="Dashboards"
       intro="Business-intelligence dashboards built in Power BI and Excel — turning raw operational data into decision-ready visuals."
-      accent="copper"
+      tint
+      accent="teal"
     >
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {dashboards.map((project, i) => (
@@ -17,7 +17,7 @@ export default function Dashboards() {
             as="article"
             key={project.repo}
             delay={i * 70}
-            className="group flex h-full flex-col overflow-hidden border border-line border-t-2 border-t-copper/60 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-lineStrong hover:shadow-[0_24px_50px_-22px_rgba(242,136,75,0.4)]"
+            className="group flex h-full flex-col overflow-hidden border border-line border-t-2 border-t-teal/60 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-lineStrong hover:shadow-[0_24px_50px_-22px_rgba(232,93,143,0.4)]"
           >
             <a href={project.url} target="_blank" rel="noreferrer" className="flex flex-1 flex-col">
               <div className="aspect-[1200/630] w-full overflow-hidden border-b border-line bg-panel">
@@ -31,7 +31,7 @@ export default function Dashboards() {
               </div>
               <div className="flex flex-1 flex-col p-6 pb-0">
                 <p className="font-mono text-[12px] text-ink/80">{project.repo}</p>
-                <p className="mt-2 font-mono text-[11px] uppercase tracking-wide text-copper">
+                <p className="mt-2 font-mono text-[11px] uppercase tracking-wide text-teal">
                   {project.relevance}
                 </p>
                 <p className="mt-3 flex-1 text-[14px] leading-relaxed text-muted">

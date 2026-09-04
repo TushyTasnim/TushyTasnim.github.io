@@ -16,11 +16,9 @@ export default function MLProjects() {
   return (
     <Section
       id="ml-projects"
-      index="06"
       title="Data & ML Projects"
       intro="Applied data science, machine learning, and business-intelligence projects I've built end to end — predictive maintenance, demand forecasting, NLP, and dashboards. All published on my GitHub."
-      tint
-      accent="teal"
+      accent="copper"
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {mlProjects.map((project, i) => {
@@ -30,11 +28,11 @@ export default function MLProjects() {
               as="article"
               key={project.repo}
               delay={i * 60}
-              className="group flex h-full flex-col border border-line border-t-2 border-t-teal/60 bg-panel/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-teal/50 hover:bg-panel/50 hover:shadow-[0_20px_44px_-22px_rgba(232,93,143,0.4)]"
+              className="group flex h-full flex-col border border-line border-t-2 border-t-copper/60 bg-panel/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-copper/50 hover:bg-panel/50 hover:shadow-[0_20px_44px_-22px_rgba(242,136,75,0.4)]"
             >
               <a href={project.url} target="_blank" rel="noreferrer" className="flex flex-1 flex-col p-5">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-tealSoft text-teal transition-transform duration-300 group-hover:scale-110">
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-copperSoft text-copper transition-transform duration-300 group-hover:scale-110">
                     <Icon size={19} strokeWidth={1.8} />
                   </span>
                   <span className="font-mono text-[10.5px] uppercase tracking-wide text-copper">
@@ -61,7 +59,7 @@ export default function MLProjects() {
                   href={project.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="link-underline inline-block w-fit text-[12.5px] font-semibold text-teal"
+                  className="link-underline inline-block w-fit text-[12.5px] font-semibold text-copper"
                 >
                   View on GitHub
                 </a>

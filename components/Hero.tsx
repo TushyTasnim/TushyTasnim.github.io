@@ -33,14 +33,8 @@ export default function Hero() {
 
           <div className="rise-in mt-8 flex flex-wrap items-center gap-3 [animation-delay:270ms]">
             <a
-              href={profile.cvUrl}
-              className="inline-flex h-11 items-center rounded-sm bg-copper px-5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d9683a] hover:shadow-[0_14px_30px_-12px_rgba(242,136,75,0.5)]"
-            >
-              View CV
-            </a>
-            <a
               href="#contact"
-              className="inline-flex h-11 items-center rounded-sm border border-lineStrong px-5 text-sm font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-copper hover:text-copper"
+              className="inline-flex h-11 items-center rounded-sm bg-copper px-5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d9683a] hover:shadow-[0_14px_30px_-12px_rgba(242,136,75,0.5)]"
             >
               Contact me
             </a>

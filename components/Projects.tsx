@@ -5,11 +5,11 @@ import { projects } from "@/data/portfolio";
 
 export default function Projects() {
   return (
-    <Section id="projects" index="08" title="Academic Projects" tint accent="teal">
+    <Section id="projects" title="Academic Projects" accent="copper">
       <div className="grid gap-5 md:grid-cols-2">
         {projects.map((project, i) => (
           <Reveal as="article" key={project.title} delay={i * 90}>
-            <div className="group flex h-full flex-col border border-line border-t-2 border-t-teal/60 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-lineStrong hover:shadow-[0_24px_50px_-22px_rgba(232,93,143,0.4)]">
+            <div className="group flex h-full flex-col border border-line border-t-2 border-t-copper/60 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-lineStrong hover:shadow-[0_24px_50px_-22px_rgba(242,136,75,0.4)]">
               <div className="aspect-[16/9] w-full overflow-hidden border-b border-line bg-panel">
                 {project.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -34,7 +34,7 @@ export default function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-sm bg-tealSoft px-2 py-1 font-mono text-[11px] text-teal"
+                      className="rounded-sm bg-copperSoft px-2 py-1 font-mono text-[11px] text-copper"
                     >
                       {tag}
                     </span>

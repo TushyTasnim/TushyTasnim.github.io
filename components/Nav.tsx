@@ -39,12 +39,12 @@ export default function Nav() {
           {profile.name}
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden flex-wrap items-center justify-end gap-x-4 gap-y-2 lg:flex">
           {nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`link-underline text-[13px] font-medium transition-colors duration-200 hover:text-ink ${
+              className={`link-underline whitespace-nowrap text-[12.5px] font-medium transition-colors duration-200 hover:text-ink ${
                 active === item.href ? "text-copper" : "text-muted"
               }`}
             >
@@ -58,7 +58,7 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label="Toggle navigation menu"
-          className="flex h-9 w-9 flex-none items-center justify-center rounded border border-line text-ink md:hidden"
+          className="flex h-9 w-9 flex-none items-center justify-center rounded border border-line text-ink lg:hidden"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
             {open ? (
@@ -80,7 +80,7 @@ export default function Nav() {
       </div>
 
       {open ? (
-        <nav className="border-t border-line px-6 py-3 md:hidden">
+        <nav className="border-t border-line px-6 py-3 lg:hidden">
           <ul className="flex flex-col gap-1">
             {nav.map((item) => (
               <li key={item.href}>

@@ -2,14 +2,17 @@ import Section from "./Section";
 import Reveal from "./Reveal";
 import { profile } from "@/data/portfolio";
 
+const emailSubject = encodeURIComponent("Hello from your portfolio");
+const mailtoHref = `mailto:${profile.email}?subject=${emailSubject}`;
+
 const details = [
-  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
+  { label: "Email", value: profile.email, href: mailtoHref },
   { label: "Phone", value: profile.phone, href: `tel:${profile.phone}` },
   { label: "Location", value: profile.location },
 ];
 
 const actions = [
-  { label: "Send email", href: `mailto:${profile.email}`, external: false },
+  { label: "Send email", href: mailtoHref, external: false },
   { label: "Google Scholar", href: profile.links.scholar, external: true },
   { label: "LinkedIn", href: profile.links.linkedin, external: true },
   { label: "GitHub", href: profile.links.github, external: true },
@@ -17,7 +20,7 @@ const actions = [
 
 export default function Contact() {
   return (
-    <Section id="contact" index="11" title="Contact" accent="copper">
+    <Section id="contact" title="Contact" tint accent="teal">
       <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
         <Reveal>
           <h3 className="max-w-prose font-display text-2xl font-medium leading-snug text-ink">

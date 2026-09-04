@@ -4,7 +4,7 @@ import { publications } from "@/data/portfolio";
 
 export default function Research() {
   return (
-    <Section id="research" index="02" title="Research & Publications" tint accent="teal">
+    <Section id="research" title="Research & Publications" tint accent="teal">
       <div className="space-y-6">
         {publications.map((pub, i) => (
           <Reveal as="article" key={pub.title} delay={i * 110}>

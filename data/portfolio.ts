@@ -30,15 +30,7 @@ export const about = {
     "Operations Research",
     "Sustainable Operations",
     "AI/Data-driven Industrial Systems",
-  ],
-  researchTopics: [
-    "Food Supply Chains",
-    "Technology Adoption",
-    "Optimization",
-    "PLS-SEM",
-    "ISM-MICMAC",
-    "Simulation",
-    "Decision Support",
+    "Digital Twin",
   ],
 };
 
@@ -139,6 +131,22 @@ export const publications: Publication[] = [
   },
 ];
 
+export type OngoingResearchItem = {
+  title: string;
+  summary: string;
+  tags?: string[];
+};
+
+export const ongoingResearch: OngoingResearchItem[] = [
+  {
+    title:
+      "Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh's Ready-Made Garment Industry: A Fuzzy DEMATEL Approach",
+    summary:
+      "Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh's ready-made garment sector.",
+    tags: ["Python", "Fuzzy DEMATEL", "Digital Twin"],
+  },
+];
+
 export type Project = {
   title: string;
   summary: string;
@@ -178,7 +186,7 @@ export const skills: SkillGroup[] = [
     label: "Research Methods",
     items: ["PLS-SEM", "ISM-MICMAC", "Linear Programming", "Simulation"],
   },
-  { label: "Programming", items: ["Python", "C Language", "Analytical Reporting"] },
+  { label: "Programming", items: ["Python", "C Language"] },
   {
     label: "Python Libraries",
     items: ["NumPy", "Pandas", "scikit-learn", "Matplotlib", "Seaborn", "Gurobipy"],
@@ -187,95 +195,20 @@ export const skills: SkillGroup[] = [
   { label: "Automation Tools", items: ["Zapier", "Pabbly Connect"] },
   {
     label: "Simulation & Drafting",
-    items: ["Arena", "AutoCAD", "Adobe Illustrator", "Canva"],
+    items: ["Arena", "AutoCAD", "Adobe Illustrator"],
   },
 ];
-
-export type NewsItem = {
-  date: string;
-  text: string;
-  certUrl?: string;
-};
-
-export const news: NewsItem[] = [
-  {
-    date: "Apr 2026",
-    text: "Selected for the Aspire Leaders Program by Aspire Institute.",
-    certUrl: "/images/certificates/aspire-leaders.png",
-  },
-  {
-    date: "Dec 2025",
-    text: "Journal article on Industry 4.0 adoption in Bangladesh's food processing sector scheduled in Journal of Open Innovation: Technology, Market & Complexity.",
-  },
-  {
-    date: "May 2024",
-    text: "Received Government Board Scholarship from the Ministry of Education, Bangladesh.",
-  },
-  {
-    date: "Nov 2023",
-    text: "Earned Certified Supply Chain Analyst credential from the International Supply Chain Education Alliance.",
-    certUrl: "/images/certificates/iscea-csca.jpg",
-  },
-  {
-    date: "Aug 2023",
-    text: "Awarded 70% scholarship for the Certified Supply Chain Analyst program through the 2023 ISCEA Prize Global Supply Chain Case Competition.",
-  },
-];
-
-export type Activity = {
-  date: string;
-  title: string;
-  icon: "leadership" | "certification" | "analytics";
-  certUrl?: string;
-};
-
-export const activities: Activity[] = [
-  {
-    date: "Apr 2026",
-    title: "Aspire Leaders Program",
-    icon: "leadership",
-    certUrl: "/images/certificates/aspire-leaders.png",
-  },
-  {
-    date: "Nov 2023",
-    title: "Certified Supply Chain Analyst",
-    icon: "certification",
-    certUrl: "/images/certificates/iscea-csca.jpg",
-  },
-  { date: "Ongoing", title: "Data Analytics & Power BI", icon: "analytics" },
-];
-
-export type ServiceItem = {
-  title: string;
-  detail: string;
-};
-
-export const service = {
-  awardCount: 2,
-  items: [
-    {
-      title: "ISCEA Scholarship",
-      detail:
-        "70% scholarship for the Certified Supply Chain Analyst program through the 2023 ISCEA Prize Global Supply Chain Case Competition, Aug 2023.",
-    },
-    {
-      title: "Government Board Scholarship",
-      detail: "Ministry of Education, Bangladesh, May 2024.",
-    },
-  ] as ServiceItem[],
-};
 
 export const nav = [
   { href: "#about", label: "About" },
   { href: "#research", label: "Research" },
+  { href: "#ongoing-research", label: "Ongoing" },
   { href: "#education", label: "Education" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
-  { href: "#ml-projects", label: "Data Projects" },
-  { href: "#dashboards", label: "Dashboard" },
-  { href: "#projects", label: "Academic Projects" },
-  { href: "#news", label: "News" },
-  { href: "#service", label: "Leadership" },
+  { href: "#ml-projects", label: "ML Projects" },
+  { href: "#dashboards", label: "Dashboards" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -321,20 +254,20 @@ export const mlProjects: MLProject[] = [
     tags: ["Python", "HistGradientBoosting", "Streamlit"],
   },
   {
-    repo: "Emotion-Detection-NLP-and-ML",
-    url: "https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML",
-    description:
-      "Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.",
-    relevance: "NLP · Machine Learning",
-    tags: ["Python", "NLP", "scikit-learn"],
-  },
-  {
     repo: "Demand-Forecasting-App",
     url: "https://github.com/TushyTasnim/Demand-Forecasting-App",
     description:
       "Forecasts product demand from historical retail data using XGBoost, deployed as an interactive Streamlit app with pricing, promotion, and inventory scenario inputs.",
     relevance: "Demand Forecasting · Retail Analytics",
     tags: ["Python", "XGBoost", "Streamlit"],
+  },
+  {
+    repo: "Emotion-Detection-NLP-and-ML",
+    url: "https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML",
+    description:
+      "Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.",
+    relevance: "NLP · Machine Learning",
+    tags: ["Python", "NLP", "scikit-learn"],
   },
   {
     repo: "heart-disease-prediction",
@@ -356,6 +289,7 @@ export const dashboards: MLProject[] = [
       "An interactive Power BI dashboard analyzing hospital operations and healthcare performance metrics from patient-level data.",
     relevance: "Business Intelligence · Healthcare Analytics",
     tags: ["Power BI", "Dashboard", "DAX"],
+    image: "/images/projects/Health-Analytics.JPG",
     demoUrl:
       "https://app.powerbi.com/view?r=eyJrIjoiZDY5NjdiMmYtMzQ0ZS00N2E4LWE4MTUtYjExMGE0OTQxMmEyIiwidCI6ImZkOGY0MWFiLWVlZDEtNDMwZC05ZTE0LTY3M2NhOGQ0NzBjNiIsImMiOjEwfQ%3D%3D",
     demoLabel: "Live Dashboard",

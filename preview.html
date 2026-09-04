@@ -50,11 +50,11 @@
   header{position:sticky;top:0;z-index:50;background:rgba(11,12,20,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
   header .brand{font-family:"Fraunces",serif;font-size:18px;font-weight:500}
-  nav.links{display:flex;gap:22px}
-  nav.links a{font-size:13px;font-weight:500;color:var(--muted);position:relative;transition:color .2s ease}
+  nav.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+  nav.links a{font-size:12.5px;font-weight:500;color:var(--muted);position:relative;white-space:nowrap;transition:color .2s ease}
   nav.links a:hover{color:var(--ink)}
   nav.links a.active{color:var(--copper)}
-  @media(max-width:900px){nav.links{display:none}}
+  @media(max-width:1024px){nav.links{display:none}}
 
   /* hero */
   #hero{position:relative;overflow:hidden;border-top:none;border-bottom:2px solid rgba(242,136,75,.5)}
@@ -109,9 +109,7 @@
   @media(max-width:860px){.corner{display:none}}
   .stitle{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
   .stitle .tick{width:32px;height:2px;background:var(--copper);flex:none}
-  .stitle .num{font-family:"IBM Plex Mono";font-size:12px;color:var(--copper)}
   .sec-teal .stitle .tick{background:var(--teal)}
-  .sec-teal .stitle .num{color:var(--teal)}
   .stitle h2{font-size:34px}
   .lede{max-width:68ch;color:var(--muted);font-size:15px;margin-bottom:40px}
   @media(max-width:860px){section .inner{padding:56px 22px}}
@@ -149,10 +147,18 @@
   .pub p{max-width:68ch;font-size:14.5px;color:var(--muted);margin-top:12px}
   .pub a{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--copper)}
 
+  /* ongoing research */
+  .ongoing{border-left:2px solid var(--copper);padding:4px 0 4px 24px;margin-bottom:28px}
+  .ongoing .status{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
+  .ongoing h3{max-width:68ch;font-size:22px;margin-top:10px;line-height:1.3}
+  .ongoing p{max-width:68ch;font-size:14.5px;color:var(--muted);margin-top:12px}
+  .ongoing .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .ongoing .tag{background:var(--copperSoft);color:var(--copper);border:none;font-family:"IBM Plex Mono";font-size:11px}
+
   /* projects */
   .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .pcard{border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-  .pcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(232,93,143,.35)}
+  .pcard{border:1px solid var(--line);border-top:2px solid rgba(242,136,75,.6);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .pcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(242,136,75,.35)}
   .pmedia{aspect-ratio:16/9;border-bottom:1px solid var(--line);overflow:hidden;background:#0d1219}
   .pmedia svg{display:block;width:100%;height:100%}
   .pmedia img{transition:transform .5s ease}
@@ -161,16 +167,16 @@
   .pcard h3{font-size:18px}
   .pcard p{flex:1;font-size:14px;color:var(--muted);margin:12px 0 0}
   .pcard .tags{margin-top:18px}
-  .pcard .tag{background:var(--tealSoft);color:var(--teal);border:none;font-family:"IBM Plex Mono";font-size:11px}
+  .pcard .tag{background:var(--copperSoft);color:var(--copper);border:none;font-family:"IBM Plex Mono";font-size:11px}
   @media(max-width:860px){.pgrid{grid-template-columns:1fr}}
 
   /* data & ml projects (icon-badge cards, no images) */
   .mlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .dscard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);background:rgba(22,26,44,.3);backdrop-filter:blur(8px);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
-  .dscard:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(232,93,143,.5);background:rgba(22,26,44,.5);box-shadow:0 20px 44px -22px rgba(232,93,143,.4)}
+  .dscard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(242,136,75,.6);background:rgba(22,26,44,.3);backdrop-filter:blur(8px);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
+  .dscard:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(242,136,75,.5);background:rgba(22,26,44,.5);box-shadow:0 20px 44px -22px rgba(242,136,75,.4)}
   .dscard a.dslink-main{display:flex;flex:1;flex-direction:column;padding:20px;color:inherit}
   .dsbadgerow{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .dsbadge{display:flex;flex:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--tealSoft);color:var(--teal);transition:transform .3s ease}
+  .dsbadge{display:flex;flex:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--copperSoft);color:var(--copper);transition:transform .3s ease}
   .dscard:hover .dsbadge{transform:scale(1.1)}
   .dsrel{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
   .dsrepo{margin-top:14px;font-family:"IBM Plex Mono";font-size:12px;color:rgba(242,241,246,.8)}
@@ -178,7 +184,7 @@
   .dstags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
   .dstag{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--muted)}
   .dsfoot{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-top:1px solid var(--line);padding:16px 20px}
-  .dsfootlink{display:inline-block;font-size:12.5px;font-weight:600;color:var(--teal);position:relative}
+  .dsfootlink{display:inline-block;font-size:12.5px;font-weight:600;color:var(--copper);position:relative}
   .dsfootlink.demo{color:var(--copper)}
   .dsfootlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
   .dsfootlink:hover:after{width:100%}
@@ -194,7 +200,7 @@
   .mlcard:hover .mlimg img{transform:scale(1.05)}
   .mlbody{padding:24px 24px 0}
   .mlrepo{font-family:"IBM Plex Mono";font-size:12px;color:rgba(242,241,246,.8)}
-  .mlrel{margin-top:8px;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--copper)}
+  .mlrel{margin-top:8px;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--teal)}
   .mldesc{margin-top:12px;font-size:14px;color:var(--muted)}
   .mltags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
   .mltag{border:1px solid var(--line);border-radius:2px;padding:4px 8px;font-family:"IBM Plex Mono";font-size:11px;color:var(--muted)}
@@ -213,48 +219,16 @@
 
   /* skills */
   .skillswrap{position:relative}
-  .skillswrap .ambient-glow{width:256px;height:256px;left:-64px;top:-64px;background:rgba(232,93,143,.1)}
-  .skillswrap .ambient-glow.slow{left:auto;right:-64px;top:auto;bottom:0;background:rgba(242,136,75,.1)}
+  .skillswrap .ambient-glow{width:256px;height:256px;left:-64px;top:-64px;background:rgba(242,136,75,.1)}
+  .skillswrap .ambient-glow.slow{left:auto;right:-64px;top:auto;bottom:0;background:rgba(232,93,143,.1)}
   .skillcard{position:relative;display:grid;grid-template-columns:1fr;gap:20px 32px;border:1px solid var(--line);background:rgba(22,26,44,.6);backdrop-filter:blur(20px);border-radius:24px;padding:20px}
   @media(min-width:768px){.skillcard{grid-template-columns:1fr 1fr;padding:28px}}
   .sgroup{padding-top:0;border-top:0}
   .sgroup .label{font-size:13.5px;font-weight:600;color:var(--ink)}
   .sgroup .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
   .sgroup .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:rgba(11,12,20,.4);backdrop-filter:blur(8px);padding:6px 12px;font-size:12.5px;font-weight:500;color:var(--muted);transition:transform .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
-  .sgroup .tag:hover{transform:translateY(-2px) scale(1.05);border-color:var(--teal);color:var(--ink);box-shadow:0 10px 24px -14px rgba(232,93,143,.4)}
-  .sgroup .tag svg{flex:none;color:var(--teal)}
-
-  /* news */
-  .newslist{border-top:1px solid var(--line)}
-  .newsrow{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:16px 0 16px 16px;margin-left:-16px;border-left:2px solid transparent;border-bottom:1px solid var(--line);transition:border-color .3s ease,background .3s ease}
-  .newsrow:hover{border-left-color:var(--copper);background:rgba(22,26,44,.5)}
-  .newsrow time{font-family:"IBM Plex Mono";font-size:12.5px;color:var(--copper)}
-  .newsrow p{margin:0;font-size:14.5px;color:rgba(242,241,246,.9)}
-  .newsrow .certlink{display:inline-block;margin-top:6px;font-size:12.5px;font-weight:600;color:var(--teal);position:relative}
-  .newsrow .certlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
-  .newsrow .certlink:hover:after{width:100%}
-
-  /* service */
-  .svc-grid{display:grid;grid-template-columns:200px 1fr;gap:40px}
-  .count-card{border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);padding:24px;display:flex;align-items:center;gap:24px;transition:transform .3s ease,box-shadow .3s ease}
-  .count-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px -22px rgba(232,93,143,.3)}
-  .count-card .num{font-family:"Fraunces";font-size:48px;color:var(--copper)}
-  .count-card .lbl{font-size:13px;color:var(--muted)}
-  .svc-item{border-left:2px solid var(--line);padding-left:20px;padding-bottom:24px;margin-bottom:24px;transition:border-color .3s ease}
-  .svc-item:hover{border-left-color:var(--teal)}
-  .svc-item:last-child{margin:0;padding-bottom:0}
-  .svc-item h3{font-size:18px}
-  .svc-item p{font-size:14px;color:var(--muted);margin-top:6px}
-  .act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-  .act-card{border:1px solid var(--line);padding:16px;display:flex;gap:12px;align-items:flex-start;transition:all .3s ease}
-  .act-card:hover{transform:translateY(-4px);border-color:rgba(232,93,143,.5);box-shadow:0 16px 36px -20px rgba(232,93,143,.35)}
-  .act-card svg{flex:none;color:var(--copper);margin-top:2px}
-  .act-card .d{display:block;font-family:"IBM Plex Mono";font-size:11px;color:var(--faint)}
-  .act-card .t{display:block;margin-top:6px;font-size:14px;font-weight:500}
-  .act-card .certlink{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--copper);position:relative}
-  .act-card .certlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
-  .act-card .certlink:hover:after{width:100%}
-  @media(max-width:860px){.svc-grid{grid-template-columns:1fr}.count-card{flex-direction:row}.act-grid{grid-template-columns:1fr}}
+  .sgroup .tag:hover{transform:translateY(-2px) scale(1.05);border-color:var(--copper);color:var(--ink);box-shadow:0 10px 24px -14px rgba(242,136,75,.4)}
+  .sgroup .tag svg{flex:none;color:var(--copper)}
 
   /* contact */
   .cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
@@ -287,14 +261,13 @@
       <nav class="links">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#ongoing-research">Ongoing</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#ml-projects">Data Projects</a>
-        <a href="#dashboards">Dashboard</a>
-        <a href="#projects">Academic Projects</a>
-        <a href="#news">News</a>
-        <a href="#service">Leadership</a>
+        <a href="#ml-projects">ML Projects</a>
+        <a href="#dashboards">Dashboards</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -310,8 +283,7 @@
         <h1 class="rise-in" style="animation-delay:90ms"><span class="name-a">Tushy</span> <span class="name-b">Tasnim</span></h1>
         <p class="role rise-in" style="animation-delay:180ms">Industrial &amp; Production Engineering Graduate. Researching supply chain analytics, smart manufacturing, and sustainable operations.</p>
         <div class="btn-row rise-in" style="animation-delay:270ms">
-          <a class="btn primary" href="#">View CV</a>
-          <a class="btn outline" href="#contact">Contact me</a>
+          <a class="btn primary" href="#contact">Contact me</a>
         </div>
         <div class="soc mono rise-in" style="animation-delay:340ms">
           <a href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
@@ -336,7 +308,7 @@
     <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">01</span><h2>About</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>About</h2></div>
       <div class="about-grid">
         <div class="reveal">
           <p>I am an Industrial and Production Engineering graduate from Shahjalal University of Science and Technology, Bangladesh. My academic and research interests lie at the intersection of supply chain analytics, smart manufacturing, operations research, sustainable operations, and data-driven decision-making.</p>
@@ -346,12 +318,7 @@
           <div class="fact-label">Research areas</div>
           <div class="tags">
             <span class="tag">Industry 4.0</span><span class="tag">Smart Manufacturing</span><span class="tag">Supply Chain Analytics</span>
-            <span class="tag">Operations Research</span><span class="tag">Sustainable Operations</span><span class="tag">AI/Data-driven Industrial Systems</span>
-          </div>
-          <div class="fact-label" style="margin-top:24px">Research topics</div>
-          <div class="tags">
-            <span class="tag">Food Supply Chains</span><span class="tag">Technology Adoption</span><span class="tag">Optimization</span>
-            <span class="tag">PLS-SEM</span><span class="tag">ISM-MICMAC</span><span class="tag">Simulation</span><span class="tag">Decision Support</span>
+            <span class="tag">Operations Research</span><span class="tag">Sustainable Operations</span><span class="tag">AI/Data-driven Industrial Systems</span><span class="tag">Digital Twin</span>
           </div>
         </div>
       </div>
@@ -363,7 +330,7 @@
     <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">02</span><h2>Research &amp; Publications</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Research &amp; Publications</h2></div>
       <article class="pub reveal">
         <p class="meta">Journal · December 2025 · Journal of Open Innovation: Technology, Market &amp; Complexity [Q1]</p>
         <h3>Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh</h3>
@@ -379,12 +346,27 @@
     </div>
   </section>
 
-  <section id="education" class="sec-copper">
+  <section id="ongoing-research" class="sec-copper">
     <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
     <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">03</span><h2>Education</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Ongoing Research</h2></div>
+      <article class="ongoing reveal">
+        <p class="status">Ongoing</p>
+        <h3>Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh&rsquo;s Ready-Made Garment Industry: A Fuzzy DEMATEL Approach</h3>
+        <p>Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh&rsquo;s ready-made garment sector.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Fuzzy DEMATEL</span><span class="tag">Digital Twin</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="education" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
+    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><h2>Education</h2></div>
       <div class="tl">
         <div class="titem current reveal">
           <span class="dot pulse-dot"></span>
@@ -406,12 +388,12 @@
     </div>
   </section>
 
-  <section id="experience" class="tint sec-teal">
+  <section id="experience" class="sec-copper">
     <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
     <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">04</span><h2>Work Experience</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Work Experience</h2></div>
       <div class="tl">
         <div class="titem current reveal">
           <span class="dot pulse-dot"></span>
@@ -445,10 +427,10 @@
     </div>
   </section>
 
-  <section id="skills" class="sec-copper">
+  <section id="skills" class="tint sec-teal">
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">05</span><h2>Technical Skills</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Technical Skills</h2></div>
       <p class="lede reveal">Tools and methods I use across data analysis, research, and industrial systems work — from statistical modeling to dashboards to simulation.</p>
       <div class="skillswrap">
         <div class="ambient-glow"></div>
@@ -469,7 +451,6 @@
           <div class="sgroup reveal" style="transition-delay:.12s"><div class="label">Programming</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>Python</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>C Language</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>Analytical Reporting</span>
           </div></div>
           <div class="sgroup reveal" style="transition-delay:.15s"><div class="label">Python Libraries</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>NumPy</span>
@@ -492,19 +473,18 @@
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>Arena</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>AutoCAD</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>Adobe Illustrator</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>Canva</span>
           </div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="ml-projects" class="tint sec-teal">
+  <section id="ml-projects" class="sec-copper">
     <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
     <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">06</span><h2>Data &amp; ML Projects</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Data &amp; ML Projects</h2></div>
       <p class="lede reveal">Applied data science, machine learning, and business-intelligence projects I&rsquo;ve built end to end — predictive maintenance, demand forecasting, NLP, and dashboards. All published on my GitHub.</p>
       <div class="mlgrid">
         <article class="dscard reveal">
@@ -553,21 +533,6 @@
         </article>
 
         <article class="dscard reveal" style="transition-delay:.18s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg></span>
-              <span class="dsrel">NLP · Machine Learning</span>
-            </div>
-            <p class="dsrepo">Emotion-Detection-NLP-and-ML</p>
-            <p class="dsdesc">Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">NLP</span><span class="dstag">scikit-learn</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:.24s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
@@ -579,6 +544,21 @@
           </a>
           <div class="dsfoot">
             <a class="dsfootlink" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:.24s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg></span>
+              <span class="dsrel">NLP · Machine Learning</span>
+            </div>
+            <p class="dsrepo">Emotion-Detection-NLP-and-ML</p>
+            <p class="dsdesc">Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">NLP</span><span class="dstag">scikit-learn</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootlink" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View on GitHub</a>
           </div>
         </article>
 
@@ -600,17 +580,17 @@
     </div>
   </section>
 
-  <section id="dashboards" class="sec-copper">
+  <section id="dashboards" class="tint sec-teal">
     <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
     <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">07</span><h2>Dashboard</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Dashboards</h2></div>
       <p class="lede reveal">Business-intelligence dashboards built in Power BI and Excel — turning raw operational data into decision-ready visuals.</p>
       <div class="dashgrid">
         <article class="mlcard dashcard reveal">
           <a class="mllink-main" href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer">
-            <div class="mlimg"><img src="https://opengraph.githubassets.com/1/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" alt="Hospital Monitoring Power BI dashboard preview" loading="lazy"></div>
+            <div class="mlimg"><img src="public/images/projects/Health-Analytics.JPG" alt="Hospital Monitoring Power BI dashboard preview" loading="lazy"></div>
             <div class="mlbody">
               <p class="mlrepo">Hospital-Monitoring-PowerBI-Dashboard</p>
               <p class="mlrel">Business Intelligence · Healthcare Analytics</p>
@@ -657,12 +637,12 @@
     </div>
   </section>
 
-  <section id="projects" class="tint sec-teal">
+  <section id="projects" class="sec-copper">
     <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
     <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">08</span><h2>Academic Projects</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Academic Projects</h2></div>
       <div class="pgrid">
         <article class="pcard reveal">
           <div class="pmedia">
@@ -688,71 +668,24 @@
     </div>
   </section>
 
-  <section id="news" class="sec-copper">
+  <section id="contact" class="tint sec-teal">
     <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
     <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">09</span><h2>News</h2></div>
-      <div class="newslist">
-        <div class="newsrow reveal"><time>Apr 2026</time><div><p>Selected for the Aspire Leaders Program by Aspire Institute.</p><a class="certlink" href="public/images/certificates/aspire-leaders.png" target="_blank" rel="noreferrer">View certificate</a></div></div>
-        <div class="newsrow reveal" style="transition-delay:.05s"><time>Dec 2025</time><p>Journal article on Industry 4.0 adoption in Bangladesh's food processing sector scheduled in Journal of Open Innovation: Technology, Market &amp; Complexity.</p></div>
-        <div class="newsrow reveal" style="transition-delay:.1s"><time>May 2024</time><p>Received Government Board Scholarship from the Ministry of Education, Bangladesh.</p></div>
-        <div class="newsrow reveal" style="transition-delay:.15s"><time>Nov 2023</time><div><p>Earned Certified Supply Chain Analyst credential from the International Supply Chain Education Alliance.</p><a class="certlink" href="public/images/certificates/iscea-csca.jpg" target="_blank" rel="noreferrer">View certificate</a></div></div>
-        <div class="newsrow reveal" style="transition-delay:.2s"><time>Aug 2023</time><p>Awarded 70% scholarship for the Certified Supply Chain Analyst program through the 2023 ISCEA Prize Global Supply Chain Case Competition.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="service" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">10</span><h2>Leadership &amp; Service</h2></div>
-      <div class="svc-grid">
-        <div class="count-card reveal"><span class="num" id="award-count" data-target="2">0</span><span class="lbl">Honors &amp; scholarships</span></div>
-        <div>
-          <div class="svc-item reveal"><h3>ISCEA Scholarship</h3><p>70% scholarship for the Certified Supply Chain Analyst program through the 2023 ISCEA Prize Global Supply Chain Case Competition, Aug 2023.</p></div>
-          <div class="svc-item reveal" style="transition-delay:.09s"><h3>Government Board Scholarship</h3><p>Ministry of Education, Bangladesh, May 2024.</p></div>
-        </div>
-      </div>
-      <p style="margin:44px 0 0;font-size:14.5px;font-weight:600">Activities &amp; certifications</p>
-      <div class="act-grid">
-        <div class="act-card reveal">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 4.5 5 .7-3.6 3.5.8 5-4.4-2.3-4.4 2.3.8-5-3.6-3.5 5-.7L12 3z"/></svg>
-          <span><span class="d">Apr 2026</span><span class="t">Aspire Leaders Program</span><a class="certlink" href="public/images/certificates/aspire-leaders.png" target="_blank" rel="noreferrer">View certificate</a></span>
-        </div>
-        <div class="act-card reveal" style="transition-delay:.08s">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.3L17 21l-1.5-7.5"/></svg>
-          <span><span class="d">Nov 2023</span><span class="t">Certified Supply Chain Analyst</span><a class="certlink" href="public/images/certificates/iscea-csca.jpg" target="_blank" rel="noreferrer">View certificate</a></span>
-        </div>
-        <div class="act-card reveal" style="transition-delay:.16s">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-          <span><span class="d">Ongoing</span><span class="t">Data Analytics &amp; Power BI</span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><span class="num">11</span><h2>Contact</h2></div>
+      <div class="stitle reveal"><span class="tick"></span><h2>Contact</h2></div>
       <div class="cgrid">
         <div class="reveal">
           <h3>Let&rsquo;s connect about graduate research, collaboration, or academic opportunities.</h3>
           <p>I am open to professor outreach, MS/PhD research conversations, and opportunities related to supply chain analytics, smart manufacturing, sustainable operations, and data-driven industrial systems.</p>
           <div class="dl">
-            <div class="drow"><span class="dt">Email</span><a class="dd" href="mailto:onomytasnim@gmail.com">onomytasnim@gmail.com</a></div>
+            <div class="drow"><span class="dt">Email</span><a class="dd" href="mailto:onomytasnim@gmail.com?subject=Hello%20from%20your%20portfolio">onomytasnim@gmail.com</a></div>
             <div class="drow"><span class="dt">Phone</span><a class="dd" href="tel:+8801725428973">+8801725428973</a></div>
             <div class="drow"><span class="dt">Location</span><span class="dd">Bangladesh</span></div>
           </div>
         </div>
         <div class="actions reveal" style="transition-delay:.12s">
-          <a href="mailto:onomytasnim@gmail.com">Send email <span>&#8594;</span></a>
+          <a href="mailto:onomytasnim@gmail.com?subject=Hello%20from%20your%20portfolio">Send email <span>&#8594;</span></a>
           <a href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar <span>&#8594;</span></a>
           <a href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn <span>&#8594;</span></a>
           <a href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub <span>&#8594;</span></a>

@@ -23,16 +23,15 @@ function TagList({ label, items }: { label: string; items: string[] }) {
 
 export default function About() {
   return (
-    <Section id="about" index="01" title="About" accent="copper">
+    <Section id="about" title="About" accent="copper">
       <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
         <div className="max-w-prose space-y-5 text-[15px] leading-relaxed text-ink/90">
           {about.paragraphs.map((p) => (
             <p key={p.slice(0, 20)}>{p}</p>
           ))}
         </div>
-        <div className="space-y-7 border-t border-line pt-7 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+        <div className="border-t border-line pt-7 md:border-l md:border-t-0 md:pl-8 md:pt-0">
           <TagList label="Research areas" items={about.researchAreas} />
-          <TagList label="Research topics" items={about.researchTopics} />
         </div>
       </div>
     </Section>

@@ -27,7 +27,6 @@ const accentStyles: Record<
 
 export default function Section({
   id,
-  index,
   title,
   intro,
   children,
@@ -35,7 +34,6 @@ export default function Section({
   accent = "copper",
 }: {
   id: string;
-  index: string;
   title: string;
   intro?: string;
   children: ReactNode;
@@ -78,9 +76,6 @@ export default function Section({
         <Reveal>
           <div className="mb-10 flex items-baseline gap-4 md:mb-14">
             <span aria-hidden className={`h-[2px] w-8 flex-none ${a.tick}`} />
-            <span className={`font-mono text-[12px] tracking-wide ${a.text}`}>
-              {index}
-            </span>
             <h2 className="font-display text-3xl font-medium text-ink md:text-4xl">
               {title}
             </h2>
