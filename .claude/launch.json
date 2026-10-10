@@ -4,8 +4,19 @@
     {
       "name": "tushy-portfolio-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 3000
+    },
+    {
+      "name": "tushy-portfolio-static-preview",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "preview-server.mjs"
+      ],
+      "port": 4173
     }
   ]
 }

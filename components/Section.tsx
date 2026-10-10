@@ -11,16 +11,16 @@ const accentStyles: Record<
     border: "border-t-copper/50",
     text: "text-copper",
     tick: "bg-copper",
-    glowA: "bg-copper/20",
-    glowB: "bg-teal/[0.15]",
+    glowA: "bg-copper/[0.07]",
+    glowB: "bg-teal/[0.06]",
     corner: "border-copper/40",
   },
   teal: {
     border: "border-t-teal/50",
     text: "text-teal",
     tick: "bg-teal",
-    glowA: "bg-teal/20",
-    glowB: "bg-copper/[0.15]",
+    glowA: "bg-teal/[0.07]",
+    glowB: "bg-copper/[0.06]",
     corner: "border-teal/40",
   },
 };
@@ -45,7 +45,7 @@ export default function Section({
     <section
       id={id}
       className={`scroll-mt-24 relative overflow-hidden border-t-2 ${a.border} ${
-        tint ? "bg-panel/40" : ""
+        tint ? "bg-panel/70" : ""
       }`}
     >
       <div

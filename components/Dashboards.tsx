@@ -17,7 +17,7 @@ export default function Dashboards() {
             as="article"
             key={project.repo}
             delay={i * 70}
-            className="group flex h-full flex-col overflow-hidden border border-line border-t-2 border-t-teal/60 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-lineStrong hover:shadow-[0_24px_50px_-22px_rgba(232,93,143,0.4)]"
+            className="group flex h-full flex-col overflow-hidden border border-line border-t-2 border-t-teal/60 bg-panel/80 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-lineStrong hover:shadow-[0_24px_50px_-22px_rgba(22,33,62,0.13)]"
           >
             <a href={project.url} target="_blank" rel="noreferrer" className="flex flex-1 flex-col">
               <div className="aspect-[1200/630] w-full overflow-hidden border-b border-line bg-panel">

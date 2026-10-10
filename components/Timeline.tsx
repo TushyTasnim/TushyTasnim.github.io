@@ -15,7 +15,7 @@ export default function Timeline({ items }: { items: TimelineItem[] }) {
               aria-hidden
               className={`absolute -left-8 top-1.5 h-[11px] w-[11px] rounded-full border-2 ${
                 item.current
-                  ? "border-copper bg-copper shadow-[0_0_0_0_rgba(242,136,75,0.5)] animate-[softPulse_2.6s_ease-in-out_infinite]"
+                  ? "border-copper bg-copper shadow-[0_0_0_0_rgba(140,47,57,0.5)] animate-[softPulse_2.6s_ease-in-out_infinite]"
                   : "border-teal bg-deep"
               }`}
             />

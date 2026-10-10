@@ -132,18 +132,123 @@ export const publications: Publication[] = [
 ];
 
 export type OngoingResearchItem = {
+  /** "Submitted" papers are under review; "Ongoing" are still in progress. */
+  status: "Submitted" | "Ongoing";
   title: string;
   summary: string;
-  tags?: string[];
+  authors?: string;
+  tools?: string[];
+  focus?: string[];
 };
 
 export const ongoingResearch: OngoingResearchItem[] = [
   {
+    status: "Submitted",
+    title:
+      "Calibrate, Certify, or Learn? Deciding When a Language Model Should Defer to a Human",
+    authors: "Tushy Tasnim, Rifat Faruk Zitu",
+    summary:
+      "This research investigates how large language models can improve decision reliability by determining when to answer independently and when to defer to human review. It combines Bayesian uncertainty estimation, conformal risk control, and value-of-information strategies to evaluate the trade-offs between accuracy, risk, and review costs.",
+    tools: [
+      "Python",
+      "Qwen2.5-Instruct (7B / 1.5B)",
+      "vLLM",
+      "GPTQ 4-bit quantization",
+      "Bayesian Logistic Regression",
+      "Conformal Risk Control",
+      "TruthfulQA",
+      "GSM8K",
+    ],
+    focus: [
+      "LLM reliability",
+      "Uncertainty calibration",
+      "Human–AI collaboration",
+      "Risk-aware decision-making",
+    ],
+  },
+  {
+    status: "Submitted",
+    title:
+      "Uncertainty-Aware Preferential Bayesian Optimization under Noisy Human Preferences: A Controlled Test of Ambiguity-Seeking Acquisition",
+    authors: "Rifat Faruk Zitu, Tushy Tasnim",
+    summary:
+      "This research evaluates whether incorporating uncertainty about preference rankings can improve Bayesian optimization when human preference feedback contains noise. It introduces Uncertainty-Aware Expected Utility of the Best Option (UA-EUBO), which combines expected utility with an ambiguity bonus. The approach is tested against standard EUBO using synthetic optimization benchmarks and the UT-Zappos50K shoe-preference dataset. Results show that the proposed method does not provide consistent improvements, highlighting when ambiguity-aware query selection may offer limited benefits.",
+    tools: [
+      "Python",
+      "BoTorch 0.18.1",
+      "Pairwise Gaussian Process (PairwiseGP)",
+      "Bayesian Optimization",
+      "Gaussian Process Preference Learning",
+      "Principal Component Analysis (PCA)",
+      "UT-Zappos50K",
+    ],
+    focus: [
+      "Preferential Bayesian optimization",
+      "Uncertainty-aware decision-making",
+      "Noisy human feedback",
+      "Active learning",
+      "Experimental evaluation",
+    ],
+  },
+  {
+    status: "Ongoing",
+    title:
+      "Bottleneck Forecasting Under a Stricter Evaluation: A Leakage-Controlled, Rolling-Origin Comparison of Statistical and Machine Learning Models",
+    authors: "Rifat Faruk Zitu, Tushy Tasnim",
+    summary:
+      "This study compares statistical and machine learning models for forecasting bottlenecks in a simulated five-station steel production line. Using public energy-consumption data from a South Korean steel plant, it evaluates six forecasting approaches across 25 rolling weekly origins and four forecast horizons. Recursive XGBoost achieved the lowest mean scaled error at every horizon, although statistically significant improvements over the best classical model occurred only at the 4-hour and 10-day horizons. The study also evaluates prediction-interval coverage and high-utilization alerts, demonstrating that machine learning advantages depend on the forecasting horizon and evaluation criteria.",
+    tools: [
+      "Discrete-Event Simulation",
+      "Python",
+      "ARIMA",
+      "SARIMA",
+      "Hybrid SARIMA",
+      "XGBoost",
+      "Recursive XGBoost",
+      "Split-Conformal Prediction",
+      "Diebold–Mariano Tests",
+      "Holm Correction",
+    ],
+    focus: [
+      "Manufacturing bottleneck prediction",
+      "Production-system simulation",
+      "Time-series forecasting",
+      "Machine learning evaluation",
+      "Uncertainty quantification",
+      "Industrial process monitoring",
+    ],
+  },
+  {
+    status: "Ongoing",
+    title:
+      "A Two-Stage Experimental Framework for Industrial Defect Detection and Inspection Decisions Using Classical Machine Learning and Q-Learning",
+    authors: "Tushy Tasnim, Rifat Faruk Zitu",
+    summary:
+      "This study develops a two-stage framework that combines industrial defect detection with cost-sensitive inspection decision-making. In the first stage, handcrafted colour, texture, and shape features are combined with an Isolation Forest trained on normal bottle images from the MVTec Anomaly Detection Dataset, achieving a ROC-AUC of 0.947. In the second stage, tabular Q-learning converts anomaly scores into inspection decisions: Accept, Reject, or Human Review. Compared with a fixed-threshold strategy, the learned policy increased average reward from 0.143 to 0.405 and reduced missed defects from three to zero, while highlighting trade-offs involving false rejections and human-review costs.",
+    tools: [
+      "Isolation Forest",
+      "Handcrafted Feature Engineering (Colour, Texture, Shape)",
+      "Tabular Q-Learning",
+      "Reinforcement Learning",
+      "MVTec Anomaly Detection Dataset",
+      "Cost-Sensitive Decision-Making",
+    ],
+    focus: [
+      "Industrial defect detection",
+      "Manufacturing quality control",
+      "Anomaly detection",
+      "Reinforcement learning",
+      "Automated inspection",
+      "Human-in-the-loop decision systems",
+    ],
+  },
+  {
+    status: "Ongoing",
     title:
       "Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh's Ready-Made Garment Industry: A Fuzzy DEMATEL Approach",
     summary:
       "Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh's ready-made garment sector.",
-    tags: ["Python", "Fuzzy DEMATEL", "Digital Twin"],
+    tools: ["Python", "Fuzzy DEMATEL", "Digital Twin"],
   },
 ];
 
@@ -177,33 +282,53 @@ export const projects: Project[] = [
 
 export type SkillGroup = {
   label: string;
+  description: string;
   items: string[];
 };
 
 export const skills: SkillGroup[] = [
-  { label: "Data Analysis", items: ["MS Excel", "Google Sheets", "Power BI", "SmartPLS"] },
+  {
+    label: "Data Analysis",
+    description: "Turning raw datasets into decision-ready insight with BI and statistical tooling.",
+    items: ["MS Excel", "Google Sheets", "Power BI", "SmartPLS"],
+  },
   {
     label: "Research Methods",
+    description: "Modeling causal structure and decision systems for industrial and academic research.",
     items: ["PLS-SEM", "ISM-MICMAC", "Linear Programming", "Simulation"],
   },
-  { label: "Programming", items: ["Python", "C Language"] },
+  {
+    label: "Programming",
+    description: "Core languages for data pipelines, modeling, and applied problem solving.",
+    items: ["Python", "C Language"],
+  },
   {
     label: "Python Libraries",
+    description: "The Python data-science stack I use for analysis, modeling, and visualization.",
     items: ["NumPy", "Pandas", "scikit-learn", "Matplotlib", "Seaborn", "Gurobipy"],
   },
-  { label: "Web Development", items: ["WordPress", "Webflow", "Squarespace"] },
-  { label: "Automation Tools", items: ["Zapier", "Pabbly Connect"] },
+  {
+    label: "Web Development",
+    description: "Building and shipping sites and landing pages without a heavy dev stack.",
+    items: ["WordPress", "Webflow", "Squarespace"],
+  },
+  {
+    label: "Automation Tools",
+    description: "Connecting apps and automating repetitive workflows end to end.",
+    items: ["Zapier", "Pabbly Connect"],
+  },
   {
     label: "Simulation & Drafting",
+    description: "Modeling systems and drafting technical designs for industrial engineering work.",
     items: ["Arena", "AutoCAD", "Adobe Illustrator"],
   },
 ];
 
 export const nav = [
   { href: "#about", label: "About" },
+  { href: "#education", label: "Education" },
   { href: "#research", label: "Research" },
   { href: "#ongoing-research", label: "Ongoing" },
-  { href: "#education", label: "Education" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#ml-projects", label: "ML Projects" },
@@ -229,6 +354,30 @@ export type MLProject = {
 // github.com/TushyTasnim — predictive modeling, forecasting, and BI
 // dashboards built end to end.
 export const mlProjects: MLProject[] = [
+  {
+    repo: "production-line-digital-twin",
+    url: "https://github.com/TushyTasnim/production-line-digital-twin",
+    description:
+      "A discrete-event digital twin of a four-station production line (cutting, welding, painting, inspection) that simulates machine wear, breakdowns, and sensor streams, computes OEE and MTBF/MTTR, tests six improvement scenarios, and trains an ML model to predict failures 30 minutes ahead.",
+    relevance: "Digital Twin · Smart Manufacturing",
+    tags: ["Python", "SimPy", "Predictive Maintenance"],
+  },
+  {
+    repo: "lean-green-sewing-line",
+    url: "https://github.com/TushyTasnim/lean-green-sewing-line",
+    description:
+      "A SimPy simulation of a ten-operation T-shirt sewing line measuring how takt-based line balancing (lean) and servo motors (green) affect output, WIP, lead time, and CO₂ per garment, reported over 30 replications with confidence intervals.",
+    relevance: "Simulation · Sustainable Operations",
+    tags: ["Python", "SimPy", "Sustainability"],
+  },
+  {
+    repo: "last-mile-delivery",
+    url: "https://github.com/TushyTasnim/last-mile-delivery",
+    description:
+      "An emissions-aware vehicle routing study for two Bangladeshi cities, solving the same capacitated VRP for minimum distance and for modelled CO₂ (payload, speed, and gradient effects) to quantify the trade-off between the two objectives.",
+    relevance: "Supply Chain Analytics · Optimization",
+    tags: ["Python", "Vehicle Routing", "Optimization"],
+  },
   {
     repo: "XGBoost-Based-Predictive-Maintenance-System",
     url: "https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System",

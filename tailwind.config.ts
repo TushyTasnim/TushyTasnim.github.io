@@ -10,17 +10,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        deep: "#0b0c14",
-        panel: "#161a2c",
-        line: "rgba(255,255,255,0.10)",
-        lineStrong: "rgba(255,255,255,0.20)",
-        ink: "#f2f1f6",
-        muted: "#a3a8ba",
-        faint: "#787f92",
-        copper: "#f2884b",
-        copperSoft: "rgba(242,136,75,0.16)",
-        teal: "#e85d8f",
-        tealSoft: "rgba(232,93,143,0.16)",
+        // Academic-press palette: warm ivory paper, deep navy ink, muted
+        // burgundy and slate-blue accents. Every ink/accent token below clears
+        // WCAG AA (4.5:1) against the page, card, and tinted-band backgrounds.
+        deep: "#faf8f3",
+        panel: "#ffffff",
+        line: "rgba(22,33,62,0.12)",
+        lineStrong: "rgba(22,33,62,0.24)",
+        ink: "#16213e",
+        muted: "#44506a",
+        faint: "#646d85",
+        // `copper` and `teal` keep their names so components stay untouched;
+        // only the values changed.
+        copper: "#8c2f39",
+        copperSoft: "rgba(140,47,57,0.09)",
+        teal: "#2c4a6e",
+        tealSoft: "rgba(44,74,110,0.09)",
+        indigo: "#16213e",
       },
       fontFamily: {
         display: ["var(--font-fraunces)", "serif"],

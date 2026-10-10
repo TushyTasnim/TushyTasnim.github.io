@@ -10,18 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#0b0c14; --panel:#161a2c; --line:rgba(255,255,255,.10); --lineStrong:rgba(255,255,255,.20);
-    --ink:#f2f1f6; --muted:#a3a8ba; --faint:#787f92; --copper:#f2884b; --copperSoft:rgba(242,136,75,.12);
-    --teal:#e85d8f; --tealSoft:rgba(232,93,143,.12);
+    --deep:#faf8f3; --panel:#ffffff; --line:rgba(22,33,62,.12); --lineStrong:rgba(22,33,62,.24);
+    --ink:#16213e; --muted:#44506a; --faint:#646d85; --copper:#8c2f39; --copperSoft:rgba(140,47,57,.09);
+    --teal:#2c4a6e; --tealSoft:rgba(44,74,110,.09); --indigo:#16213e;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background-color:var(--deep);background-image:radial-gradient(ellipse 55% 45% at 12% 8%,rgba(232,93,143,.18),transparent 62%),radial-gradient(ellipse 50% 40% at 92% 4%,rgba(242,136,75,.16),transparent 60%),radial-gradient(ellipse 60% 45% at 50% 100%,rgba(122,90,248,.12),transparent 65%);background-repeat:no-repeat,no-repeat,no-repeat;color:var(--ink);font-family:"IBM Plex Sans",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{margin:0;background-color:var(--deep);background-image:radial-gradient(ellipse 55% 45% at 12% 8%,rgba(44,74,110,.06),transparent 62%),radial-gradient(ellipse 50% 40% at 92% 4%,rgba(140,47,57,.05),transparent 60%),radial-gradient(ellipse 60% 45% at 50% 100%,rgba(22,33,62,.04),transparent 65%);background-repeat:no-repeat,no-repeat,no-repeat;background-attachment:fixed;color:var(--ink);font-family:"IBM Plex Sans",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-family:"Fraunces",serif;font-weight:500;margin:0}
   .mono{font-family:"IBM Plex Mono",monospace}
   .wrap{max-width:1024px;margin:0 auto;padding:0 24px}
-  ::selection{background:rgba(242,136,75,.25);color:#f2f1f6}
+  ::selection{background:rgba(140,47,57,.15);color:#16213e}
   a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
 
   /* scroll reveal */
@@ -35,7 +35,7 @@
   .draw-line{stroke-dasharray:340;animation:drawLine 1.6s ease-out forwards}
   @keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
   .pop-in{animation:popIn .5s ease-out both}
-  @keyframes softPulse{0%,100%{box-shadow:0 0 0 0 rgba(242,136,75,.4)}50%{box-shadow:0 0 0 6px rgba(242,136,75,0)}}
+  @keyframes softPulse{0%,100%{box-shadow:0 0 0 0 rgba(140,47,57,.4)}50%{box-shadow:0 0 0 6px rgba(140,47,57,0)}}
   .pulse-dot{animation:softPulse 2.6s ease-in-out infinite}
   @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(2%,3%)}}
   .ambient-glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(110px);animation:drift 16s ease-in-out infinite}
@@ -47,7 +47,7 @@
   #scroll-progress .bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--copper));transition:width .15s ease-out}
 
   /* nav */
-  header{position:sticky;top:0;z-index:50;background:rgba(11,12,20,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
   header .brand{font-family:"Fraunces",serif;font-size:18px;font-weight:500}
   nav.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
@@ -57,17 +57,17 @@
   @media(max-width:1024px){nav.links{display:none}}
 
   /* hero */
-  #hero{position:relative;overflow:hidden;border-top:none;border-bottom:2px solid rgba(242,136,75,.5)}
+  #hero{position:relative;overflow:hidden;border-top:none;border-bottom:2px solid rgba(140,47,57,.5)}
   #hero .scrollcue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:var(--faint);transition:color .2s ease}
   #hero .scrollcue:hover{color:var(--copper)}
   #hero .scrollcue svg{animation:bounce 1.6s infinite}
   @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
   @media(max-width:860px){#hero .scrollcue{display:none}}
-  #hero .glow-a{left:-96px;top:-128px;width:460px;height:460px;background:rgba(232,93,143,.25)}
-  #hero .glow-b{right:-128px;top:0;width:420px;height:420px;background:rgba(242,136,75,.2)}
-  #hero .glow-c{left:33%;bottom:0;width:320px;height:320px;background:rgba(122,90,248,.15)}
+  #hero .glow-a{left:-96px;top:-128px;width:460px;height:460px;background:rgba(44,74,110,.10)}
+  #hero .glow-b{right:-128px;top:0;width:420px;height:420px;background:rgba(140,47,57,.09)}
+  #hero .glow-c{left:33%;bottom:0;width:320px;height:320px;background:rgba(22,33,62,.07)}
   #hero .inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:112px 24px}
-  #hero .kicker{display:inline-flex;align-items:center;font-size:12px;color:var(--copper);margin-bottom:18px;border:1px solid var(--line);background:rgba(22,26,44,.6);backdrop-filter:blur(8px);border-radius:999px;padding:7px 16px}
+  #hero .kicker{display:inline-flex;align-items:center;font-size:12px;color:var(--copper);margin-bottom:18px;border:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(8px);border-radius:999px;padding:7px 16px}
   #hero h1{font-size:56px;line-height:1.08;margin-top:20px}
   #hero .name-a{color:var(--copper)}
   #hero .name-b{background:linear-gradient(90deg,var(--teal),#7a5af8);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -75,7 +75,7 @@
   .btn-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;height:44px;padding:0 20px;font-size:14px;font-weight:600;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}
   .btn.primary{background:var(--copper);color:#fff}
-  .btn.primary:hover{transform:translateY(-2px);background:#d9683a;box-shadow:0 14px 30px -12px rgba(242,136,75,.45)}
+  .btn.primary:hover{transform:translateY(-2px);background:#6f252d;box-shadow:0 14px 30px -12px rgba(140,47,57,.45)}
   .btn.outline{border:1px solid var(--lineStrong);color:var(--ink)}
   .btn.outline:hover{transform:translateY(-2px);border-color:var(--copper);color:var(--copper)}
   .soc{display:flex;gap:24px;margin-top:32px;font-size:12px;color:var(--muted)}
@@ -84,9 +84,9 @@
   .soc a:hover:after{width:100%}
   .soc a:hover{color:var(--ink)}
   .mono-frame-wrap{position:relative;max-width:280px;margin:0 auto}
-  .mono-frame-wrap .offset{position:absolute;right:-16px;bottom:-16px;width:100%;aspect-ratio:1/1;border-radius:24px;border:2px solid rgba(242,136,75,.5)}
-  .mono-frame{position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;border-radius:24px;border:2px solid var(--line);background:var(--panel);box-shadow:0 30px 60px -25px rgba(0,0,0,.5);transition:border-color .5s ease,box-shadow .5s ease}
-  .mono-frame:hover{border-color:rgba(232,93,143,.6);box-shadow:0 30px 60px -20px rgba(232,93,143,.35)}
+  .mono-frame-wrap .offset{position:absolute;right:-16px;bottom:-16px;width:100%;aspect-ratio:1/1;border-radius:24px;border:2px solid rgba(140,47,57,.5)}
+  .mono-frame{position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;border-radius:24px;border:2px solid var(--line);background:var(--panel);box-shadow:0 30px 60px -25px rgba(22,33,62,.16);transition:border-color .5s ease,box-shadow .5s ease}
+  .mono-frame:hover{border-color:rgba(44,74,110,.6);box-shadow:0 30px 60px -20px rgba(44,74,110,.35)}
   .mono-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
   .mono-frame:hover img{transform:scale(1.05)}
   @media(min-width:861px){.mono-frame-wrap{max-width:none}}
@@ -94,14 +94,14 @@
 
   /* sections */
   section{position:relative;overflow:hidden;border-top:2px solid var(--line)}
-  section.sec-copper{border-top-color:rgba(242,136,75,.5)}
-  section.sec-teal{border-top-color:rgba(232,93,143,.5)}
-  section.tint{background:rgba(22,26,44,.6)}
+  section.sec-copper{border-top-color:rgba(140,47,57,.5)}
+  section.sec-teal{border-top-color:rgba(44,74,110,.5)}
+  section.tint{background:rgba(255,255,255,.6)}
   section .inner{position:relative;max-width:1024px;margin:0 auto;padding:88px 24px}
   .sec-glow{position:absolute;left:-80px;top:-96px;width:288px;height:288px;border-radius:50%;pointer-events:none;filter:blur(100px);animation:drift 16s ease-in-out infinite}
   .sec-glow.b{left:auto;right:-96px;top:auto;bottom:0;animation:drift 22s ease-in-out infinite reverse}
-  .corner{position:absolute;width:16px;height:16px;pointer-events:none;border-width:0;border-style:solid;border-color:rgba(242,136,75,.4)}
-  .sec-teal .corner{border-color:rgba(232,93,143,.4)}
+  .corner{position:absolute;width:16px;height:16px;pointer-events:none;border-width:0;border-style:solid;border-color:rgba(140,47,57,.4)}
+  .sec-teal .corner{border-color:rgba(44,74,110,.4)}
   .corner.tl{left:16px;top:16px;border-left-width:2px;border-top-width:2px}
   .corner.tr{right:16px;top:16px;border-right-width:2px;border-top-width:2px}
   .corner.bl{left:16px;bottom:16px;border-left-width:2px;border-bottom-width:2px}
@@ -116,7 +116,7 @@
 
   /* about */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
-  .about-grid p{max-width:68ch;font-size:15px;color:rgba(242,241,246,.9);margin:0 0 18px}
+  .about-grid p{max-width:68ch;font-size:15px;color:rgba(22,33,62,.9);margin:0 0 18px}
   .facts{border-top:1px solid var(--line);padding-top:28px}
   @media(min-width:861px){.facts{border-top:0;border-left:1px solid var(--line);padding-top:0;padding-left:32px}}
   .fact-label{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.02em;color:var(--faint);text-transform:uppercase;margin-bottom:12px}
@@ -133,7 +133,7 @@
   .titem.current .dot{border-color:var(--copper);background:var(--copper)}
   .titem .status{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
   .titem h3{font-size:22px;margin-top:6px}
-  .titem .org{margin-top:4px;font-size:14.5px;font-weight:500;color:rgba(242,241,246,.8)}
+  .titem .org{margin-top:4px;font-size:14.5px;font-weight:500;color:rgba(22,33,62,.8)}
   .titem .date{margin-top:6px;font-family:"IBM Plex Mono";font-size:12.5px;color:var(--faint)}
   .titem ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
   .titem ul li{margin:4px 0}
@@ -143,23 +143,37 @@
   .pub{border-left:2px solid var(--teal);padding:4px 0 4px 24px;margin-bottom:28px}
   .pub:nth-child(2){border-left-color:var(--copper)}
   .pub .meta{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--muted)}
-  .pub h3{max-width:68ch;font-size:22px;margin-top:10px;line-height:1.3}
-  .pub p{max-width:68ch;font-size:14.5px;color:var(--muted);margin-top:12px}
+  .pub h3{font-size:22px;margin-top:10px;line-height:1.3}
+  .pub p{font-size:15px;line-height:1.75;color:var(--muted);margin-top:12px}
   .pub a{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--copper)}
 
   /* ongoing research */
   .ongoing{border-left:2px solid var(--copper);padding:4px 0 4px 24px;margin-bottom:28px}
   .ongoing .status{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
-  .ongoing h3{max-width:68ch;font-size:22px;margin-top:10px;line-height:1.3}
-  .ongoing p{max-width:68ch;font-size:14.5px;color:var(--muted);margin-top:12px}
+  .ongoing h3{font-size:22px;margin-top:10px;line-height:1.3}
+  .ongoing p{font-size:15px;line-height:1.75;color:var(--muted);margin-top:12px}
   .ongoing .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
   .ongoing .tag{background:var(--copperSoft);color:var(--copper);border:none;font-family:"IBM Plex Mono";font-size:11px}
+  .rgroup{margin-bottom:56px}
+  .rgroup:last-of-type{margin-bottom:0}
+  .rghead{display:flex;align-items:baseline;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+  .rghead h3{font-family:"Fraunces",serif;font-size:22px;font-weight:500;color:var(--ink)}
+  .rghead .cap{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint)}
+  .ongoing{margin-bottom:40px}
+  .ongoing:last-child{margin-bottom:0}
+  .ongoing.submitted{border-left-color:var(--teal)}
+  .ongoing.submitted .status{color:var(--teal)}
+  .ongoing.submitted .tag{background:var(--tealSoft);color:var(--teal)}
+  .ongoing .authors{font-family:"IBM Plex Mono";font-size:12px;color:var(--faint);margin-top:8px}
+  .ongoing .flabel{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint);margin-top:16px}
+  .ongoing .focus{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .ongoing .focus .fchip{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;color:var(--muted)}
 
   /* projects */
   .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .pcard{border:1px solid var(--line);border-top:2px solid rgba(242,136,75,.6);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-  .pcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(242,136,75,.35)}
-  .pmedia{aspect-ratio:16/9;border-bottom:1px solid var(--line);overflow:hidden;background:#0d1219}
+  .pcard{border:1px solid var(--line);border-top:2px solid rgba(140,47,57,.6);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .pcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(140,47,57,.35)}
+  .pmedia{aspect-ratio:16/9;border-bottom:1px solid var(--line);overflow:hidden;background:#f2efe6}
   .pmedia svg{display:block;width:100%;height:100%}
   .pmedia img{transition:transform .5s ease}
   .pcard:hover .pmedia img{transform:scale(1.05)}
@@ -172,34 +186,45 @@
 
   /* data & ml projects (icon-badge cards, no images) */
   .mlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .dscard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(242,136,75,.6);background:rgba(22,26,44,.3);backdrop-filter:blur(8px);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
-  .dscard:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(242,136,75,.5);background:rgba(22,26,44,.5);box-shadow:0 20px 44px -22px rgba(242,136,75,.4)}
+  .dscard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(140,47,57,.6);background:rgba(255,255,255,.8);backdrop-filter:blur(8px);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
+  .dscard:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(140,47,57,.5);background:rgba(255,255,255,.5);box-shadow:0 20px 44px -22px rgba(140,47,57,.4)}
   .dscard a.dslink-main{display:flex;flex:1;flex-direction:column;padding:20px;color:inherit}
   .dsbadgerow{display:flex;align-items:center;justify-content:space-between;gap:12px}
   .dsbadge{display:flex;flex:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--copperSoft);color:var(--copper);transition:transform .3s ease}
   .dscard:hover .dsbadge{transform:scale(1.1)}
-  .dsrel{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
-  .dsrepo{margin-top:14px;font-family:"IBM Plex Mono";font-size:12px;color:rgba(242,241,246,.8)}
+  .dsrel{font-family:"IBM Plex Mono";font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
+  .dsrel .idx-dot{color:var(--faint)}
+  .dsrepo{margin-top:14px;font-size:15px;font-weight:600;line-height:1.35;color:var(--ink)}
   .dsdesc{margin-top:8px;flex:1;font-size:13.5px;line-height:1.5;color:var(--muted)}
   .dstags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
   .dstag{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--muted)}
-  .dsfoot{display:flex;flex-wrap:wrap;align-items:center;gap:16px;border-top:1px solid var(--line);padding:16px 20px}
-  .dsfootlink{display:inline-block;font-size:12.5px;font-weight:600;color:var(--copper);position:relative}
-  .dsfootlink.demo{color:var(--copper)}
-  .dsfootlink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
-  .dsfootlink:hover:after{width:100%}
+  .dsfoot{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding:16px}
+  .dsfootbtn{flex:1;border-radius:8px;padding:8px 0;text-align:center;font-size:12.5px;font-weight:600;transition:background .2s ease,border-color .2s ease,color .2s ease}
+  .dsfootbtn.primary{background:var(--copper);color:#fff}
+  .dsfootbtn.primary:hover{background:#6f252d}
+  .dsfootbtn.outline{border:1px solid var(--line);color:var(--ink)}
+  .dsfootbtn.outline:hover{border-color:var(--copper);color:var(--copper)}
+
+  .statsbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.8)}
+  .statsgrid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:40px 24px}
+  @media(min-width:768px){.statsgrid{grid-template-columns:1fr 1fr 1fr 1fr;padding:40px}}
+  .statbox{border:1px solid var(--line);border-radius:12px;background:rgba(250,248,243,1);backdrop-filter:blur(8px);padding:20px 16px;text-align:center;transition:transform .3s ease,border-color .3s ease}
+  .statbox:hover{transform:translateY(-4px);border-color:rgba(140,47,57,.5)}
+  .statval{font-family:"Fraunces",serif;font-size:26px;font-weight:600;color:var(--ink)}
+  @media(min-width:768px){.statval{font-size:30px}}
+  .statlabel{margin-top:6px;font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint)}
   @media(max-width:1100px){.mlgrid{grid-template-columns:1fr 1fr}}
   @media(max-width:860px){.mlgrid{grid-template-columns:1fr}}
 
   /* data & ml projects — dashboard section keeps the original image-card look */
-  .mlcard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(232,93,143,.6);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-  .mlcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(232,93,143,.35)}
+  .mlcard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(44,74,110,.6);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .mlcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(44,74,110,.35)}
   .mlcard a.mllink-main{display:block;color:inherit}
   .mlimg{aspect-ratio:1200/630;overflow:hidden;border-bottom:1px solid var(--line);background:var(--panel)}
   .mlimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
   .mlcard:hover .mlimg img{transform:scale(1.05)}
   .mlbody{padding:24px 24px 0}
-  .mlrepo{font-family:"IBM Plex Mono";font-size:12px;color:rgba(242,241,246,.8)}
+  .mlrepo{font-family:"IBM Plex Mono";font-size:12px;color:rgba(22,33,62,.8)}
   .mlrel{margin-top:8px;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--teal)}
   .mldesc{margin-top:12px;font-size:14px;color:var(--muted)}
   .mltags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
@@ -212,22 +237,25 @@
 
   /* dashboard */
   .dashgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .dashcard{border-top-color:rgba(242,136,75,.6)}
-  .dashcard:hover{box-shadow:0 24px 50px -22px rgba(242,136,75,.35)}
+  .dashcard{border-top-color:rgba(140,47,57,.6)}
+  .dashcard:hover{box-shadow:0 24px 50px -22px rgba(140,47,57,.35)}
   @media(max-width:1100px){.dashgrid{grid-template-columns:1fr 1fr}}
   @media(max-width:860px){.dashgrid{grid-template-columns:1fr}}
 
   /* skills */
   .skillswrap{position:relative}
-  .skillswrap .ambient-glow{width:256px;height:256px;left:-64px;top:-64px;background:rgba(242,136,75,.1)}
-  .skillswrap .ambient-glow.slow{left:auto;right:-64px;top:auto;bottom:0;background:rgba(232,93,143,.1)}
-  .skillcard{position:relative;display:grid;grid-template-columns:1fr;gap:20px 32px;border:1px solid var(--line);background:rgba(22,26,44,.6);backdrop-filter:blur(20px);border-radius:24px;padding:20px}
-  @media(min-width:768px){.skillcard{grid-template-columns:1fr 1fr;padding:28px}}
-  .sgroup{padding-top:0;border-top:0}
-  .sgroup .label{font-size:13.5px;font-weight:600;color:var(--ink)}
-  .sgroup .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
-  .sgroup .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:rgba(11,12,20,.4);backdrop-filter:blur(8px);padding:6px 12px;font-size:12.5px;font-weight:500;color:var(--muted);transition:transform .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
-  .sgroup .tag:hover{transform:translateY(-2px) scale(1.05);border-color:var(--copper);color:var(--ink);box-shadow:0 10px 24px -14px rgba(242,136,75,.4)}
+  .skillswrap .ambient-glow{width:256px;height:256px;left:-64px;top:-64px;background:rgba(140,47,57,.05)}
+  .skillswrap .ambient-glow.slow{left:auto;right:-64px;top:auto;bottom:0;background:rgba(44,74,110,.05)}
+  .skillcard{position:relative;display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:640px){.skillcard{grid-template-columns:1fr 1fr}}
+  @media(min-width:1024px){.skillcard{grid-template-columns:1fr 1fr 1fr}}
+  .sgroup{display:flex;flex-direction:column;border:1px solid var(--line);background:rgba(255,255,255,.8);backdrop-filter:blur(20px);border-radius:16px;padding:24px;transition:transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease}
+  .sgroup:hover{transform:translateY(-4px);border-color:rgba(44,74,110,.5);background:rgba(255,255,255,.6);box-shadow:0 20px 44px -24px rgba(44,74,110,.4)}
+  .sgroup .label{font-size:14.5px;font-weight:600;color:var(--ink)}
+  .sgroup .desc{margin-top:8px;font-size:13px;line-height:1.5;color:var(--muted)}
+  .sgroup .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .sgroup .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:rgba(250,248,243,1);backdrop-filter:blur(8px);padding:6px 12px;font-size:12.5px;font-weight:500;color:var(--muted);transition:transform .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
+  .sgroup .tag:hover{transform:translateY(-2px) scale(1.05);border-color:var(--copper);color:var(--ink);box-shadow:0 10px 24px -14px rgba(140,47,57,.4)}
   .sgroup .tag svg{flex:none;color:var(--copper)}
 
   /* contact */
@@ -244,7 +272,7 @@
   .actions a:hover span{transform:translateX(4px)}
   .actions a:last-child{border-bottom:0}
   .actions a:first-child{background:var(--copper);color:#fff}
-  .actions a:first-child:hover{background:#d9683a}
+  .actions a:first-child:hover{background:#6f252d}
   .actions a:not(:first-child):hover{background:var(--panel)}
   @media(max-width:860px){.cgrid{grid-template-columns:1fr}}
 
@@ -260,9 +288,9 @@
       <a href="#hero" class="brand">Tushy Tasnim</a>
       <nav class="links">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#research">Research</a>
         <a href="#ongoing-research">Ongoing</a>
-        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#ml-projects">ML Projects</a>
@@ -303,9 +331,18 @@
     </a>
   </section>
 
+  <div class="statsbar">
+    <div class="statsgrid">
+      <div class="statbox reveal"><p class="statval">12+</p><p class="statlabel">GitHub Projects</p></div>
+      <div class="statbox reveal" style="transition-delay:.08s"><p class="statval">3</p><p class="statlabel">Dashboards Built</p></div>
+      <div class="statbox reveal" style="transition-delay:.16s"><p class="statval">24+</p><p class="statlabel">Tools &amp; Technologies</p></div>
+      <div class="statbox reveal" style="transition-delay:.24s"><p class="statval">2</p><p class="statlabel">Publications</p></div>
+    </div>
+  </div>
+
   <section id="about" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
       <div class="stitle reveal"><span class="tick"></span><h2>About</h2></div>
@@ -325,45 +362,9 @@
     </div>
   </section>
 
-  <section id="research" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Research &amp; Publications</h2></div>
-      <article class="pub reveal">
-        <p class="meta">Journal · December 2025 · Journal of Open Innovation: Technology, Market &amp; Complexity [Q1]</p>
-        <h3>Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh</h3>
-        <p>Studied Industry 4.0 adoption in Bangladesh's food processing sector and identified technology capability, information sharing, organizational performance, business growth, and insufficient capital as a critical driving barrier.</p>
-        <a href="https://doi.org/10.1016/j.joitmc.2025.100674" target="_blank" rel="noreferrer">Read the paper</a>
-      </article>
-      <article class="pub reveal" style="transition-delay:.11s">
-        <p class="meta">Conference · December 2021 · IMEOM 2022, Dhaka</p>
-        <h3>Development of a Linear Programming Model for the Diet Plan of University Students</h3>
-        <p>Developed a nutrition optimization model using linear programming and the simplex method, showing protein intake gaps and improved cost allocation toward protein-rich food items.</p>
-        <a href="https://doi.org/10.46254/BD05.20220175" target="_blank" rel="noreferrer">Read the paper</a>
-      </article>
-    </div>
-  </section>
-
-  <section id="ongoing-research" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Ongoing Research</h2></div>
-      <article class="ongoing reveal">
-        <p class="status">Ongoing</p>
-        <h3>Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh&rsquo;s Ready-Made Garment Industry: A Fuzzy DEMATEL Approach</h3>
-        <p>Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh&rsquo;s ready-made garment sector.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Fuzzy DEMATEL</span><span class="tag">Digital Twin</span></div>
-      </article>
-    </div>
-  </section>
-
   <section id="education" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
       <div class="stitle reveal"><span class="tick"></span><h2>Education</h2></div>
@@ -388,9 +389,92 @@
     </div>
   </section>
 
+  <section id="research" class="sec-copper">
+    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><h2>Research &amp; Publications</h2></div>
+      <article class="pub reveal">
+        <p class="meta">Journal · December 2025 · Journal of Open Innovation: Technology, Market &amp; Complexity [Q1]</p>
+        <h3>Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh</h3>
+        <p>Studied Industry 4.0 adoption in Bangladesh's food processing sector and identified technology capability, information sharing, organizational performance, business growth, and insufficient capital as a critical driving barrier.</p>
+        <a href="https://doi.org/10.1016/j.joitmc.2025.100674" target="_blank" rel="noreferrer">Read the paper</a>
+      </article>
+      <article class="pub reveal" style="transition-delay:.11s">
+        <p class="meta">Conference · December 2021 · IMEOM 2022, Dhaka</p>
+        <h3>Development of a Linear Programming Model for the Diet Plan of University Students</h3>
+        <p>Developed a nutrition optimization model using linear programming and the simplex method, showing protein intake gaps and improved cost allocation toward protein-rich food items.</p>
+        <a href="https://doi.org/10.46254/BD05.20220175" target="_blank" rel="noreferrer">Read the paper</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="ongoing-research" class="tint sec-teal">
+    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
+    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+    <div class="inner">
+      <div class="stitle reveal"><span class="tick"></span><h2>Ongoing &amp; Submitted Research</h2></div>
+      <div class="rgroup">
+        <div class="rghead reveal"><h3>Submitted</h3><span class="cap">Under review &middot; 2</span></div>
+        <article class="ongoing submitted reveal">
+          <p class="status">Submitted</p>
+          <h3>Calibrate, Certify, or Learn? Deciding When a Language Model Should Defer to a Human</h3>
+          <p class="authors">Tushy Tasnim, Rifat Faruk Zitu</p>
+          <p>This research investigates how large language models can improve decision reliability by determining when to answer independently and when to defer to human review. It combines Bayesian uncertainty estimation, conformal risk control, and value-of-information strategies to evaluate the trade-offs between accuracy, risk, and review costs.</p>
+          <p class="flabel">Tools &amp; Technologies</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Qwen2.5-Instruct (7B / 1.5B)</span><span class="tag">vLLM</span><span class="tag">GPTQ 4-bit quantization</span><span class="tag">Bayesian Logistic Regression</span><span class="tag">Conformal Risk Control</span><span class="tag">TruthfulQA</span><span class="tag">GSM8K</span></div>
+          <p class="flabel">Key Focus</p>
+          <div class="focus"><span class="fchip">LLM reliability</span><span class="fchip">Uncertainty calibration</span><span class="fchip">Human&ndash;AI collaboration</span><span class="fchip">Risk-aware decision-making</span></div>
+        </article>
+        <article class="ongoing submitted reveal">
+          <p class="status">Submitted</p>
+          <h3>Uncertainty-Aware Preferential Bayesian Optimization under Noisy Human Preferences: A Controlled Test of Ambiguity-Seeking Acquisition</h3>
+          <p class="authors">Rifat Faruk Zitu, Tushy Tasnim</p>
+          <p>This research evaluates whether incorporating uncertainty about preference rankings can improve Bayesian optimization when human preference feedback contains noise. It introduces Uncertainty-Aware Expected Utility of the Best Option (UA-EUBO), which combines expected utility with an ambiguity bonus. The approach is tested against standard EUBO using synthetic optimization benchmarks and the UT-Zappos50K shoe-preference dataset. Results show that the proposed method does not provide consistent improvements, highlighting when ambiguity-aware query selection may offer limited benefits.</p>
+          <p class="flabel">Tools &amp; Technologies</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">BoTorch 0.18.1</span><span class="tag">Pairwise Gaussian Process (PairwiseGP)</span><span class="tag">Bayesian Optimization</span><span class="tag">Gaussian Process Preference Learning</span><span class="tag">Principal Component Analysis (PCA)</span><span class="tag">UT-Zappos50K</span></div>
+          <p class="flabel">Key Focus</p>
+          <div class="focus"><span class="fchip">Preferential Bayesian optimization</span><span class="fchip">Uncertainty-aware decision-making</span><span class="fchip">Noisy human feedback</span><span class="fchip">Active learning</span><span class="fchip">Experimental evaluation</span></div>
+        </article>
+      </div>
+      <div class="rgroup">
+        <div class="rghead reveal"><h3>Ongoing</h3><span class="cap">In progress &middot; 3</span></div>
+        <article class="ongoing reveal">
+          <p class="status">Ongoing</p>
+          <h3>Bottleneck Forecasting Under a Stricter Evaluation: A Leakage-Controlled, Rolling-Origin Comparison of Statistical and Machine Learning Models</h3>
+          <p class="authors">Rifat Faruk Zitu, Tushy Tasnim</p>
+          <p>This study compares statistical and machine learning models for forecasting bottlenecks in a simulated five-station steel production line. Using public energy-consumption data from a South Korean steel plant, it evaluates six forecasting approaches across 25 rolling weekly origins and four forecast horizons. Recursive XGBoost achieved the lowest mean scaled error at every horizon, although statistically significant improvements over the best classical model occurred only at the 4-hour and 10-day horizons. The study also evaluates prediction-interval coverage and high-utilization alerts, demonstrating that machine learning advantages depend on the forecasting horizon and evaluation criteria.</p>
+          <p class="flabel">Tools &amp; Technologies</p>
+          <div class="tags"><span class="tag">Discrete-Event Simulation</span><span class="tag">Python</span><span class="tag">ARIMA</span><span class="tag">SARIMA</span><span class="tag">Hybrid SARIMA</span><span class="tag">XGBoost</span><span class="tag">Recursive XGBoost</span><span class="tag">Split-Conformal Prediction</span><span class="tag">Diebold&ndash;Mariano Tests</span><span class="tag">Holm Correction</span></div>
+          <p class="flabel">Key Focus</p>
+          <div class="focus"><span class="fchip">Manufacturing bottleneck prediction</span><span class="fchip">Production-system simulation</span><span class="fchip">Time-series forecasting</span><span class="fchip">Machine learning evaluation</span><span class="fchip">Uncertainty quantification</span><span class="fchip">Industrial process monitoring</span></div>
+        </article>
+        <article class="ongoing reveal">
+          <p class="status">Ongoing</p>
+          <h3>A Two-Stage Experimental Framework for Industrial Defect Detection and Inspection Decisions Using Classical Machine Learning and Q-Learning</h3>
+          <p class="authors">Tushy Tasnim, Rifat Faruk Zitu</p>
+          <p>This study develops a two-stage framework that combines industrial defect detection with cost-sensitive inspection decision-making. In the first stage, handcrafted colour, texture, and shape features are combined with an Isolation Forest trained on normal bottle images from the MVTec Anomaly Detection Dataset, achieving a ROC-AUC of 0.947. In the second stage, tabular Q-learning converts anomaly scores into inspection decisions: Accept, Reject, or Human Review. Compared with a fixed-threshold strategy, the learned policy increased average reward from 0.143 to 0.405 and reduced missed defects from three to zero, while highlighting trade-offs involving false rejections and human-review costs.</p>
+          <p class="flabel">Tools &amp; Technologies</p>
+          <div class="tags"><span class="tag">Isolation Forest</span><span class="tag">Handcrafted Feature Engineering (Colour, Texture, Shape)</span><span class="tag">Tabular Q-Learning</span><span class="tag">Reinforcement Learning</span><span class="tag">MVTec Anomaly Detection Dataset</span><span class="tag">Cost-Sensitive Decision-Making</span></div>
+          <p class="flabel">Key Focus</p>
+          <div class="focus"><span class="fchip">Industrial defect detection</span><span class="fchip">Manufacturing quality control</span><span class="fchip">Anomaly detection</span><span class="fchip">Reinforcement learning</span><span class="fchip">Automated inspection</span><span class="fchip">Human-in-the-loop decision systems</span></div>
+        </article>
+        <article class="ongoing reveal">
+          <p class="status">Ongoing</p>
+          <h3>Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh&rsquo;s Ready-Made Garment Industry: A Fuzzy DEMATEL Approach</h3>
+          <p>Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh&rsquo;s ready-made garment sector.</p>
+          <p class="flabel">Tools &amp; Technologies</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Fuzzy DEMATEL</span><span class="tag">Digital Twin</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="experience" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
       <div class="stitle reveal"><span class="tick"></span><h2>Work Experience</h2></div>
@@ -436,23 +520,23 @@
         <div class="ambient-glow"></div>
         <div class="ambient-glow slow"></div>
         <div class="skillcard">
-          <div class="sgroup reveal"><div class="label">Data Analysis</div><div class="tags">
+          <div class="sgroup reveal"><div class="label">Data Analysis</div><div class="desc">Turning raw datasets into decision-ready insight with BI and statistical tooling.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>MS Excel</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>Google Sheets</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Power BI</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>SmartPLS</span>
           </div></div>
-          <div class="sgroup reveal" style="transition-delay:.06s"><div class="label">Research Methods</div><div class="tags">
+          <div class="sgroup reveal" style="transition-delay:.06s"><div class="label">Research Methods</div><div class="desc">Modeling causal structure and decision systems for industrial and academic research.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>PLS-SEM</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>ISM-MICMAC</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg>Linear Programming</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Simulation</span>
           </div></div>
-          <div class="sgroup reveal" style="transition-delay:.12s"><div class="label">Programming</div><div class="tags">
+          <div class="sgroup reveal" style="transition-delay:.12s"><div class="label">Programming</div><div class="desc">Core languages for data pipelines, modeling, and applied problem solving.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>Python</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>C Language</span>
           </div></div>
-          <div class="sgroup reveal" style="transition-delay:.15s"><div class="label">Python Libraries</div><div class="tags">
+          <div class="sgroup reveal" style="transition-delay:.15s"><div class="label">Python Libraries</div><div class="desc">The Python data-science stack I use for analysis, modeling, and visualization.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>NumPy</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Pandas</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>scikit-learn</span>
@@ -460,16 +544,16 @@
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>Seaborn</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Gurobipy</span>
           </div></div>
-          <div class="sgroup reveal" style="transition-delay:.18s"><div class="label">Web Development</div><div class="tags">
+          <div class="sgroup reveal" style="transition-delay:.18s"><div class="label">Web Development</div><div class="desc">Building and shipping sites and landing pages without a heavy dev stack.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>WordPress</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>Webflow</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Squarespace</span>
           </div></div>
-          <div class="sgroup reveal" style="transition-delay:.24s"><div class="label">Automation Tools</div><div class="tags">
+          <div class="sgroup reveal" style="transition-delay:.24s"><div class="label">Automation Tools</div><div class="desc">Connecting apps and automating repetitive workflows end to end.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg>Zapier</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>Pabbly Connect</span>
           </div></div>
-          <div class="sgroup reveal" style="transition-delay:.3s"><div class="label">Simulation &amp; Drafting</div><div class="tags">
+          <div class="sgroup reveal" style="transition-delay:.3s"><div class="label">Simulation &amp; Drafting</div><div class="desc">Modeling systems and drafting technical designs for industrial engineering work.</div><div class="tags">
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>Arena</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>AutoCAD</span>
             <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>Adobe Illustrator</span>
@@ -480,100 +564,154 @@
   </section>
 
   <section id="ml-projects" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Data &amp; ML Projects</h2></div>
-      <p class="lede reveal">Applied data science, machine learning, and business-intelligence projects I&rsquo;ve built end to end — predictive maintenance, demand forecasting, NLP, and dashboards. All published on my GitHub.</p>
+      <div class="stitle reveal"><span class="tick"></span><h2>Projects</h2></div>
+      <p class="lede reveal">Applied data science, machine learning, and simulation projects I&rsquo;ve built end to end — digital twins, production and routing simulation, predictive maintenance, demand forecasting, and NLP. All published on my GitHub.</p>
       <div class="mlgrid">
         <article class="dscard reveal">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg></span>
+              <span class="dsrel">01 <span class="idx-dot">&middot;</span> Digital Twin</span>
+            </div>
+            <p class="dsrepo">production line digital twin</p>
+            <p class="dsdesc">A discrete-event digital twin of a four-station production line (cutting, welding, painting, inspection) that simulates machine wear, breakdowns, and sensor streams, computes OEE and MTBF/MTTR, tests six improvement scenarios, and trains an ML model to predict failures 30 minutes ahead.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">SimPy</span><span class="dstag">Predictive Maintenance</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:0.06s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+              <span class="dsrel">02 <span class="idx-dot">&middot;</span> Simulation</span>
+            </div>
+            <p class="dsrepo">lean green sewing line</p>
+            <p class="dsdesc">A SimPy simulation of a ten-operation T-shirt sewing line measuring how takt-based line balancing (lean) and servo motors (green) affect output, WIP, lead time, and CO&#8322; per garment, reported over 30 replications with confidence intervals.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">SimPy</span><span class="dstag">Sustainability</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:0.12s">
+          <a class="dslink-main" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">
+            <div class="dsbadgerow">
+              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>
+              <span class="dsrel">03 <span class="idx-dot">&middot;</span> Supply Chain Analytics</span>
+            </div>
+            <p class="dsrepo">last mile delivery</p>
+            <p class="dsdesc">An emissions-aware vehicle routing study for two Bangladeshi cities, solving the same capacitated VRP for minimum distance and for modelled CO&#8322; (payload, speed, and gradient effects) to quantify the trade-off between the two objectives.</p>
+            <div class="dstags"><span class="dstag">Python</span><span class="dstag">Vehicle Routing</span><span class="dstag">Optimization</span></div>
+          </a>
+          <div class="dsfoot">
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+        </article>
+
+        <article class="dscard reveal" style="transition-delay:0.18s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
-              <span class="dsrel">Predictive Maintenance · Industry 4.0</span>
+              <span class="dsrel">04 <span class="idx-dot">&middot;</span> Predictive Maintenance</span>
             </div>
-            <p class="dsrepo">XGBoost-Based-Predictive-Maintenance-System</p>
+            <p class="dsrepo">XGBoost Based Predictive Maintenance System</p>
             <p class="dsdesc">Predicts machine failure from sensor data using XGBoost, generating downtime risk scores and visualizing maintenance insights through an interactive Streamlit dashboard.</p>
             <div class="dstags"><span class="dstag">Python</span><span class="dstag">XGBoost</span><span class="dstag">Streamlit</span></div>
           </a>
           <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </article>
 
-        <article class="dscard reveal" style="transition-delay:.06s">
+        <article class="dscard reveal" style="transition-delay:0.24s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></span>
-              <span class="dsrel">Supply Chain Analytics · Optimization</span>
+              <span class="dsrel">05 <span class="idx-dot">&middot;</span> Supply Chain Analytics</span>
             </div>
-            <p class="dsrepo">supply_chain_optimization_projects</p>
+            <p class="dsrepo">supply chain optimization projects</p>
             <p class="dsdesc">An end-to-end supply chain analytics project covering demand forecasting, inventory optimization, route optimization, Monte Carlo simulation, and cost optimization.</p>
             <div class="dstags"><span class="dstag">Python</span><span class="dstag">Simulation</span><span class="dstag">Optimization</span></div>
           </a>
           <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </article>
 
-        <article class="dscard reveal" style="transition-delay:.12s">
+        <article class="dscard reveal" style="transition-delay:0.3s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
-              <span class="dsrel">Supply Chain Analytics · Predictive Modeling</span>
+              <span class="dsrel">06 <span class="idx-dot">&middot;</span> Supply Chain Analytics</span>
             </div>
-            <p class="dsrepo">late-delivery-predictive-analytics&#8203;-in-supply-chain-using-ML-HistGradientBoostingModel</p>
+            <p class="dsrepo">late delivery predictive analytics&#8203; in supply chain using ML HistGradientBoostingModel</p>
             <p class="dsdesc">Predicts late-delivery risk in supply chain logistics using a HistGradientBoosting model, with an interactive Streamlit dashboard exploring the drivers behind delivery delays.</p>
             <div class="dstags"><span class="dstag">Python</span><span class="dstag">HistGradientBoosting</span><span class="dstag">Streamlit</span></div>
           </a>
           <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </article>
 
-        <article class="dscard reveal" style="transition-delay:.18s">
+        <article class="dscard reveal" style="transition-delay:0.36s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
-              <span class="dsrel">Demand Forecasting · Retail Analytics</span>
+              <span class="dsrel">07 <span class="idx-dot">&middot;</span> Demand Forecasting</span>
             </div>
-            <p class="dsrepo">Demand-Forecasting-App</p>
+            <p class="dsrepo">Demand Forecasting App</p>
             <p class="dsdesc">Forecasts product demand from historical retail data using XGBoost, deployed as an interactive Streamlit app with pricing, promotion, and inventory scenario inputs.</p>
             <div class="dstags"><span class="dstag">Python</span><span class="dstag">XGBoost</span><span class="dstag">Streamlit</span></div>
           </a>
           <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </article>
 
-        <article class="dscard reveal" style="transition-delay:.24s">
+        <article class="dscard reveal" style="transition-delay:0.42s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg></span>
-              <span class="dsrel">NLP · Machine Learning</span>
+              <span class="dsrel">08 <span class="idx-dot">&middot;</span> NLP</span>
             </div>
-            <p class="dsrepo">Emotion-Detection-NLP-and-ML</p>
+            <p class="dsrepo">Emotion Detection NLP and ML</p>
             <p class="dsdesc">Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.</p>
             <div class="dstags"><span class="dstag">Python</span><span class="dstag">NLP</span><span class="dstag">scikit-learn</span></div>
           </a>
           <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </article>
 
-        <article class="dscard reveal" style="transition-delay:.3s">
+        <article class="dscard reveal" style="transition-delay:0.48s">
           <a class="dslink-main" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">
             <div class="dsbadgerow">
               <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>
-              <span class="dsrel">Healthcare · Machine Learning</span>
+              <span class="dsrel">09 <span class="idx-dot">&middot;</span> Healthcare</span>
             </div>
-            <p class="dsrepo">heart-disease-prediction</p>
+            <p class="dsrepo">heart disease prediction</p>
             <p class="dsdesc">Predicts heart-disease risk from clinical data, comparing five classification algorithms and deploying a K-Nearest Neighbors model in a Streamlit web app.</p>
             <div class="dstags"><span class="dstag">Python</span><span class="dstag">scikit-learn</span><span class="dstag">Streamlit</span></div>
           </a>
           <div class="dsfoot">
-            <a class="dsfootlink" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View on GitHub</a>
+            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View Project</a>
+            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View GitHub</a>
           </div>
         </article>
       </div>
@@ -581,8 +719,8 @@
   </section>
 
   <section id="dashboards" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
       <div class="stitle reveal"><span class="tick"></span><h2>Dashboards</h2></div>
@@ -638,8 +776,8 @@
   </section>
 
   <section id="projects" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(232,93,143,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(242,136,75,.15)"></div>
+    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
       <div class="stitle reveal"><span class="tick"></span><h2>Academic Projects</h2></div>
@@ -669,8 +807,8 @@
   </section>
 
   <section id="contact" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(242,136,75,.2)"></div>
-    <div class="sec-glow b" style="background:rgba(232,93,143,.15)"></div>
+    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
+    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
     <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
     <div class="inner">
       <div class="stitle reveal"><span class="tick"></span><h2>Contact</h2></div>

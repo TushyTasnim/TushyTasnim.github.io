@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Research from "@/components/Research";
 import OngoingResearch from "@/components/OngoingResearch";
@@ -20,10 +21,11 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Stats />
         <About />
+        <Education />
         <Research />
         <OngoingResearch />
-        <Education />
         <Experience />
         <Skills />
         <MLProjects />

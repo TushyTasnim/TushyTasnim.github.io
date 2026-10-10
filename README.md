@@ -3,13 +3,13 @@
 A light, single-page academic portfolio built with Next.js 14 (App Router) and
 Tailwind CSS, for graduate school applications, professor outreach, and
 research visibility. Layout is inspired by prakharrathi25.netlify.app, restyled
-with a warm cream "engineering blueprint" theme (cream background, deep navy
-+ burnt-orange accents, Fraunces/IBM Plex type) suited to an industrial
+with an academic-press theme (warm ivory paper, deep navy ink, muted
+burgundy + slate-blue accents, Fraunces/IBM Plex type) suited to an industrial
 engineering / supply chain profile. Every section carries a persistent grid
 texture and blueprint-style corner marks, alternating between the two accent
 colors. All color tokens live in `tailwind.config.ts` — swap the hex values
-there to re-theme the whole site (the `teal` token now holds the navy color;
-only its value changed, not its name, to avoid touching every component).
+there to re-theme the whole site. Every ink and accent token clears WCAG AA
+(4.5:1) against both the page and card backgrounds.
 
 ## Run locally
 
@@ -71,7 +71,7 @@ the same change in `preview.html` to keep the static preview in sync.
 app/
   layout.tsx      fonts (Fraunces, IBM Plex Sans/Mono) + metadata
   page.tsx         assembles all sections
-  globals.css      base dark theme styles
+  globals.css      base light theme styles
 components/        one component per section (Hero, About, Education, ...)
 data/
   portfolio.ts     all content — single source of truth, incl. mlProjects

@@ -61,7 +61,7 @@ export default function Contact() {
               target={a.external ? "_blank" : undefined}
               rel={a.external ? "noreferrer" : undefined}
               className={`group flex items-center justify-between px-5 py-4 text-[14px] font-medium transition-colors ${
-                i === 0 ? "bg-copper text-white hover:bg-[#d9683a]" : "text-ink hover:bg-panel"
+                i === 0 ? "bg-copper text-white hover:bg-[#6f252d]" : "text-ink hover:bg-panel"
               }`}
             >
               {a.label}

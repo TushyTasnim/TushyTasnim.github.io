@@ -6,15 +6,15 @@ export default function Hero() {
     <section id="hero" className="relative overflow-hidden border-b-2 border-b-copper/50">
       <div
         aria-hidden
-        className="ambient-glow pointer-events-none absolute -left-24 -top-32 h-[460px] w-[460px] rounded-full bg-teal/25 blur-[120px]"
+        className="ambient-glow pointer-events-none absolute -left-24 -top-32 h-[460px] w-[460px] rounded-full bg-teal/[0.10] blur-[120px]"
       />
       <div
         aria-hidden
-        className="ambient-glow-slow pointer-events-none absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-copper/20 blur-[120px]"
+        className="ambient-glow-slow pointer-events-none absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-copper/[0.09] blur-[120px]"
       />
       <div
         aria-hidden
-        className="ambient-glow pointer-events-none absolute bottom-0 left-1/3 h-[320px] w-[320px] rounded-full bg-[#7a5af8]/15 blur-[110px]"
+        className="ambient-glow pointer-events-none absolute bottom-0 left-1/3 h-[320px] w-[320px] rounded-full bg-indigo/[0.07] blur-[110px]"
       />
       <div className="relative mx-auto grid max-w-5xl gap-12 px-6 py-20 md:grid-cols-[1.15fr_0.85fr] md:items-center md:px-10 md:py-28">
         <div>
@@ -23,7 +23,7 @@ export default function Hero() {
           </span>
           <h1 className="rise-in mt-5 font-display text-4xl font-medium leading-[1.08] [animation-delay:90ms] sm:text-5xl md:text-6xl">
             <span className="text-copper">{profile.name.split(" ")[0]}</span>{" "}
-            <span className="bg-gradient-to-r from-teal to-[#7a5af8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal to-indigo bg-clip-text text-transparent">
               {profile.name.split(" ").slice(1).join(" ")}
             </span>
           </h1>
@@ -34,7 +34,7 @@ export default function Hero() {
           <div className="rise-in mt-8 flex flex-wrap items-center gap-3 [animation-delay:270ms]">
             <a
               href="#contact"
-              className="inline-flex h-11 items-center rounded-sm bg-copper px-5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#d9683a] hover:shadow-[0_14px_30px_-12px_rgba(242,136,75,0.5)]"
+              className="inline-flex h-11 items-center rounded-sm bg-copper px-5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#6f252d] hover:shadow-[0_14px_30px_-12px_rgba(140,47,57,0.30)]"
             >
               Contact me
             </a>
@@ -73,7 +73,7 @@ export default function Hero() {
             aria-hidden
             className="absolute -bottom-4 -right-4 aspect-square w-full rounded-3xl border-2 border-copper/50"
           />
-          <div className="group relative aspect-square w-full overflow-hidden rounded-3xl border-2 border-line bg-panel shadow-[0_30px_60px_-25px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-teal/60 hover:shadow-[0_30px_60px_-20px_rgba(232,93,143,0.4)]">
+          <div className="group relative aspect-square w-full overflow-hidden rounded-3xl border-2 border-line bg-panel shadow-[0_30px_60px_-25px_rgba(22,33,62,0.15)] transition-all duration-500 hover:border-teal/60 hover:shadow-[0_30px_60px_-20px_rgba(44,74,110,0.24)]">
             <Image
               src="/images/headshot.jpeg"
               alt={profile.name}
