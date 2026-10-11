@@ -20,32 +20,31 @@ const actions = [
 
 export default function Contact() {
   return (
-    <Section id="contact" title="Contact" tint accent="teal">
-      <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
+    <Section id="contact" title="Contact" index={10} accent="brand">
+      <div className="grid gap-8 md:grid-cols-[1.2fr_1fr]">
         <Reveal>
-          <h3 className="max-w-prose font-display text-2xl font-medium leading-snug text-ink">
-            Let&rsquo;s connect about graduate research, collaboration, or academic
-            opportunities.
+          <h3 className="max-w-prose font-display text-[22px] font-extrabold leading-snug tracking-tight text-ink md:text-[26px]">
+            Open to MS / PhD research conversations and collaboration.
           </h3>
-          <p className="mt-4 max-w-prose text-[14.5px] leading-relaxed text-muted">
-            I am open to professor outreach, MS/PhD research conversations, and
-            opportunities related to supply chain analytics, smart manufacturing,
-            sustainable operations, and data-driven industrial systems.
-          </p>
-
-          <dl className="mt-8 space-y-4">
+          <dl className="mt-7 space-y-3">
             {details.map((d) => (
-              <div key={d.label} className="flex items-baseline gap-4 border-b border-line pb-3">
-                <dt className="w-20 flex-none font-mono text-[11px] uppercase tracking-wide text-faint">
+              <div
+                key={d.label}
+                className="flex items-baseline gap-4 border-b border-line pb-3"
+              >
+                <dt className="w-20 flex-none font-mono text-[10.5px] font-bold uppercase tracking-[0.12em] text-faint">
                   {d.label}
                 </dt>
                 <dd>
                   {d.href ? (
-                    <a href={d.href} className="link-underline text-[14.5px] font-medium text-ink">
+                    <a
+                      href={d.href}
+                      className="link-underline text-[14.5px] font-semibold text-ink hover:text-brand"
+                    >
                       {d.value}
                     </a>
                   ) : (
-                    <span className="text-[14.5px] font-medium text-ink">{d.value}</span>
+                    <span className="text-[14.5px] font-semibold text-ink">{d.value}</span>
                   )}
                 </dd>
               </div>
@@ -53,22 +52,24 @@ export default function Contact() {
           </dl>
         </Reveal>
 
-        <Reveal delay={120} className="flex flex-col divide-y divide-line border border-line">
+        <Reveal
+          delay={120}
+          className="flex flex-col divide-y divide-line overflow-hidden rounded-2xl border border-line bg-panel shadow-[0_12px_34px_-26px_rgba(13,20,36,0.4)]"
+        >
           {actions.map((a, i) => (
             <a
               key={a.label}
               href={a.href}
               target={a.external ? "_blank" : undefined}
               rel={a.external ? "noreferrer" : undefined}
-              className={`group flex items-center justify-between px-5 py-4 text-[14px] font-medium transition-colors ${
-                i === 0 ? "bg-copper text-white hover:bg-[#6f252d]" : "text-ink hover:bg-panel"
+              className={`group flex items-center justify-between px-5 py-4 text-[14px] font-bold transition-colors ${
+                i === 0
+                  ? "bg-brand text-white hover:bg-brandDeep"
+                  : "text-ink hover:bg-deep hover:text-brand"
               }`}
             >
               {a.label}
-              <span
-                aria-hidden
-                className="transition-transform group-hover:translate-x-1"
-              >
+              <span aria-hidden className="transition-transform group-hover:translate-x-1">
                 &#8594;
               </span>
             </a>

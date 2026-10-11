@@ -1,40 +1,72 @@
 import { ReactNode } from "react";
 import Reveal from "./Reveal";
 
-type Accent = "copper" | "teal";
+export type Accent = "brand" | "teal" | "amber";
 
-const accentStyles: Record<
+// Tailwind only sees class names written as literals, so each accent carries a
+// full set of strings rather than an interpolated colour name.
+export const accentStyles: Record<
   Accent,
-  { border: string; text: string; tick: string; glowA: string; glowB: string; corner: string }
+  {
+    text: string;
+    bar: string;
+    rule: string;
+    chip: string;
+    border: string;
+    hoverBorder: string;
+    glowA: string;
+    glowB: string;
+    button: string;
+  }
 > = {
-  copper: {
-    border: "border-t-copper/50",
-    text: "text-copper",
-    tick: "bg-copper",
-    glowA: "bg-copper/[0.07]",
-    glowB: "bg-teal/[0.06]",
-    corner: "border-copper/40",
+  brand: {
+    text: "text-brand",
+    bar: "bg-gradient-to-r from-brand to-teal",
+    rule: "bg-gradient-to-r from-brand via-brand/35 to-transparent",
+    chip: "bg-brandSoft text-brand",
+    border: "border-t-brand",
+    hoverBorder: "hover:border-brand/60",
+    glowA: "bg-brand/[0.10]",
+    glowB: "bg-teal/[0.08]",
+    button: "bg-brand hover:bg-brandDeep",
   },
   teal: {
-    border: "border-t-teal/50",
     text: "text-teal",
-    tick: "bg-teal",
-    glowA: "bg-teal/[0.07]",
-    glowB: "bg-copper/[0.06]",
-    corner: "border-teal/40",
+    bar: "bg-gradient-to-r from-teal to-brand",
+    rule: "bg-gradient-to-r from-teal via-teal/35 to-transparent",
+    chip: "bg-tealSoft text-teal",
+    border: "border-t-teal",
+    hoverBorder: "hover:border-teal/60",
+    glowA: "bg-teal/[0.10]",
+    glowB: "bg-brand/[0.08]",
+    button: "bg-teal hover:bg-tealDeep",
+  },
+  amber: {
+    text: "text-amber",
+    bar: "bg-gradient-to-r from-amber to-brand",
+    rule: "bg-gradient-to-r from-amber via-amber/35 to-transparent",
+    chip: "bg-amberSoft text-amber",
+    border: "border-t-amber",
+    hoverBorder: "hover:border-amber/60",
+    glowA: "bg-amber/[0.10]",
+    glowB: "bg-brand/[0.08]",
+    button: "bg-amber hover:bg-amberDeep",
   },
 };
 
 export default function Section({
   id,
   title,
+  index,
   intro,
   children,
   tint,
-  accent = "copper",
+  accent = "brand",
 }: {
   id: string;
   title: string;
+  /** Section number shown above the heading, e.g. 3 renders as "03". */
+  index: number;
   intro?: string;
   children: ReactNode;
   tint?: boolean;
@@ -44,47 +76,40 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-24 relative overflow-hidden border-t-2 ${a.border} ${
-        tint ? "bg-panel/70" : ""
+      className={`scroll-mt-20 relative overflow-hidden ${
+        tint ? "bg-panel" : "bg-deep/40"
       }`}
     >
+      {/* Full-bleed accent rule: gives every band its own identity at a glance. */}
+      <div aria-hidden className={`absolute inset-x-0 top-0 h-[3px] ${a.rule}`} />
       <div
         aria-hidden
-        className={`ambient-glow pointer-events-none absolute -left-20 -top-24 h-72 w-72 rounded-full ${a.glowA} blur-[100px]`}
+        className={`ambient-glow pointer-events-none absolute -left-24 -top-28 h-80 w-80 rounded-full ${a.glowA} blur-[110px]`}
       />
       <div
         aria-hidden
-        className={`ambient-glow-slow pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full ${a.glowB} blur-[100px]`}
-      />
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute left-4 top-4 hidden h-4 w-4 border-l-2 border-t-2 md:block ${a.corner}`}
-      />
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute right-4 top-4 hidden h-4 w-4 border-r-2 border-t-2 md:block ${a.corner}`}
-      />
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute bottom-4 left-4 hidden h-4 w-4 border-b-2 border-l-2 md:block ${a.corner}`}
-      />
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute bottom-4 right-4 hidden h-4 w-4 border-b-2 border-r-2 md:block ${a.corner}`}
+        className={`ambient-glow-slow pointer-events-none absolute -right-28 bottom-0 h-80 w-80 rounded-full ${a.glowB} blur-[110px]`}
       />
       <div className="relative mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-24">
         <Reveal>
-          <div className="mb-10 flex items-baseline gap-4 md:mb-14">
-            <span aria-hidden className={`h-[2px] w-8 flex-none ${a.tick}`} />
-            <h2 className="font-display text-3xl font-medium text-ink md:text-4xl">
+          <div className="mb-10 md:mb-14">
+            <div className="flex items-center gap-3">
+              <span
+                className={`font-mono text-[12px] font-bold tabular-nums tracking-[0.2em] ${a.text}`}
+              >
+                {String(index).padStart(2, "0")}
+              </span>
+              <span aria-hidden className={`h-[2px] w-7 flex-none rounded-full ${a.bar}`} />
+            </div>
+            <h2 className="mt-3 font-display text-[30px] font-extrabold leading-[1.1] tracking-tight text-ink md:text-[42px]">
               {title}
             </h2>
+            {intro ? (
+              <p className="mt-4 max-w-prose text-[15px] leading-relaxed text-muted">
+                {intro}
+              </p>
+            ) : null}
           </div>
-          {intro ? (
-            <p className="mb-10 max-w-prose text-[15px] leading-relaxed text-muted">
-              {intro}
-            </p>
-          ) : null}
         </Reveal>
         {children}
       </div>

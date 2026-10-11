@@ -10,28 +10,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Academic-press palette: warm ivory paper, deep navy ink, muted
-        // burgundy and slate-blue accents. Every ink/accent token below clears
-        // WCAG AA (4.5:1) against the page, card, and tinted-band backgrounds.
-        deep: "#faf8f3",
+        // Modern-professional palette: cool paper-white canvas, near-black
+        // navy ink, and a confident indigo / teal / amber accent triad that
+        // rotates section by section so each band reads as its own moment.
+        // Every ink and accent token clears WCAG AA (4.5:1) on both the page
+        // canvas and the white card surface.
+        deep: "#f4f6fb",
         panel: "#ffffff",
-        line: "rgba(22,33,62,0.12)",
-        lineStrong: "rgba(22,33,62,0.24)",
-        ink: "#16213e",
-        muted: "#44506a",
-        faint: "#646d85",
-        // `copper` and `teal` keep their names so components stay untouched;
-        // only the values changed.
-        copper: "#8c2f39",
-        copperSoft: "rgba(140,47,57,0.09)",
-        teal: "#2c4a6e",
-        tealSoft: "rgba(44,74,110,0.09)",
-        indigo: "#16213e",
+        line: "rgba(13,20,36,0.10)",
+        lineStrong: "rgba(13,20,36,0.20)",
+        ink: "#0d1424",
+        muted: "#475069",
+        faint: "#646d8a",
+        brand: "#4338ca",
+        brandDeep: "#312e81",
+        brandSoft: "rgba(67,56,202,0.08)",
+        teal: "#0f766e",
+        tealDeep: "#115e59",
+        tealSoft: "rgba(15,118,110,0.08)",
+        amber: "#b45309",
+        amberDeep: "#92400e",
+        amberSoft: "rgba(180,83,9,0.09)",
       },
       fontFamily: {
-        display: ["var(--font-fraunces)", "serif"],
-        sans: ["var(--font-plex-sans)", "sans-serif"],
-        mono: ["var(--font-plex-mono)", "monospace"],
+        display: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains)", "monospace"],
       },
       maxWidth: {
         prose: "68ch",

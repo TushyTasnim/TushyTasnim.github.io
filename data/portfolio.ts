@@ -1,5 +1,7 @@
 // Single source of truth for portfolio content.
 // Edit this file to update anything on the site — text, links, dates, etc.
+// Keep copy tight: short summaries, and only the most mention-worthy tools
+// and focus areas per research item.
 
 export const profile = {
   name: "Tushy Tasnim",
@@ -20,8 +22,8 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I am an Industrial and Production Engineering graduate from Shahjalal University of Science and Technology, Bangladesh. My academic and research interests lie at the intersection of supply chain analytics, smart manufacturing, operations research, sustainable operations, and data-driven decision-making.",
-    "I have research experience in Industry 4.0 technology adoption, PLS-SEM, ISM-MICMAC, linear programming, simulation, and analytical reporting. I am particularly interested in how emerging technologies, analytics, and optimization methods can improve industrial systems, supply chain performance, and sustainable operations.",
+    "Industrial and Production Engineering graduate from Shahjalal University of Science and Technology, working at the intersection of supply chain analytics, smart manufacturing, and operations research.",
+    "My research applies Industry 4.0 adoption modelling, PLS-SEM, ISM-MICMAC, optimization, and simulation to industrial systems and sustainable operations.",
   ],
   researchAreas: [
     "Industry 4.0",
@@ -29,7 +31,6 @@ export const about = {
     "Supply Chain Analytics",
     "Operations Research",
     "Sustainable Operations",
-    "AI/Data-driven Industrial Systems",
     "Digital Twin",
   ],
 };
@@ -58,9 +59,6 @@ export const education: TimelineItem[] = [
     title: "Prospective MS / PhD Student",
     org: "Industrial Engineering — Supply Chain Analytics, Smart Manufacturing, Sustainable Operations",
     date: "Seeking Fall admission opportunities",
-    meta: [
-      "Research fit: data-driven industrial systems, optimization, and sustainable operations.",
-    ],
   },
 ];
 
@@ -71,11 +69,9 @@ export const experience: TimelineItem[] = [
     org: "Algorizin Inc.",
     date: "Jan 2023 – Nov 2024 · Remote",
     bullets: [
-      "Conducted data-driven process analysis to redesign workflows and reduce process cycle time by 70%.",
-      "Developed an automated expense tracking system, improving data accuracy, transparency, and reporting efficiency.",
-      "Analyzed operational and performance datasets to identify trends and support evidence-based decision-making.",
-      "Prepared analytical reports and presentations by converting complex data into actionable insights.",
-      "Coordinated cross-functional teams to implement process improvement initiatives and ensure timely project delivery.",
+      "Redesigned workflows from data-driven process analysis, cutting process cycle time by 70%.",
+      "Built an automated expense tracking system, improving data accuracy and reporting efficiency.",
+      "Turned operational datasets into analytical reports that supported evidence-based decisions.",
     ],
     current: true,
   },
@@ -85,7 +81,7 @@ export const experience: TimelineItem[] = [
     org: "",
     date: "Dec 2023",
     bullets: [
-      "Gained practical understanding of mechanical engineering principles in a manufacturing facility.",
+      "Mechanical engineering principles applied in a live manufacturing facility.",
     ],
   },
   {
@@ -93,9 +89,7 @@ export const experience: TimelineItem[] = [
     title: "Bangladesh Industrial Technical Assistance Centre",
     org: "",
     date: "Jan 2023",
-    bullets: [
-      "Acquired practical skills in process improvement, product testing, and data analysis.",
-    ],
+    bullets: ["Hands-on process improvement, product testing, and data analysis."],
   },
 ];
 
@@ -116,7 +110,7 @@ export const publications: Publication[] = [
     title:
       "Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh",
     summary:
-      "Studied Industry 4.0 adoption in Bangladesh's food processing sector and identified technology capability, information sharing, organizational performance, business growth, and insufficient capital as a critical driving barrier.",
+      "Modelled Industry 4.0 adoption in Bangladesh's food processing sector, identifying technological capability and information exchange as the key drivers and insufficient capital as the critical barrier.",
     paperUrl: "https://doi.org/10.1016/j.joitmc.2025.100674",
   },
   {
@@ -126,7 +120,7 @@ export const publications: Publication[] = [
     title:
       "Development of a Linear Programming Model for the Diet Plan of University Students",
     summary:
-      "Developed a nutrition optimization model using linear programming and the simplex method, showing protein intake gaps and improved cost allocation toward protein-rich food items.",
+      "A linear programming diet model solved by the simplex method, exposing protein intake gaps and reallocating cost toward protein-rich items.",
     paperUrl: "https://doi.org/10.46254/BD05.20220175",
   },
 ];
@@ -137,7 +131,9 @@ export type OngoingResearchItem = {
   title: string;
   summary: string;
   authors?: string;
+  /** Only the headline tools — 3 to 6 per item, never an exhaustive stack. */
   tools?: string[];
+  /** Only the 3 defining focus areas. */
   focus?: string[];
 };
 
@@ -148,23 +144,15 @@ export const ongoingResearch: OngoingResearchItem[] = [
       "Calibrate, Certify, or Learn? Deciding When a Language Model Should Defer to a Human",
     authors: "Tushy Tasnim, Rifat Faruk Zitu",
     summary:
-      "This research investigates how large language models can improve decision reliability by determining when to answer independently and when to defer to human review. It combines Bayesian uncertainty estimation, conformal risk control, and value-of-information strategies to evaluate the trade-offs between accuracy, risk, and review costs.",
+      "Decides when a language model should answer and when to defer to a human, combining Bayesian uncertainty estimation, conformal risk control, and value-of-information to balance accuracy, risk, and review cost.",
     tools: [
       "Python",
-      "Qwen2.5-Instruct (7B / 1.5B)",
+      "Qwen2.5-Instruct",
       "vLLM",
-      "GPTQ 4-bit quantization",
       "Bayesian Logistic Regression",
       "Conformal Risk Control",
-      "TruthfulQA",
-      "GSM8K",
     ],
-    focus: [
-      "LLM reliability",
-      "Uncertainty calibration",
-      "Human–AI collaboration",
-      "Risk-aware decision-making",
-    ],
+    focus: ["LLM reliability", "Uncertainty calibration", "Human–AI collaboration"],
   },
   {
     status: "Submitted",
@@ -172,22 +160,17 @@ export const ongoingResearch: OngoingResearchItem[] = [
       "Uncertainty-Aware Preferential Bayesian Optimization under Noisy Human Preferences: A Controlled Test of Ambiguity-Seeking Acquisition",
     authors: "Rifat Faruk Zitu, Tushy Tasnim",
     summary:
-      "This research evaluates whether incorporating uncertainty about preference rankings can improve Bayesian optimization when human preference feedback contains noise. It introduces Uncertainty-Aware Expected Utility of the Best Option (UA-EUBO), which combines expected utility with an ambiguity bonus. The approach is tested against standard EUBO using synthetic optimization benchmarks and the UT-Zappos50K shoe-preference dataset. Results show that the proposed method does not provide consistent improvements, highlighting when ambiguity-aware query selection may offer limited benefits.",
+      "Tests whether modelling uncertainty over preference rankings improves Bayesian optimization under noisy human feedback. The proposed UA-EUBO acquisition adds an ambiguity bonus to expected utility, but shows no consistent gain over standard EUBO on synthetic benchmarks or the UT-Zappos50K dataset.",
     tools: [
       "Python",
-      "BoTorch 0.18.1",
-      "Pairwise Gaussian Process (PairwiseGP)",
+      "BoTorch",
+      "Pairwise Gaussian Process",
       "Bayesian Optimization",
-      "Gaussian Process Preference Learning",
-      "Principal Component Analysis (PCA)",
-      "UT-Zappos50K",
     ],
     focus: [
       "Preferential Bayesian optimization",
-      "Uncertainty-aware decision-making",
       "Noisy human feedback",
       "Active learning",
-      "Experimental evaluation",
     ],
   },
   {
@@ -196,26 +179,19 @@ export const ongoingResearch: OngoingResearchItem[] = [
       "Bottleneck Forecasting Under a Stricter Evaluation: A Leakage-Controlled, Rolling-Origin Comparison of Statistical and Machine Learning Models",
     authors: "Rifat Faruk Zitu, Tushy Tasnim",
     summary:
-      "This study compares statistical and machine learning models for forecasting bottlenecks in a simulated five-station steel production line. Using public energy-consumption data from a South Korean steel plant, it evaluates six forecasting approaches across 25 rolling weekly origins and four forecast horizons. Recursive XGBoost achieved the lowest mean scaled error at every horizon, although statistically significant improvements over the best classical model occurred only at the 4-hour and 10-day horizons. The study also evaluates prediction-interval coverage and high-utilization alerts, demonstrating that machine learning advantages depend on the forecasting horizon and evaluation criteria.",
+      "Compares six forecasting models for bottlenecks in a simulated five-station steel line under leakage-controlled, rolling-origin evaluation across 25 origins and four horizons. Recursive XGBoost gave the lowest scaled error at every horizon, but beat the best classical model significantly at only two.",
     tools: [
-      "Discrete-Event Simulation",
       "Python",
-      "ARIMA",
+      "Discrete-Event Simulation",
       "SARIMA",
-      "Hybrid SARIMA",
       "XGBoost",
-      "Recursive XGBoost",
-      "Split-Conformal Prediction",
-      "Diebold–Mariano Tests",
-      "Holm Correction",
+      "Conformal Prediction",
+      "Diebold–Mariano Test",
     ],
     focus: [
-      "Manufacturing bottleneck prediction",
-      "Production-system simulation",
+      "Bottleneck prediction",
       "Time-series forecasting",
-      "Machine learning evaluation",
       "Uncertainty quantification",
-      "Industrial process monitoring",
     ],
   },
   {
@@ -224,22 +200,17 @@ export const ongoingResearch: OngoingResearchItem[] = [
       "A Two-Stage Experimental Framework for Industrial Defect Detection and Inspection Decisions Using Classical Machine Learning and Q-Learning",
     authors: "Tushy Tasnim, Rifat Faruk Zitu",
     summary:
-      "This study develops a two-stage framework that combines industrial defect detection with cost-sensitive inspection decision-making. In the first stage, handcrafted colour, texture, and shape features are combined with an Isolation Forest trained on normal bottle images from the MVTec Anomaly Detection Dataset, achieving a ROC-AUC of 0.947. In the second stage, tabular Q-learning converts anomaly scores into inspection decisions: Accept, Reject, or Human Review. Compared with a fixed-threshold strategy, the learned policy increased average reward from 0.143 to 0.405 and reduced missed defects from three to zero, while highlighting trade-offs involving false rejections and human-review costs.",
+      "Pairs anomaly detection with cost-sensitive inspection decisions on MVTec bottle images. Handcrafted colour, texture, and shape features with an Isolation Forest reach 0.947 ROC-AUC; tabular Q-learning then chooses Accept, Reject, or Human Review, lifting average reward from 0.143 to 0.405 and cutting missed defects from three to zero.",
     tools: [
+      "Python",
       "Isolation Forest",
-      "Handcrafted Feature Engineering (Colour, Texture, Shape)",
       "Tabular Q-Learning",
-      "Reinforcement Learning",
-      "MVTec Anomaly Detection Dataset",
-      "Cost-Sensitive Decision-Making",
+      "Feature Engineering",
     ],
     focus: [
       "Industrial defect detection",
-      "Manufacturing quality control",
       "Anomaly detection",
-      "Reinforcement learning",
-      "Automated inspection",
-      "Human-in-the-loop decision systems",
+      "Human-in-the-loop decisions",
     ],
   },
   {
@@ -247,8 +218,9 @@ export const ongoingResearch: OngoingResearchItem[] = [
     title:
       "Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh's Ready-Made Garment Industry: A Fuzzy DEMATEL Approach",
     summary:
-      "Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh's ready-made garment sector.",
+      "A fuzzy DEMATEL model mapping causal relationships among digital-twin readiness factors and ranking adoption barriers in Bangladesh's ready-made garment sector.",
     tools: ["Python", "Fuzzy DEMATEL", "Digital Twin"],
+    focus: ["Digital twin readiness", "Barrier prioritization"],
   },
 ];
 
@@ -265,7 +237,7 @@ export const projects: Project[] = [
   {
     title: "Dust Detection using IR & Photo Sensor",
     summary:
-      "Designed an engineering prototype concept for dust accumulation detection using infrared and photo sensor behavior, with emphasis on sensing logic, calibration, and practical monitoring potential.",
+      "A prototype for detecting dust accumulation from infrared and photo sensor behaviour, focused on sensing logic and calibration.",
     tags: ["Sensors", "Prototype", "Industrial Monitoring"],
     illustration: "sensor",
     image: "/images/projects/dust-detection.jpg",
@@ -273,7 +245,7 @@ export const projects: Project[] = [
   {
     title: "Portable Dishwasher with Liquid Dispenser",
     summary:
-      "Developed a compact cleaning automation concept focused on dispensing control, ergonomic usability, product design, and manufacturability considerations.",
+      "A compact cleaning automation concept focused on dispensing control, ergonomics, and manufacturability.",
     tags: ["Product Design", "Automation", "Manufacturing"],
     illustration: "dishwasher",
     image: "/images/projects/portable-dishwasher.jpg",
@@ -282,44 +254,36 @@ export const projects: Project[] = [
 
 export type SkillGroup = {
   label: string;
-  description: string;
   items: string[];
 };
 
 export const skills: SkillGroup[] = [
   {
     label: "Data Analysis",
-    description: "Turning raw datasets into decision-ready insight with BI and statistical tooling.",
     items: ["MS Excel", "Google Sheets", "Power BI", "SmartPLS"],
   },
   {
     label: "Research Methods",
-    description: "Modeling causal structure and decision systems for industrial and academic research.",
     items: ["PLS-SEM", "ISM-MICMAC", "Linear Programming", "Simulation"],
   },
   {
     label: "Programming",
-    description: "Core languages for data pipelines, modeling, and applied problem solving.",
     items: ["Python", "C Language"],
   },
   {
     label: "Python Libraries",
-    description: "The Python data-science stack I use for analysis, modeling, and visualization.",
     items: ["NumPy", "Pandas", "scikit-learn", "Matplotlib", "Seaborn", "Gurobipy"],
   },
   {
     label: "Web Development",
-    description: "Building and shipping sites and landing pages without a heavy dev stack.",
     items: ["WordPress", "Webflow", "Squarespace"],
   },
   {
     label: "Automation Tools",
-    description: "Connecting apps and automating repetitive workflows end to end.",
     items: ["Zapier", "Pabbly Connect"],
   },
   {
     label: "Simulation & Drafting",
-    description: "Modeling systems and drafting technical designs for industrial engineering work.",
     items: ["Arena", "AutoCAD", "Adobe Illustrator"],
   },
 ];
@@ -358,7 +322,7 @@ export const mlProjects: MLProject[] = [
     repo: "production-line-digital-twin",
     url: "https://github.com/TushyTasnim/production-line-digital-twin",
     description:
-      "A discrete-event digital twin of a four-station production line (cutting, welding, painting, inspection) that simulates machine wear, breakdowns, and sensor streams, computes OEE and MTBF/MTTR, tests six improvement scenarios, and trains an ML model to predict failures 30 minutes ahead.",
+      "A discrete-event digital twin of a four-station line that simulates wear and breakdowns, computes OEE and MTBF/MTTR, and predicts failures 30 minutes ahead.",
     relevance: "Digital Twin · Smart Manufacturing",
     tags: ["Python", "SimPy", "Predictive Maintenance"],
   },
@@ -366,7 +330,7 @@ export const mlProjects: MLProject[] = [
     repo: "lean-green-sewing-line",
     url: "https://github.com/TushyTasnim/lean-green-sewing-line",
     description:
-      "A SimPy simulation of a ten-operation T-shirt sewing line measuring how takt-based line balancing (lean) and servo motors (green) affect output, WIP, lead time, and CO₂ per garment, reported over 30 replications with confidence intervals.",
+      "A SimPy model of a ten-operation sewing line measuring how takt-based balancing and servo motors affect output, WIP, lead time, and CO₂ per garment.",
     relevance: "Simulation · Sustainable Operations",
     tags: ["Python", "SimPy", "Sustainability"],
   },
@@ -374,7 +338,7 @@ export const mlProjects: MLProject[] = [
     repo: "last-mile-delivery",
     url: "https://github.com/TushyTasnim/last-mile-delivery",
     description:
-      "An emissions-aware vehicle routing study for two Bangladeshi cities, solving the same capacitated VRP for minimum distance and for modelled CO₂ (payload, speed, and gradient effects) to quantify the trade-off between the two objectives.",
+      "An emissions-aware routing study for two Bangladeshi cities, solving the same capacitated VRP for minimum distance and for modelled CO₂.",
     relevance: "Supply Chain Analytics · Optimization",
     tags: ["Python", "Vehicle Routing", "Optimization"],
   },
@@ -382,7 +346,7 @@ export const mlProjects: MLProject[] = [
     repo: "XGBoost-Based-Predictive-Maintenance-System",
     url: "https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System",
     description:
-      "Predicts machine failure from sensor data using XGBoost, generating downtime risk scores and visualizing maintenance insights through an interactive Streamlit dashboard.",
+      "Predicts machine failure from sensor data with XGBoost, surfacing downtime risk scores in an interactive Streamlit dashboard.",
     relevance: "Predictive Maintenance · Industry 4.0",
     tags: ["Python", "XGBoost", "Streamlit"],
   },
@@ -390,7 +354,7 @@ export const mlProjects: MLProject[] = [
     repo: "supply_chain_optimization_projects",
     url: "https://github.com/TushyTasnim/supply_chain_optimization_projects",
     description:
-      "An end-to-end supply chain analytics project covering demand forecasting, inventory optimization, route optimization, Monte Carlo simulation, and cost optimization.",
+      "End-to-end supply chain analytics: demand forecasting, inventory and route optimization, and Monte Carlo simulation.",
     relevance: "Supply Chain Analytics · Optimization",
     tags: ["Python", "Simulation", "Optimization"],
   },
@@ -398,7 +362,7 @@ export const mlProjects: MLProject[] = [
     repo: "late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel",
     url: "https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel",
     description:
-      "Predicts late-delivery risk in supply chain logistics using a HistGradientBoosting model, with an interactive Streamlit dashboard exploring the drivers behind delivery delays.",
+      "Predicts late-delivery risk with a HistGradientBoosting model, with a Streamlit dashboard exploring the drivers of delay.",
     relevance: "Supply Chain Analytics · Predictive Modeling",
     tags: ["Python", "HistGradientBoosting", "Streamlit"],
   },
@@ -406,7 +370,7 @@ export const mlProjects: MLProject[] = [
     repo: "Demand-Forecasting-App",
     url: "https://github.com/TushyTasnim/Demand-Forecasting-App",
     description:
-      "Forecasts product demand from historical retail data using XGBoost, deployed as an interactive Streamlit app with pricing, promotion, and inventory scenario inputs.",
+      "Forecasts retail demand with XGBoost, deployed as a Streamlit app with pricing, promotion, and inventory scenarios.",
     relevance: "Demand Forecasting · Retail Analytics",
     tags: ["Python", "XGBoost", "Streamlit"],
   },
@@ -414,7 +378,7 @@ export const mlProjects: MLProject[] = [
     repo: "Emotion-Detection-NLP-and-ML",
     url: "https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML",
     description:
-      "Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.",
+      "Classifies emotion in text, comparing machine learning models across an NLP preprocessing and feature-extraction pipeline.",
     relevance: "NLP · Machine Learning",
     tags: ["Python", "NLP", "scikit-learn"],
   },
@@ -422,7 +386,7 @@ export const mlProjects: MLProject[] = [
     repo: "heart-disease-prediction",
     url: "https://github.com/TushyTasnim/heart-disease-prediction",
     description:
-      "Predicts heart-disease risk from clinical data, comparing five classification algorithms and deploying a K-Nearest Neighbors model in a Streamlit web app.",
+      "Predicts heart-disease risk from clinical data, comparing five classifiers and deploying K-Nearest Neighbors in a Streamlit app.",
     relevance: "Healthcare · Machine Learning",
     tags: ["Python", "scikit-learn", "Streamlit"],
   },
@@ -435,7 +399,7 @@ export const dashboards: MLProject[] = [
     repo: "Hospital-Monitoring-PowerBI-Dashboard",
     url: "https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard",
     description:
-      "An interactive Power BI dashboard analyzing hospital operations and healthcare performance metrics from patient-level data.",
+      "A Power BI dashboard on hospital operations and healthcare performance, built from patient-level data.",
     relevance: "Business Intelligence · Healthcare Analytics",
     tags: ["Power BI", "Dashboard", "DAX"],
     image: "/images/projects/Health-Analytics.JPG",
@@ -447,7 +411,7 @@ export const dashboards: MLProject[] = [
     repo: "Dengue-Phenomenon-in-Bangladesh-Dashboard",
     url: "https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard",
     description:
-      "A dashboard visualizing dengue outbreak trends and patterns across Bangladesh to support public-health monitoring and awareness.",
+      "Dengue outbreak trends and patterns across Bangladesh, for public-health monitoring.",
     relevance: "Public Health Analytics · Dashboard",
     tags: ["Dashboard", "Data Visualization", "Public Health"],
     image: "/images/projects/dengue-dashboard.jpg",
@@ -456,7 +420,7 @@ export const dashboards: MLProject[] = [
     repo: "Hotel-Monitoring-Excel-Dashboard",
     url: "https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard",
     description:
-      "An Excel dashboard tracking hotel booking, occupancy, and revenue performance for hospitality management.",
+      "An Excel dashboard tracking hotel booking, occupancy, and revenue performance.",
     relevance: "Business Intelligence · Hospitality Analytics",
     tags: ["Excel", "Dashboard", "Data Visualization"],
     image: "/images/projects/hotel-dashboard.png",

@@ -1,4 +1,15 @@
-import { Gauge, Network, Truck, MessageSquareText, TrendingUp, HeartPulse, Factory, Leaf, Route, type LucideIcon } from "lucide-react";
+import {
+  Gauge,
+  Network,
+  Truck,
+  MessageSquareText,
+  TrendingUp,
+  HeartPulse,
+  Factory,
+  Leaf,
+  Route,
+  type LucideIcon,
+} from "lucide-react";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import { mlProjects } from "@/data/portfolio";
@@ -20,30 +31,31 @@ export default function MLProjects() {
     <Section
       id="ml-projects"
       title="Projects"
-      intro="Applied data science, machine learning, and simulation projects I've built end to end — digital twins, production and routing simulation, predictive maintenance, demand forecasting, and NLP. All published on my GitHub."
-      accent="copper"
+      index={7}
+      accent="brand"
+      tint
+      intro="Data science, machine learning, and simulation projects built end to end — all published on GitHub."
     >
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {mlProjects.map((project, i) => {
           const Icon = projectIcons[project.repo] ?? Gauge;
-          const index = String(i + 1).padStart(2, "0");
           return (
             <Reveal
               as="article"
               key={project.repo}
               delay={i * 60}
-              className="group flex h-full flex-col border border-line border-t-2 border-t-copper/60 bg-panel/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.01] hover:border-copper/50 hover:bg-panel hover:shadow-[0_20px_44px_-22px_rgba(22,33,62,0.13)]"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel shadow-[0_12px_34px_-26px_rgba(13,20,36,0.4)] transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/50 hover:shadow-[0_22px_48px_-24px_rgba(67,56,202,0.32)]"
             >
               <div className="flex flex-1 flex-col p-5">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-copperSoft text-copper transition-transform duration-300 group-hover:scale-110">
-                    <Icon size={19} strokeWidth={1.8} />
+                  <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-brandSoft text-brand transition-transform duration-300 group-hover:scale-110">
+                    <Icon size={19} strokeWidth={2} />
                   </span>
-                  <span className="font-mono text-[11px] font-semibold uppercase tracking-wide text-copper">
-                    {index} <span className="text-faint">&middot;</span> {project.relevance.split(" · ")[0]}
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.1em] text-faint">
+                    {project.relevance.split(" · ")[0]}
                   </span>
                 </div>
-                <h3 className="mt-3.5 text-[15px] font-semibold leading-snug text-ink">
+                <h3 className="mt-4 font-display text-[15.5px] font-extrabold capitalize leading-snug tracking-tight text-ink">
                   {project.repo.replace(/[-_]/g, " ")}
                 </h3>
                 <p className="mt-2 flex-1 text-[13.5px] leading-relaxed text-muted">
@@ -53,7 +65,7 @@ export default function MLProjects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-line px-2.5 py-1 font-mono text-[10.5px] text-muted"
+                      className="rounded-md bg-deep px-2 py-1 font-mono text-[10.5px] font-medium text-muted"
                     >
                       {tag}
                     </span>
@@ -61,21 +73,27 @@ export default function MLProjects() {
                 </div>
               </div>
               <div className="flex items-center gap-2 border-t border-line p-4">
-                <a
-                  href={project.demoUrl ?? project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex-1 rounded-lg bg-copper py-2 text-center text-[12.5px] font-semibold text-white transition-colors hover:bg-[#6f252d]"
-                >
-                  {project.demoUrl ? project.demoLabel ?? "View Demo" : "View Project"}
-                </a>
+                {project.demoUrl ? (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 rounded-lg bg-brand py-2 text-center text-[12.5px] font-bold text-white transition-colors hover:bg-brandDeep"
+                  >
+                    {project.demoLabel ?? "View Demo"}
+                  </a>
+                ) : null}
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 rounded-lg border border-line py-2 text-center text-[12.5px] font-semibold text-ink transition-colors hover:border-copper hover:text-copper"
+                  className={`flex-1 rounded-lg py-2 text-center text-[12.5px] font-bold transition-colors ${
+                    project.demoUrl
+                      ? "border border-line text-ink hover:border-brand hover:text-brand"
+                      : "bg-brand text-white hover:bg-brandDeep"
+                  }`}
                 >
-                  View GitHub
+                  View on GitHub
                 </a>
               </div>
             </Reveal>

@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/portfolio";
 
-const fraunces = Fraunces({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  weight: "variable",
-  axes: ["opsz", "SOFT", "WONK"],
-  style: ["normal", "italic"],
+  variable: "--font-jakarta",
+  weight: ["600", "700", "800"],
 });
 
-const plexSans = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-plex-sans",
+  variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
 
-const plexMono = IBM_Plex_Mono({
+const jetbrains = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-plex-mono",
-  weight: ["400", "500"],
+  variable: "--font-jetbrains",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable}`}
+      className={`${jakarta.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body className="font-sans antialiased">{children}</body>
     </html>

@@ -4,288 +4,266 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tushy Tasnim | Academic Portfolio</title>
-<meta name="description" content="Academic portfolio of Tushy Tasnim, Industrial and Production Engineering graduate interested in supply chain analytics, smart manufacturing, sustainable operations, and data-driven industrial systems.">
+<meta name="description" content="Academic portfolio of Tushy Tasnim, Industrial &amp; Production Engineering Graduate interested in supply chain analytics, smart manufacturing, sustainable operations, and data-driven industrial systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#faf8f3; --panel:#ffffff; --line:rgba(22,33,62,.12); --lineStrong:rgba(22,33,62,.24);
-    --ink:#16213e; --muted:#44506a; --faint:#646d85; --copper:#8c2f39; --copperSoft:rgba(140,47,57,.09);
-    --teal:#2c4a6e; --tealSoft:rgba(44,74,110,.09); --indigo:#16213e;
+    --deep:#f4f6fb; --panel:#ffffff; --line:rgba(13,20,36,.10); --lineStrong:rgba(13,20,36,.20);
+    --ink:#0d1424; --muted:#475069; --faint:#646d8a;
+    --brand:#4338ca; --brandDeep:#312e81; --brandSoft:rgba(67,56,202,.08);
+    --teal:#0f766e; --tealDeep:#115e59; --tealSoft:rgba(15,118,110,.08);
+    --amber:#b45309; --amberDeep:#92400e; --amberSoft:rgba(180,83,9,.09);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background-color:var(--deep);background-image:radial-gradient(ellipse 55% 45% at 12% 8%,rgba(44,74,110,.06),transparent 62%),radial-gradient(ellipse 50% 40% at 92% 4%,rgba(140,47,57,.05),transparent 60%),radial-gradient(ellipse 60% 45% at 50% 100%,rgba(22,33,62,.04),transparent 65%);background-repeat:no-repeat,no-repeat,no-repeat;background-attachment:fixed;color:var(--ink);font-family:"IBM Plex Sans",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{margin:0;background-color:var(--deep);
+    background-image:radial-gradient(ellipse 55% 45% at 10% 4%,rgba(67,56,202,.10),transparent 60%),
+      radial-gradient(ellipse 45% 38% at 94% 10%,rgba(15,118,110,.09),transparent 58%),
+      radial-gradient(ellipse 60% 42% at 50% 100%,rgba(180,83,9,.07),transparent 62%);
+    background-repeat:no-repeat;background-attachment:fixed;color:var(--ink);
+    font-family:"Inter",system-ui,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:"Fraunces",serif;font-weight:500;margin:0}
-  .mono{font-family:"IBM Plex Mono",monospace}
+  h1,h2,h3{font-family:"Plus Jakarta Sans",system-ui,sans-serif;margin:0;letter-spacing:-.02em}
+  h2{font-weight:800}
+  h3{font-weight:700}
+  .mono{font-family:"JetBrains Mono",monospace}
   .wrap{max-width:1024px;margin:0 auto;padding:0 24px}
-  ::selection{background:rgba(140,47,57,.15);color:#16213e}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+  ::selection{background:rgba(67,56,202,.16);color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:4px}
 
   /* scroll reveal */
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out}
   .reveal.visible{opacity:1;transform:translateY(0)}
 
-  /* one-shot entrance keyframes */
   @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   .rise-in{animation:riseIn .7s cubic-bezier(.16,1,.3,1) both}
-  @keyframes drawLine{from{stroke-dashoffset:340}to{stroke-dashoffset:0}}
-  .draw-line{stroke-dasharray:340;animation:drawLine 1.6s ease-out forwards}
-  @keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
-  .pop-in{animation:popIn .5s ease-out both}
-  @keyframes softPulse{0%,100%{box-shadow:0 0 0 0 rgba(140,47,57,.4)}50%{box-shadow:0 0 0 6px rgba(140,47,57,0)}}
+  @keyframes softPulse{0%,100%{box-shadow:0 0 0 0 rgba(67,56,202,.45)}50%{box-shadow:0 0 0 6px rgba(67,56,202,0)}}
   .pulse-dot{animation:softPulse 2.6s ease-in-out infinite}
   @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(2%,3%)}}
-  .ambient-glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(110px);animation:drift 16s ease-in-out infinite}
+  .ambient-glow{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none;animation:drift 16s ease-in-out infinite}
   .ambient-glow.slow{animation:drift 22s ease-in-out infinite reverse}
-  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  }
+
+  .link-underline{position:relative}
+  .link-underline::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;border-radius:2px;background:currentColor;transition:width .25s ease}
+  .link-underline:hover::after{width:100%}
 
   /* scroll progress */
-  #scroll-progress{position:fixed;left:0;top:0;z-index:60;height:2px;width:100%;background:transparent}
-  #scroll-progress .bar{height:100%;width:0%;background:linear-gradient(90deg,var(--teal),var(--copper));transition:width .15s ease-out}
+  #scroll-progress{position:fixed;left:0;top:0;height:2px;width:100%;z-index:60}
+  #scroll-progress .bar{height:100%;width:0;background:linear-gradient(90deg,var(--brand),#6d28d9,var(--teal))}
 
   /* nav */
-  header{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.75);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
-  header .brand{font-family:"Fraunces",serif;font-size:18px;font-weight:500}
-  nav.links{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
-  nav.links a{font-size:12.5px;font-weight:500;color:var(--muted);position:relative;white-space:nowrap;transition:color .2s ease}
-  nav.links a:hover{color:var(--ink)}
-  nav.links a.active{color:var(--copper)}
-  @media(max-width:1024px){nav.links{display:none}}
+  header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(255,255,255,.85);backdrop-filter:blur(16px)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+  .brand{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:17px;letter-spacing:-.02em}
+  .brand span{color:var(--brand)}
+  .links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:2px}
+  .links a{padding:6px 10px;border-radius:8px;font-size:12.5px;font-weight:600;color:var(--muted);white-space:nowrap;transition:background .2s,color .2s}
+  .links a:hover{background:var(--deep);color:var(--ink)}
+  .links a.active{background:var(--brandSoft);color:var(--brand)}
+  @media(max-width:980px){.links{display:none}}
 
   /* hero */
-  #hero{position:relative;overflow:hidden;border-top:none;border-bottom:2px solid rgba(140,47,57,.5)}
-  #hero .scrollcue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:var(--faint);transition:color .2s ease}
-  #hero .scrollcue:hover{color:var(--copper)}
-  #hero .scrollcue svg{animation:bounce 1.6s infinite}
-  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-  @media(max-width:860px){#hero .scrollcue{display:none}}
-  #hero .glow-a{left:-96px;top:-128px;width:460px;height:460px;background:rgba(44,74,110,.10)}
-  #hero .glow-b{right:-128px;top:0;width:420px;height:420px;background:rgba(140,47,57,.09)}
-  #hero .glow-c{left:33%;bottom:0;width:320px;height:320px;background:rgba(22,33,62,.07)}
-  #hero .inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:112px 24px}
-  #hero .kicker{display:inline-flex;align-items:center;font-size:12px;color:var(--copper);margin-bottom:18px;border:1px solid var(--line);background:rgba(255,255,255,.6);backdrop-filter:blur(8px);border-radius:999px;padding:7px 16px}
-  #hero h1{font-size:56px;line-height:1.08;margin-top:20px}
-  #hero .name-a{color:var(--copper)}
-  #hero .name-b{background:linear-gradient(90deg,var(--teal),#7a5af8);-webkit-background-clip:text;background-clip:text;color:transparent}
-  #hero .role{max-width:60ch;font-size:20px;color:var(--muted);margin-top:16px}
-  .btn-row{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;height:44px;padding:0 20px;font-size:14px;font-weight:600;border-radius:2px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease}
-  .btn.primary{background:var(--copper);color:#fff}
-  .btn.primary:hover{transform:translateY(-2px);background:#6f252d;box-shadow:0 14px 30px -12px rgba(140,47,57,.45)}
-  .btn.outline{border:1px solid var(--lineStrong);color:var(--ink)}
-  .btn.outline:hover{transform:translateY(-2px);border-color:var(--copper);color:var(--copper)}
-  .soc{display:flex;gap:24px;margin-top:32px;font-size:12px;color:var(--muted)}
-  .soc a{position:relative}
-  .soc a:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
-  .soc a:hover:after{width:100%}
-  .soc a:hover{color:var(--ink)}
-  .mono-frame-wrap{position:relative;max-width:280px;margin:0 auto}
-  .mono-frame-wrap .offset{position:absolute;right:-16px;bottom:-16px;width:100%;aspect-ratio:1/1;border-radius:24px;border:2px solid rgba(140,47,57,.5)}
-  .mono-frame{position:relative;aspect-ratio:1/1;width:100%;overflow:hidden;border-radius:24px;border:2px solid var(--line);background:var(--panel);box-shadow:0 30px 60px -25px rgba(22,33,62,.16);transition:border-color .5s ease,box-shadow .5s ease}
-  .mono-frame:hover{border-color:rgba(44,74,110,.6);box-shadow:0 30px 60px -20px rgba(44,74,110,.35)}
-  .mono-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
-  .mono-frame:hover img{transform:scale(1.05)}
-  @media(min-width:861px){.mono-frame-wrap{max-width:none}}
-  @media(max-width:860px){#hero .inner{grid-template-columns:1fr;padding:64px 24px}#hero h1{font-size:38px}}
+  #hero{position:relative;overflow:hidden;background:var(--panel)}
+  #hero .inner{position:relative;max-width:1024px;margin:0 auto;padding:80px 24px;display:grid;gap:48px;grid-template-columns:1.15fr .85fr;align-items:center}
+  @media(max-width:860px){#hero .inner{grid-template-columns:1fr;padding:64px 24px}}
+  #hero .glow-a{left:-112px;top:-144px;width:480px;height:480px;background:rgba(67,56,202,.14)}
+  #hero .glow-b{right:-128px;top:0;width:440px;height:440px;background:rgba(15,118,110,.12)}
+  #hero .glow-c{bottom:0;left:33%;width:340px;height:340px;background:rgba(180,83,9,.09)}
+  .kicker{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(67,56,202,.25);background:var(--brandSoft);color:var(--brand);
+    border-radius:999px;padding:6px 16px;font-size:11.5px;font-weight:500;letter-spacing:.01em}
+  .kicker i{width:6px;height:6px;border-radius:50%;background:var(--brand);display:block}
+  #hero h1{margin-top:24px;font-size:64px;font-weight:800;line-height:1.02}
+  #hero h1 .first{display:block;color:var(--ink)}
+  #hero h1 .last{display:block;background:linear-gradient(90deg,var(--brand),#6d28d9,var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+  @media(max-width:860px){#hero h1{font-size:44px}}
+  .hero-role{margin:20px 0 0;max-width:68ch;font-size:19px;font-weight:500;color:rgba(13,20,36,.8)}
+  .hero-tag{margin:8px 0 0;max-width:68ch;font-size:15.5px;color:var(--muted)}
+  .cta{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;height:44px;padding:0 24px;border-radius:12px;font-size:14px;font-weight:700;transition:transform .2s,background .2s,box-shadow .2s,border-color .2s,color .2s}
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 14px 30px -14px rgba(67,56,202,.55)}
+  .btn-primary:hover{background:var(--brandDeep);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--lineStrong);background:var(--panel);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--brand);color:var(--brand);transform:translateY(-2px)}
+  .socials{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:12px;font-weight:500;color:var(--muted)}
+  .socials a:hover{color:var(--brand)}
+  .shot{position:relative;width:100%;max-width:280px;margin:0 auto}
+  @media(min-width:861px){.shot{max-width:none}}
+  .shot .back{position:absolute;right:-16px;bottom:-16px;width:100%;aspect-ratio:1;border-radius:28px;background:linear-gradient(135deg,rgba(67,56,202,.35),rgba(15,118,110,.35))}
+  .shot .frame{position:relative;width:100%;aspect-ratio:1;overflow:hidden;border-radius:28px;border:1px solid var(--line);background:var(--panel);box-shadow:0 30px 60px -24px rgba(13,20,36,.28)}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+  .shot:hover img{transform:scale(1.05)}
+
+  /* stats */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(244,246,251,.6)}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:40px 0}
+  @media(max-width:700px){.stats .grid{grid-template-columns:repeat(2,1fr)}}
+  .stat{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:24px 16px;text-align:center;
+    box-shadow:0 10px 30px -22px rgba(13,20,36,.35);transition:transform .3s,border-color .3s}
+  .stat:hover{transform:translateY(-4px)}
+  .stat .v{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:36px;letter-spacing:-.02em}
+  .stat .l{margin-top:6px;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
+  .stat.a-brand .v{color:var(--brand)} .stat.a-brand:hover{border-color:rgba(67,56,202,.5)}
+  .stat.a-teal .v{color:var(--teal)} .stat.a-teal:hover{border-color:rgba(15,118,110,.5)}
+  .stat.a-amber .v{color:var(--amber)} .stat.a-amber:hover{border-color:rgba(180,83,9,.5)}
 
   /* sections */
-  section{position:relative;overflow:hidden;border-top:2px solid var(--line)}
-  section.sec-copper{border-top-color:rgba(140,47,57,.5)}
-  section.sec-teal{border-top-color:rgba(44,74,110,.5)}
-  section.tint{background:rgba(255,255,255,.6)}
-  section .inner{position:relative;max-width:1024px;margin:0 auto;padding:88px 24px}
-  .sec-glow{position:absolute;left:-80px;top:-96px;width:288px;height:288px;border-radius:50%;pointer-events:none;filter:blur(100px);animation:drift 16s ease-in-out infinite}
-  .sec-glow.b{left:auto;right:-96px;top:auto;bottom:0;animation:drift 22s ease-in-out infinite reverse}
-  .corner{position:absolute;width:16px;height:16px;pointer-events:none;border-width:0;border-style:solid;border-color:rgba(140,47,57,.4)}
-  .sec-teal .corner{border-color:rgba(44,74,110,.4)}
-  .corner.tl{left:16px;top:16px;border-left-width:2px;border-top-width:2px}
-  .corner.tr{right:16px;top:16px;border-right-width:2px;border-top-width:2px}
-  .corner.bl{left:16px;bottom:16px;border-left-width:2px;border-bottom-width:2px}
-  .corner.br{right:16px;bottom:16px;border-right-width:2px;border-bottom-width:2px}
-  @media(max-width:860px){.corner{display:none}}
-  .stitle{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
-  .stitle .tick{width:32px;height:2px;background:var(--copper);flex:none}
-  .sec-teal .stitle .tick{background:var(--teal)}
-  .stitle h2{font-size:34px}
-  .lede{max-width:68ch;color:var(--muted);font-size:15px;margin-bottom:40px}
-  @media(max-width:860px){section .inner{padding:56px 22px}}
+  .sec{position:relative;overflow:hidden;scroll-margin-top:80px;background:rgba(244,246,251,.4)}
+  .sec.tint{background:var(--panel)}
+  .sec .wrap{position:relative;padding-top:64px;padding-bottom:64px}
+  @media(min-width:768px){.sec .wrap{padding-top:96px;padding-bottom:96px}}
+  .sec-rule{position:absolute;left:0;right:0;top:0;height:3px}
+  .sec .glow-a{left:-96px;top:-112px;width:320px;height:320px}
+  .sec .glow-b{right:-112px;bottom:0;width:320px;height:320px}
+  .sec-brand .sec-rule{background:linear-gradient(90deg,var(--brand),rgba(67,56,202,.35),transparent)}
+  .sec-brand .glow-a{background:rgba(67,56,202,.10)} .sec-brand .glow-b{background:rgba(15,118,110,.08)}
+  .sec-brand .num{color:var(--brand)} .sec-brand .tick{background:linear-gradient(90deg,var(--brand),var(--teal))}
+  .sec-teal .sec-rule{background:linear-gradient(90deg,var(--teal),rgba(15,118,110,.35),transparent)}
+  .sec-teal .glow-a{background:rgba(15,118,110,.10)} .sec-teal .glow-b{background:rgba(67,56,202,.08)}
+  .sec-teal .num{color:var(--teal)} .sec-teal .tick{background:linear-gradient(90deg,var(--teal),var(--brand))}
+  .sec-amber .sec-rule{background:linear-gradient(90deg,var(--amber),rgba(180,83,9,.35),transparent)}
+  .sec-amber .glow-a{background:rgba(180,83,9,.10)} .sec-amber .glow-b{background:rgba(67,56,202,.08)}
+  .sec-amber .num{color:var(--amber)} .sec-amber .tick{background:linear-gradient(90deg,var(--amber),var(--brand))}
+  .sec-head{margin-bottom:56px}
+  .sec-eyebrow{display:flex;align-items:center;gap:12px}
+  .sec-eyebrow .num{font-size:12px;font-weight:700;letter-spacing:.2em;font-variant-numeric:tabular-nums}
+  .sec-eyebrow .tick{height:2px;width:28px;border-radius:999px;display:block}
+  .sec-head h2{margin-top:12px;font-size:42px;line-height:1.1}
+  @media(max-width:700px){.sec-head h2{font-size:30px}}
+  .sec-intro{margin:16px 0 0;max-width:68ch;font-size:15px;color:var(--muted)}
 
   /* about */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
-  .about-grid p{max-width:68ch;font-size:15px;color:rgba(22,33,62,.9);margin:0 0 18px}
-  .facts{border-top:1px solid var(--line);padding-top:28px}
-  @media(min-width:861px){.facts{border-top:0;border-left:1px solid var(--line);padding-top:0;padding-left:32px}}
-  .fact-label{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.02em;color:var(--faint);text-transform:uppercase;margin-bottom:12px}
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{border:1px solid var(--line);border-radius:2px;padding:5px 10px;font-size:12.5px}
   @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+  .about-copy p{margin:0 0 16px;max-width:68ch;font-size:16px;line-height:1.75;color:rgba(13,20,36,.85)}
+  .areas{border:1px solid var(--line);border-radius:16px;background:rgba(244,246,251,.7);padding:24px}
+  .areas .lbl{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--faint)}
+  .areas .row{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .areas .row span{border-radius:999px;background:var(--panel);padding:6px 12px;font-size:12.5px;font-weight:600;
+    box-shadow:0 2px 8px -4px rgba(13,20,36,.3),0 0 0 1px var(--line)}
 
   /* timeline */
   .tl{position:relative;padding-left:32px}
-  .tl:before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
-  .titem{position:relative;margin-bottom:40px}
-  .titem:last-child{margin-bottom:0}
-  .titem .dot{position:absolute;left:-32px;top:6px;width:11px;height:11px;border-radius:50%;border:2px solid var(--teal);background:var(--deep)}
-  .titem.current .dot{border-color:var(--copper);background:var(--copper)}
-  .titem .status{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
-  .titem h3{font-size:22px;margin-top:6px}
-  .titem .org{margin-top:4px;font-size:14.5px;font-weight:500;color:rgba(22,33,62,.8)}
-  .titem .date{margin-top:6px;font-family:"IBM Plex Mono";font-size:12.5px;color:var(--faint)}
-  .titem ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
-  .titem ul li{margin:4px 0}
-  .titem .meta{margin:8px 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
+  .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .tl li{position:relative;list-style:none;margin-bottom:36px}
+  .tl ol{margin:0;padding:0}
+  .tl .dot{position:absolute;left:-32px;top:8px;width:12px;height:12px;border-radius:50%;border:2px solid var(--panel);background:var(--lineStrong)}
+  .tl .status{font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}
+  .tl h3{margin-top:8px;font-size:21px;line-height:1.3}
+  .tl .org{margin:4px 0 0;font-size:14.5px;font-weight:600;color:rgba(13,20,36,.75)}
+  .tl .date{margin:6px 0 0;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--faint)}
+  .tl .meta{margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .tl .meta li{list-style:none;margin:0;border-radius:6px;padding:4px 10px;font-size:12.5px;font-weight:600}
+  .tl .bullets{margin:12px 0 0;padding-left:18px;max-width:68ch;font-size:14.5px;color:var(--muted)}
+  .tl .bullets li{list-style:disc;margin-bottom:6px}
+  .tl-teal .status{color:var(--teal)} .tl-teal .meta li{background:var(--tealSoft);color:var(--teal)}
+  .tl-teal .dot.current{background:linear-gradient(90deg,var(--teal),var(--brand));border-color:var(--panel)}
 
-  /* research */
-  .pub{border-left:2px solid var(--teal);padding:4px 0 4px 24px;margin-bottom:28px}
-  .pub:nth-child(2){border-left-color:var(--copper)}
-  .pub .meta{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--muted)}
-  .pub h3{font-size:22px;margin-top:10px;line-height:1.3}
-  .pub p{font-size:15px;line-height:1.75;color:var(--muted);margin-top:12px}
-  .pub a{display:inline-block;margin-top:14px;font-size:13px;font-weight:600;color:var(--copper)}
+  /* cards */
+  .card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel);
+    box-shadow:0 12px 34px -26px rgba(13,20,36,.4);transition:transform .3s,border-color .3s,box-shadow .3s}
+  .card:hover{transform:translateY(-4px)}
+  .card .rail{position:absolute;left:0;top:0;bottom:0;width:4px}
+  .pad{padding:28px}
+  @media(max-width:600px){.pad{padding:22px}}
+  .badge{display:inline-block;border-radius:6px;padding:2px 8px;font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+  .b-brand{background:var(--brandSoft);color:var(--brand)} .b-teal{background:var(--tealSoft);color:var(--teal)} .b-amber{background:var(--amberSoft);color:var(--amber)}
+  .card h3{margin-top:12px;font-size:22px;line-height:1.3}
+  .card .venue{margin:8px 0 0;font-size:13px;font-weight:600;color:var(--muted)}
+  .card .summary{margin:12px 0 0;max-width:68ch;font-size:15px;line-height:1.7;color:var(--muted)}
+  .card .authors{margin:8px 0 0;font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--faint)}
+  .grouplbl{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--faint);margin:20px 0 0}
+  .chips{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip-tool{border-radius:6px;padding:4px 8px;font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500}
+  .chip-focus{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:500;color:var(--muted)}
+  .paperlink{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:13px;font-weight:700}
+  .stack{display:grid;gap:16px}
+  .subhead{display:flex;align-items:baseline;gap:12px;margin-bottom:24px}
+  .subhead h3{font-size:20px;font-weight:800}
+  .subhead .cap{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
 
-  /* ongoing research */
-  .ongoing{border-left:2px solid var(--copper);padding:4px 0 4px 24px;margin-bottom:28px}
-  .ongoing .status{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
-  .ongoing h3{font-size:22px;margin-top:10px;line-height:1.3}
-  .ongoing p{font-size:15px;line-height:1.75;color:var(--muted);margin-top:12px}
-  .ongoing .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .ongoing .tag{background:var(--copperSoft);color:var(--copper);border:none;font-family:"IBM Plex Mono";font-size:11px}
-  .rgroup{margin-bottom:56px}
-  .rgroup:last-of-type{margin-bottom:0}
-  .rghead{display:flex;align-items:baseline;gap:12px;margin-bottom:28px;flex-wrap:wrap}
-  .rghead h3{font-family:"Fraunces",serif;font-size:22px;font-weight:500;color:var(--ink)}
-  .rghead .cap{font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint)}
-  .ongoing{margin-bottom:40px}
-  .ongoing:last-child{margin-bottom:0}
-  .ongoing.submitted{border-left-color:var(--teal)}
-  .ongoing.submitted .status{color:var(--teal)}
-  .ongoing.submitted .tag{background:var(--tealSoft);color:var(--teal)}
-  .ongoing .authors{font-family:"IBM Plex Mono";font-size:12px;color:var(--faint);margin-top:8px}
-  .ongoing .flabel{font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint);margin-top:16px}
-  .ongoing .focus{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-  .ongoing .focus .fchip{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;color:var(--muted)}
-
-  /* projects */
-  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .pcard{border:1px solid var(--line);border-top:2px solid rgba(140,47,57,.6);display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-  .pcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(140,47,57,.35)}
-  .pmedia{aspect-ratio:16/9;border-bottom:1px solid var(--line);overflow:hidden;background:#f2efe6}
-  .pmedia svg{display:block;width:100%;height:100%}
-  .pmedia img{transition:transform .5s ease}
-  .pcard:hover .pmedia img{transform:scale(1.05)}
-  .pcard .pbody{padding:24px;display:flex;flex-direction:column;flex:1}
-  .pcard h3{font-size:18px}
-  .pcard p{flex:1;font-size:14px;color:var(--muted);margin:12px 0 0}
-  .pcard .tags{margin-top:18px}
-  .pcard .tag{background:var(--copperSoft);color:var(--copper);border:none;font-family:"IBM Plex Mono";font-size:11px}
-  @media(max-width:860px){.pgrid{grid-template-columns:1fr}}
-
-  /* data & ml projects (icon-badge cards, no images) */
-  .mlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .dscard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(140,47,57,.6);background:rgba(255,255,255,.8);backdrop-filter:blur(8px);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease}
-  .dscard:hover{transform:translateY(-6px) scale(1.01);border-color:rgba(140,47,57,.5);background:rgba(255,255,255,.5);box-shadow:0 20px 44px -22px rgba(140,47,57,.4)}
-  .dscard a.dslink-main{display:flex;flex:1;flex-direction:column;padding:20px;color:inherit}
-  .dsbadgerow{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .dsbadge{display:flex;flex:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--copperSoft);color:var(--copper);transition:transform .3s ease}
-  .dscard:hover .dsbadge{transform:scale(1.1)}
-  .dsrel{font-family:"IBM Plex Mono";font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;color:var(--copper)}
-  .dsrel .idx-dot{color:var(--faint)}
-  .dsrepo{margin-top:14px;font-size:15px;font-weight:600;line-height:1.35;color:var(--ink)}
-  .dsdesc{margin-top:8px;flex:1;font-size:13.5px;line-height:1.5;color:var(--muted)}
-  .dstags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-  .dstag{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-family:"IBM Plex Mono";font-size:10.5px;color:var(--muted)}
-  .dsfoot{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding:16px}
-  .dsfootbtn{flex:1;border-radius:8px;padding:8px 0;text-align:center;font-size:12.5px;font-weight:600;transition:background .2s ease,border-color .2s ease,color .2s ease}
-  .dsfootbtn.primary{background:var(--copper);color:#fff}
-  .dsfootbtn.primary:hover{background:#6f252d}
-  .dsfootbtn.outline{border:1px solid var(--line);color:var(--ink)}
-  .dsfootbtn.outline:hover{border-color:var(--copper);color:var(--copper)}
-
-  .statsbar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.8)}
-  .statsgrid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:40px 24px}
-  @media(min-width:768px){.statsgrid{grid-template-columns:1fr 1fr 1fr 1fr;padding:40px}}
-  .statbox{border:1px solid var(--line);border-radius:12px;background:rgba(250,248,243,1);backdrop-filter:blur(8px);padding:20px 16px;text-align:center;transition:transform .3s ease,border-color .3s ease}
-  .statbox:hover{transform:translateY(-4px);border-color:rgba(140,47,57,.5)}
-  .statval{font-family:"Fraunces",serif;font-size:26px;font-weight:600;color:var(--ink)}
-  @media(min-width:768px){.statval{font-size:30px}}
-  .statlabel{margin-top:6px;font-family:"IBM Plex Mono";font-size:10.5px;text-transform:uppercase;letter-spacing:.02em;color:var(--faint)}
-  @media(max-width:1100px){.mlgrid{grid-template-columns:1fr 1fr}}
-  @media(max-width:860px){.mlgrid{grid-template-columns:1fr}}
-
-  /* data & ml projects — dashboard section keeps the original image-card look */
-  .mlcard{display:flex;flex-direction:column;border:1px solid var(--line);border-top:2px solid rgba(44,74,110,.6);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-  .mlcard:hover{transform:translateY(-6px) scale(1.01);border-color:var(--lineStrong);box-shadow:0 24px 50px -22px rgba(44,74,110,.35)}
-  .mlcard a.mllink-main{display:block;color:inherit}
-  .mlimg{aspect-ratio:1200/630;overflow:hidden;border-bottom:1px solid var(--line);background:var(--panel)}
-  .mlimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
-  .mlcard:hover .mlimg img{transform:scale(1.05)}
-  .mlbody{padding:24px 24px 0}
-  .mlrepo{font-family:"IBM Plex Mono";font-size:12px;color:rgba(22,33,62,.8)}
-  .mlrel{margin-top:8px;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--teal)}
-  .mldesc{margin-top:12px;font-size:14px;color:var(--muted)}
-  .mltags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-  .mltag{border:1px solid var(--line);border-radius:2px;padding:4px 8px;font-family:"IBM Plex Mono";font-size:11px;color:var(--muted)}
-  .mlfoot{display:flex;flex-wrap:wrap;align-items:center;gap:20px;padding:20px 24px 24px}
-  .mllink{display:inline-block;font-size:13px;font-weight:600;color:var(--teal);position:relative}
-  .mllink.demo{color:var(--copper)}
-  .mllink:after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:currentColor;transition:width .25s ease}
-  .mllink:hover:after{width:100%}
-
-  /* dashboard */
-  .dashgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .dashcard{border-top-color:rgba(140,47,57,.6)}
-  .dashcard:hover{box-shadow:0 24px 50px -22px rgba(140,47,57,.35)}
-  @media(max-width:1100px){.dashgrid{grid-template-columns:1fr 1fr}}
-  @media(max-width:860px){.dashgrid{grid-template-columns:1fr}}
+  /* grids of project cards */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.grid3,.grid2{grid-template-columns:1fr}}
+  .pcard{display:flex;flex-direction:column;height:100%}
+  .pcard .body{display:flex;flex-direction:column;flex:1;padding:20px}
+  .pcard .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .pcard .ico{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--brandSoft);color:var(--brand);font-size:17px}
+  .pcard .rel{font-family:"JetBrains Mono",monospace;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);text-align:right}
+  .pcard h3{margin-top:16px;font-size:15.5px;font-weight:800;line-height:1.35;text-transform:capitalize}
+  .pcard p{margin:8px 0 0;flex:1;font-size:13.5px;line-height:1.6;color:var(--muted)}
+  .pcard .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+  .pcard .tags span{border-radius:6px;background:var(--deep);padding:4px 8px;font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:500;color:var(--muted)}
+  .pcard .foot{display:flex;align-items:center;gap:8px;border-top:1px solid var(--line);padding:16px}
+  .pcard .foot a{flex:1;border-radius:8px;padding:8px 0;text-align:center;font-size:12.5px;font-weight:700;transition:background .2s,border-color .2s,color .2s}
+  .fill-brand{background:var(--brand);color:#fff} .fill-brand:hover{background:var(--brandDeep)}
+  .fill-teal{background:var(--teal);color:#fff} .fill-teal:hover{background:var(--tealDeep)}
+  .out{border:1px solid var(--line);color:var(--ink)}
+  .sec-brand .out:hover{border-color:var(--brand);color:var(--brand)}
+  .sec-teal .out:hover{border-color:var(--teal);color:var(--teal)}
+  .shotwrap{width:100%;overflow:hidden;border-bottom:1px solid var(--line);background:var(--deep)}
+  .shotwrap img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .pcard:hover .shotwrap img{transform:scale(1.05)}
+  .ratio-og{aspect-ratio:1200/630} .ratio-wide{aspect-ratio:16/9}
+  .dcard .rel{text-align:left;font-size:10px;color:var(--teal)}
+  .sec-teal .pcard .ico{background:var(--tealSoft);color:var(--teal)}
+  .sec-amber .pcard .ico{background:var(--amberSoft);color:var(--amber)}
+  .sec-brand .card:hover{border-color:rgba(67,56,202,.5)}
+  .sec-teal .card:hover{border-color:rgba(15,118,110,.5)}
+  .sec-amber .card:hover{border-color:rgba(180,83,9,.5)}
 
   /* skills */
-  .skillswrap{position:relative}
-  .skillswrap .ambient-glow{width:256px;height:256px;left:-64px;top:-64px;background:rgba(140,47,57,.05)}
-  .skillswrap .ambient-glow.slow{left:auto;right:-64px;top:auto;bottom:0;background:rgba(44,74,110,.05)}
-  .skillcard{position:relative;display:grid;grid-template-columns:1fr;gap:16px}
-  @media(min-width:640px){.skillcard{grid-template-columns:1fr 1fr}}
-  @media(min-width:1024px){.skillcard{grid-template-columns:1fr 1fr 1fr}}
-  .sgroup{display:flex;flex-direction:column;border:1px solid var(--line);background:rgba(255,255,255,.8);backdrop-filter:blur(20px);border-radius:16px;padding:24px;transition:transform .3s ease,border-color .3s ease,background .3s ease,box-shadow .3s ease}
-  .sgroup:hover{transform:translateY(-4px);border-color:rgba(44,74,110,.5);background:rgba(255,255,255,.6);box-shadow:0 20px 44px -24px rgba(44,74,110,.4)}
-  .sgroup .label{font-size:14.5px;font-weight:600;color:var(--ink)}
-  .sgroup .desc{margin-top:8px;font-size:13px;line-height:1.5;color:var(--muted)}
-  .sgroup .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
-  .sgroup .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;background:rgba(250,248,243,1);backdrop-filter:blur(8px);padding:6px 12px;font-size:12.5px;font-weight:500;color:var(--muted);transition:transform .2s ease,border-color .2s ease,color .2s ease,box-shadow .2s ease}
-  .sgroup .tag:hover{transform:translateY(-2px) scale(1.05);border-color:var(--copper);color:var(--ink);box-shadow:0 10px 24px -14px rgba(140,47,57,.4)}
-  .sgroup .tag svg{flex:none;color:var(--copper)}
+  .skillcard{display:flex;flex-direction:column;height:100%;padding:20px}
+  .skillcard .lbl{font-family:"Plus Jakarta Sans",sans-serif;font-size:15px;font-weight:800;letter-spacing:-.01em}
+  .skillcard .row{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+  .skillcard .row span{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;
+    background:rgba(244,246,251,.7);padding:6px 10px;font-size:12.5px;font-weight:600;color:var(--muted);transition:transform .2s,border-color .2s,color .2s}
+  .skillcard .row span:hover{transform:translateY(-2px);border-color:rgba(180,83,9,.5);color:var(--ink)}
+  .skillcard .row span svg{width:13px;height:13px;flex:none;color:var(--amber)}
+  .pcard .ico svg{width:19px;height:19px}
+
+  /* academic project cards */
+  .acard h3{margin:0;font-size:17px;font-weight:800;line-height:1.35}
+  .acard p{margin:10px 0 0;flex:1;font-size:14px;line-height:1.6;color:var(--muted)}
+  .acard .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+  .acard .tags span{border-radius:6px;background:var(--amberSoft);padding:4px 8px;font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:500;color:var(--amber)}
 
   /* contact */
-  .cgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px}
-  .cgrid h3{max-width:60ch;font-size:26px;line-height:1.3}
-  .cgrid > div:first-child > p{max-width:60ch;font-size:14.5px;color:var(--muted);margin-top:16px}
-  .dl{margin-top:32px}
-  .drow{display:flex;gap:16px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px}
-  .drow .dt{width:80px;flex:none;font-family:"IBM Plex Mono";font-size:11px;text-transform:uppercase;color:var(--faint)}
-  .drow .dd{font-size:14.5px;font-weight:500}
-  .actions{display:flex;flex-direction:column;border:1px solid var(--line)}
-  .actions a{display:flex;justify-content:space-between;padding:16px 20px;font-size:14px;font-weight:500;border-bottom:1px solid var(--line);transition:background .2s ease}
-  .actions a span{transition:transform .2s ease}
+  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+  .contact-grid h3{max-width:68ch;font-size:26px;font-weight:800;line-height:1.3}
+  .dl{margin-top:28px}
+  .dl .row{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:12px}
+  .dl dt{width:80px;flex:none;font-family:"JetBrains Mono",monospace;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--faint)}
+  .dl dd{margin:0;font-size:14.5px;font-weight:600}
+  .dl dd a:hover{color:var(--brand)}
+  .actions{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:0 12px 34px -26px rgba(13,20,36,.4)}
+  .actions a{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;font-size:14px;font-weight:700;border-bottom:1px solid var(--line);transition:background .2s,color .2s}
+  .actions a:last-child{border-bottom:none}
+  .actions a.primary{background:var(--brand);color:#fff}
+  .actions a.primary:hover{background:var(--brandDeep)}
+  .actions a:not(.primary):hover{background:var(--deep);color:var(--brand)}
+  .actions a span{transition:transform .2s}
   .actions a:hover span{transform:translateX(4px)}
-  .actions a:last-child{border-bottom:0}
-  .actions a:first-child{background:var(--copper);color:#fff}
-  .actions a:first-child:hover{background:#6f252d}
-  .actions a:not(:first-child):hover{background:var(--panel)}
-  @media(max-width:860px){.cgrid{grid-template-columns:1fr}}
 
-  footer{border-top:1px solid var(--line)}
+  footer{border-top:1px solid var(--line);background:var(--panel)}
   footer .wrap{display:flex;justify-content:space-between;padding:32px 24px;font-size:12.5px;color:var(--faint)}
+  footer .wrap strong{color:var(--ink)}
   @media(max-width:600px){footer .wrap{flex-direction:column;gap:8px;text-align:center}}
 </style>
 </head>
 <body>
   <div id="scroll-progress"><div class="bar"></div></div>
+
   <header>
     <div class="wrap">
-      <a href="#hero" class="brand">Tushy Tasnim</a>
+      <a href="#hero" class="brand">Tushy Tasnim<span>.</span></a>
       <nav class="links">
         <a href="#about">About</a>
         <a href="#education">Education</a>
@@ -307,551 +285,451 @@
     <div class="ambient-glow glow-c"></div>
     <div class="inner">
       <div>
-        <span class="kicker mono rise-in" style="animation-delay:0ms">Seeking Fall admission — MS / PhD, Industrial Engineering</span>
-        <h1 class="rise-in" style="animation-delay:90ms"><span class="name-a">Tushy</span> <span class="name-b">Tasnim</span></h1>
-        <p class="role rise-in" style="animation-delay:180ms">Industrial &amp; Production Engineering Graduate. Researching supply chain analytics, smart manufacturing, and sustainable operations.</p>
-        <div class="btn-row rise-in" style="animation-delay:270ms">
-          <a class="btn primary" href="#contact">Contact me</a>
+        <span class="kicker mono rise-in" style="animation-delay:0ms"><i></i>Seeking Fall admission — MS / PhD, Industrial Engineering</span>
+        <h1 class="rise-in" style="animation-delay:90ms"><span class="first">Tushy</span><span class="last">Tasnim</span></h1>
+        <p class="hero-role rise-in" style="animation-delay:180ms">Industrial &amp; Production Engineering Graduate</p>
+        <p class="hero-tag rise-in" style="animation-delay:200ms">Researching supply chain analytics, smart manufacturing, and sustainable operations.</p>
+        <div class="cta rise-in" style="animation-delay:270ms">
+          <a class="btn btn-primary" href="#contact">Contact me</a>
+          <a class="btn btn-ghost" href="#research">View research</a>
         </div>
-        <div class="soc mono rise-in" style="animation-delay:340ms">
-          <a href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="socials mono rise-in" style="animation-delay:340ms">
+          <a class="link-underline" href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="link-underline" href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="link-underline" href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
-      <div class="mono-frame-wrap rise-in" style="animation-delay:200ms">
-        <div class="offset"></div>
-        <div class="mono-frame">
-          <img src="public/images/headshot.jpeg" alt="Tushy Tasnim" loading="eager">
-        </div>
+      <div class="shot rise-in" style="animation-delay:200ms">
+        <div class="back"></div>
+        <div class="frame"><img src="public/images/headshot.jpeg" alt="Tushy Tasnim"></div>
       </div>
     </div>
-    <a class="scrollcue" href="#about" aria-label="Scroll to About section">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    </a>
   </section>
 
-  <div class="statsbar">
-    <div class="statsgrid">
-      <div class="statbox reveal"><p class="statval">12+</p><p class="statlabel">GitHub Projects</p></div>
-      <div class="statbox reveal" style="transition-delay:.08s"><p class="statval">3</p><p class="statlabel">Dashboards Built</p></div>
-      <div class="statbox reveal" style="transition-delay:.16s"><p class="statval">24+</p><p class="statlabel">Tools &amp; Technologies</p></div>
-      <div class="statbox reveal" style="transition-delay:.24s"><p class="statval">2</p><p class="statlabel">Publications</p></div>
-    </div>
+  <div class="stats">
+    <div class="wrap"><div class="grid">
+      <div class="stat a-brand reveal"><p class="v">12+</p><p class="l">GitHub Projects</p></div>
+      <div class="stat a-teal reveal"><p class="v">3</p><p class="l">Dashboards Built</p></div>
+      <div class="stat a-amber reveal"><p class="v">24+</p><p class="l">Tools &amp; Technologies</p></div>
+      <div class="stat a-brand reveal"><p class="v">2</p><p class="l">Publications</p></div>
+    </div></div>
   </div>
 
-  <section id="about" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>About</h2></div>
-      <div class="about-grid">
-        <div class="reveal">
-          <p>I am an Industrial and Production Engineering graduate from Shahjalal University of Science and Technology, Bangladesh. My academic and research interests lie at the intersection of supply chain analytics, smart manufacturing, operations research, sustainable operations, and data-driven decision-making.</p>
-          <p>I have research experience in Industry 4.0 technology adoption, PLS-SEM, ISM-MICMAC, linear programming, simulation, and analytical reporting. I am particularly interested in how emerging technologies, analytics, and optimization methods can improve industrial systems, supply chain performance, and sustainable operations.</p>
-        </div>
-        <div class="facts reveal" style="transition-delay:.1s">
-          <div class="fact-label">Research areas</div>
-          <div class="tags">
-            <span class="tag">Industry 4.0</span><span class="tag">Smart Manufacturing</span><span class="tag">Supply Chain Analytics</span>
-            <span class="tag">Operations Research</span><span class="tag">Sustainable Operations</span><span class="tag">AI/Data-driven Industrial Systems</span><span class="tag">Digital Twin</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Education</h2></div>
-      <div class="tl">
-        <div class="titem current reveal">
-          <span class="dot pulse-dot"></span>
-          <p class="status">Graduated</p>
-          <h3>BSc in Industrial &amp; Production Engineering</h3>
-          <p class="org">Shahjalal University of Science and Technology, Bangladesh</p>
-          <p class="date">CGPA: 3.68 / 4.00</p>
-          <ul class="meta"><li><b>Merit Position:</b> 5th out of 71</li><li><b>IELTS:</b> 7.0</li></ul>
-        </div>
-        <div class="titem reveal" style="transition-delay:.11s">
-          <span class="dot"></span>
-          <p class="status">Graduate Applicant</p>
-          <h3>Prospective MS / PhD Student</h3>
-          <p class="org">Industrial Engineering — Supply Chain Analytics, Smart Manufacturing, Sustainable Operations</p>
-          <p class="date">Seeking Fall admission opportunities</p>
-          <ul class="meta"><li><b>Research fit:</b> data-driven industrial systems, optimization, and sustainable operations.</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="research" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Research &amp; Publications</h2></div>
-      <article class="pub reveal">
-        <p class="meta">Journal · December 2025 · Journal of Open Innovation: Technology, Market &amp; Complexity [Q1]</p>
-        <h3>Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh</h3>
-        <p>Studied Industry 4.0 adoption in Bangladesh's food processing sector and identified technology capability, information sharing, organizational performance, business growth, and insufficient capital as a critical driving barrier.</p>
-        <a href="https://doi.org/10.1016/j.joitmc.2025.100674" target="_blank" rel="noreferrer">Read the paper</a>
-      </article>
-      <article class="pub reveal" style="transition-delay:.11s">
-        <p class="meta">Conference · December 2021 · IMEOM 2022, Dhaka</p>
-        <h3>Development of a Linear Programming Model for the Diet Plan of University Students</h3>
-        <p>Developed a nutrition optimization model using linear programming and the simplex method, showing protein intake gaps and improved cost allocation toward protein-rich food items.</p>
-        <a href="https://doi.org/10.46254/BD05.20220175" target="_blank" rel="noreferrer">Read the paper</a>
-      </article>
-    </div>
-  </section>
-
-  <section id="ongoing-research" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Ongoing &amp; Submitted Research</h2></div>
-      <div class="rgroup">
-        <div class="rghead reveal"><h3>Submitted</h3><span class="cap">Under review &middot; 2</span></div>
-        <article class="ongoing submitted reveal">
-          <p class="status">Submitted</p>
-          <h3>Calibrate, Certify, or Learn? Deciding When a Language Model Should Defer to a Human</h3>
-          <p class="authors">Tushy Tasnim, Rifat Faruk Zitu</p>
-          <p>This research investigates how large language models can improve decision reliability by determining when to answer independently and when to defer to human review. It combines Bayesian uncertainty estimation, conformal risk control, and value-of-information strategies to evaluate the trade-offs between accuracy, risk, and review costs.</p>
-          <p class="flabel">Tools &amp; Technologies</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Qwen2.5-Instruct (7B / 1.5B)</span><span class="tag">vLLM</span><span class="tag">GPTQ 4-bit quantization</span><span class="tag">Bayesian Logistic Regression</span><span class="tag">Conformal Risk Control</span><span class="tag">TruthfulQA</span><span class="tag">GSM8K</span></div>
-          <p class="flabel">Key Focus</p>
-          <div class="focus"><span class="fchip">LLM reliability</span><span class="fchip">Uncertainty calibration</span><span class="fchip">Human&ndash;AI collaboration</span><span class="fchip">Risk-aware decision-making</span></div>
-        </article>
-        <article class="ongoing submitted reveal">
-          <p class="status">Submitted</p>
-          <h3>Uncertainty-Aware Preferential Bayesian Optimization under Noisy Human Preferences: A Controlled Test of Ambiguity-Seeking Acquisition</h3>
-          <p class="authors">Rifat Faruk Zitu, Tushy Tasnim</p>
-          <p>This research evaluates whether incorporating uncertainty about preference rankings can improve Bayesian optimization when human preference feedback contains noise. It introduces Uncertainty-Aware Expected Utility of the Best Option (UA-EUBO), which combines expected utility with an ambiguity bonus. The approach is tested against standard EUBO using synthetic optimization benchmarks and the UT-Zappos50K shoe-preference dataset. Results show that the proposed method does not provide consistent improvements, highlighting when ambiguity-aware query selection may offer limited benefits.</p>
-          <p class="flabel">Tools &amp; Technologies</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">BoTorch 0.18.1</span><span class="tag">Pairwise Gaussian Process (PairwiseGP)</span><span class="tag">Bayesian Optimization</span><span class="tag">Gaussian Process Preference Learning</span><span class="tag">Principal Component Analysis (PCA)</span><span class="tag">UT-Zappos50K</span></div>
-          <p class="flabel">Key Focus</p>
-          <div class="focus"><span class="fchip">Preferential Bayesian optimization</span><span class="fchip">Uncertainty-aware decision-making</span><span class="fchip">Noisy human feedback</span><span class="fchip">Active learning</span><span class="fchip">Experimental evaluation</span></div>
-        </article>
-      </div>
-      <div class="rgroup">
-        <div class="rghead reveal"><h3>Ongoing</h3><span class="cap">In progress &middot; 3</span></div>
-        <article class="ongoing reveal">
-          <p class="status">Ongoing</p>
-          <h3>Bottleneck Forecasting Under a Stricter Evaluation: A Leakage-Controlled, Rolling-Origin Comparison of Statistical and Machine Learning Models</h3>
-          <p class="authors">Rifat Faruk Zitu, Tushy Tasnim</p>
-          <p>This study compares statistical and machine learning models for forecasting bottlenecks in a simulated five-station steel production line. Using public energy-consumption data from a South Korean steel plant, it evaluates six forecasting approaches across 25 rolling weekly origins and four forecast horizons. Recursive XGBoost achieved the lowest mean scaled error at every horizon, although statistically significant improvements over the best classical model occurred only at the 4-hour and 10-day horizons. The study also evaluates prediction-interval coverage and high-utilization alerts, demonstrating that machine learning advantages depend on the forecasting horizon and evaluation criteria.</p>
-          <p class="flabel">Tools &amp; Technologies</p>
-          <div class="tags"><span class="tag">Discrete-Event Simulation</span><span class="tag">Python</span><span class="tag">ARIMA</span><span class="tag">SARIMA</span><span class="tag">Hybrid SARIMA</span><span class="tag">XGBoost</span><span class="tag">Recursive XGBoost</span><span class="tag">Split-Conformal Prediction</span><span class="tag">Diebold&ndash;Mariano Tests</span><span class="tag">Holm Correction</span></div>
-          <p class="flabel">Key Focus</p>
-          <div class="focus"><span class="fchip">Manufacturing bottleneck prediction</span><span class="fchip">Production-system simulation</span><span class="fchip">Time-series forecasting</span><span class="fchip">Machine learning evaluation</span><span class="fchip">Uncertainty quantification</span><span class="fchip">Industrial process monitoring</span></div>
-        </article>
-        <article class="ongoing reveal">
-          <p class="status">Ongoing</p>
-          <h3>A Two-Stage Experimental Framework for Industrial Defect Detection and Inspection Decisions Using Classical Machine Learning and Q-Learning</h3>
-          <p class="authors">Tushy Tasnim, Rifat Faruk Zitu</p>
-          <p>This study develops a two-stage framework that combines industrial defect detection with cost-sensitive inspection decision-making. In the first stage, handcrafted colour, texture, and shape features are combined with an Isolation Forest trained on normal bottle images from the MVTec Anomaly Detection Dataset, achieving a ROC-AUC of 0.947. In the second stage, tabular Q-learning converts anomaly scores into inspection decisions: Accept, Reject, or Human Review. Compared with a fixed-threshold strategy, the learned policy increased average reward from 0.143 to 0.405 and reduced missed defects from three to zero, while highlighting trade-offs involving false rejections and human-review costs.</p>
-          <p class="flabel">Tools &amp; Technologies</p>
-          <div class="tags"><span class="tag">Isolation Forest</span><span class="tag">Handcrafted Feature Engineering (Colour, Texture, Shape)</span><span class="tag">Tabular Q-Learning</span><span class="tag">Reinforcement Learning</span><span class="tag">MVTec Anomaly Detection Dataset</span><span class="tag">Cost-Sensitive Decision-Making</span></div>
-          <p class="flabel">Key Focus</p>
-          <div class="focus"><span class="fchip">Industrial defect detection</span><span class="fchip">Manufacturing quality control</span><span class="fchip">Anomaly detection</span><span class="fchip">Reinforcement learning</span><span class="fchip">Automated inspection</span><span class="fchip">Human-in-the-loop decision systems</span></div>
-        </article>
-        <article class="ongoing reveal">
-          <p class="status">Ongoing</p>
-          <h3>Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh&rsquo;s Ready-Made Garment Industry: A Fuzzy DEMATEL Approach</h3>
-          <p>Developing a fuzzy DEMATEL model in Python to identify causal relationships among digital-twin readiness factors and prioritize adoption barriers in Bangladesh&rsquo;s ready-made garment sector.</p>
-          <p class="flabel">Tools &amp; Technologies</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Fuzzy DEMATEL</span><span class="tag">Digital Twin</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Work Experience</h2></div>
-      <div class="tl">
-        <div class="titem current reveal">
-          <span class="dot pulse-dot"></span>
-          <p class="status">Operations</p>
-          <h3>Associate Operations Engineer</h3>
-          <p class="org">Algorizin Inc.</p>
-          <p class="date">Jan 2023 – Nov 2024 · Remote</p>
-          <ul>
-            <li>Conducted data-driven process analysis to redesign workflows and reduce process cycle time by 70%.</li>
-            <li>Developed an automated expense tracking system, improving data accuracy, transparency, and reporting efficiency.</li>
-            <li>Analyzed operational and performance datasets to identify trends and support evidence-based decision-making.</li>
-            <li>Prepared analytical reports and presentations by converting complex data into actionable insights.</li>
-            <li>Coordinated cross-functional teams to implement process improvement initiatives and ensure timely project delivery.</li>
-          </ul>
-        </div>
-        <div class="titem reveal" style="transition-delay:.11s">
-          <span class="dot"></span>
-          <p class="status">Industrial Attachment</p>
-          <h3>Training Institute for Chemical Industries</h3>
-          <p class="date">Dec 2023</p>
-          <ul><li>Gained practical understanding of mechanical engineering principles in a manufacturing facility.</li></ul>
-        </div>
-        <div class="titem reveal" style="transition-delay:.22s">
-          <span class="dot"></span>
-          <p class="status">Industrial Attachment</p>
-          <h3>Bangladesh Industrial Technical Assistance Centre</h3>
-          <p class="date">Jan 2023</p>
-          <ul><li>Acquired practical skills in process improvement, product testing, and data analysis.</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="tint sec-teal">
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Technical Skills</h2></div>
-      <p class="lede reveal">Tools and methods I use across data analysis, research, and industrial systems work — from statistical modeling to dashboards to simulation.</p>
-      <div class="skillswrap">
-        <div class="ambient-glow"></div>
-        <div class="ambient-glow slow"></div>
-        <div class="skillcard">
-          <div class="sgroup reveal"><div class="label">Data Analysis</div><div class="desc">Turning raw datasets into decision-ready insight with BI and statistical tooling.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>MS Excel</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>Google Sheets</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Power BI</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>SmartPLS</span>
-          </div></div>
-          <div class="sgroup reveal" style="transition-delay:.06s"><div class="label">Research Methods</div><div class="desc">Modeling causal structure and decision systems for industrial and academic research.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>PLS-SEM</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>ISM-MICMAC</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg>Linear Programming</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Simulation</span>
-          </div></div>
-          <div class="sgroup reveal" style="transition-delay:.12s"><div class="label">Programming</div><div class="desc">Core languages for data pipelines, modeling, and applied problem solving.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>Python</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>C Language</span>
-          </div></div>
-          <div class="sgroup reveal" style="transition-delay:.15s"><div class="label">Python Libraries</div><div class="desc">The Python data-science stack I use for analysis, modeling, and visualization.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>NumPy</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Pandas</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>scikit-learn</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>Matplotlib</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>Seaborn</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Gurobipy</span>
-          </div></div>
-          <div class="sgroup reveal" style="transition-delay:.18s"><div class="label">Web Development</div><div class="desc">Building and shipping sites and landing pages without a heavy dev stack.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>WordPress</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>Webflow</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Squarespace</span>
-          </div></div>
-          <div class="sgroup reveal" style="transition-delay:.24s"><div class="label">Automation Tools</div><div class="desc">Connecting apps and automating repetitive workflows end to end.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg>Zapier</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>Pabbly Connect</span>
-          </div></div>
-          <div class="sgroup reveal" style="transition-delay:.3s"><div class="label">Simulation &amp; Drafting</div><div class="desc">Modeling systems and drafting technical designs for industrial engineering work.</div><div class="tags">
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>Arena</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>AutoCAD</span>
-            <span class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>Adobe Illustrator</span>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ml-projects" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Projects</h2></div>
-      <p class="lede reveal">Applied data science, machine learning, and simulation projects I&rsquo;ve built end to end — digital twins, production and routing simulation, predictive maintenance, demand forecasting, and NLP. All published on my GitHub.</p>
-      <div class="mlgrid">
-        <article class="dscard reveal">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg></span>
-              <span class="dsrel">01 <span class="idx-dot">&middot;</span> Digital Twin</span>
-            </div>
-            <p class="dsrepo">production line digital twin</p>
-            <p class="dsdesc">A discrete-event digital twin of a four-station production line (cutting, welding, painting, inspection) that simulates machine wear, breakdowns, and sensor streams, computes OEE and MTBF/MTTR, tests six improvement scenarios, and trains an ML model to predict failures 30 minutes ahead.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">SimPy</span><span class="dstag">Predictive Maintenance</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.06s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
-              <span class="dsrel">02 <span class="idx-dot">&middot;</span> Simulation</span>
-            </div>
-            <p class="dsrepo">lean green sewing line</p>
-            <p class="dsdesc">A SimPy simulation of a ten-operation T-shirt sewing line measuring how takt-based line balancing (lean) and servo motors (green) affect output, WIP, lead time, and CO&#8322; per garment, reported over 30 replications with confidence intervals.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">SimPy</span><span class="dstag">Sustainability</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.12s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>
-              <span class="dsrel">03 <span class="idx-dot">&middot;</span> Supply Chain Analytics</span>
-            </div>
-            <p class="dsrepo">last mile delivery</p>
-            <p class="dsdesc">An emissions-aware vehicle routing study for two Bangladeshi cities, solving the same capacitated VRP for minimum distance and for modelled CO&#8322; (payload, speed, and gradient effects) to quantify the trade-off between the two objectives.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">Vehicle Routing</span><span class="dstag">Optimization</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.18s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
-              <span class="dsrel">04 <span class="idx-dot">&middot;</span> Predictive Maintenance</span>
-            </div>
-            <p class="dsrepo">XGBoost Based Predictive Maintenance System</p>
-            <p class="dsdesc">Predicts machine failure from sensor data using XGBoost, generating downtime risk scores and visualizing maintenance insights through an interactive Streamlit dashboard.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">XGBoost</span><span class="dstag">Streamlit</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.24s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></span>
-              <span class="dsrel">05 <span class="idx-dot">&middot;</span> Supply Chain Analytics</span>
-            </div>
-            <p class="dsrepo">supply chain optimization projects</p>
-            <p class="dsdesc">An end-to-end supply chain analytics project covering demand forecasting, inventory optimization, route optimization, Monte Carlo simulation, and cost optimization.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">Simulation</span><span class="dstag">Optimization</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.3s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
-              <span class="dsrel">06 <span class="idx-dot">&middot;</span> Supply Chain Analytics</span>
-            </div>
-            <p class="dsrepo">late delivery predictive analytics&#8203; in supply chain using ML HistGradientBoostingModel</p>
-            <p class="dsdesc">Predicts late-delivery risk in supply chain logistics using a HistGradientBoosting model, with an interactive Streamlit dashboard exploring the drivers behind delivery delays.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">HistGradientBoosting</span><span class="dstag">Streamlit</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.36s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>
-              <span class="dsrel">07 <span class="idx-dot">&middot;</span> Demand Forecasting</span>
-            </div>
-            <p class="dsrepo">Demand Forecasting App</p>
-            <p class="dsdesc">Forecasts product demand from historical retail data using XGBoost, deployed as an interactive Streamlit app with pricing, promotion, and inventory scenario inputs.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">XGBoost</span><span class="dstag">Streamlit</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.42s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg></span>
-              <span class="dsrel">08 <span class="idx-dot">&middot;</span> NLP</span>
-            </div>
-            <p class="dsrepo">Emotion Detection NLP and ML</p>
-            <p class="dsdesc">Classifies human emotion in text using NLP preprocessing and feature extraction, comparing machine learning models across the full classification pipeline.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">NLP</span><span class="dstag">scikit-learn</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-
-        <article class="dscard reveal" style="transition-delay:0.48s">
-          <a class="dslink-main" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">
-            <div class="dsbadgerow">
-              <span class="dsbadge"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span>
-              <span class="dsrel">09 <span class="idx-dot">&middot;</span> Healthcare</span>
-            </div>
-            <p class="dsrepo">heart disease prediction</p>
-            <p class="dsdesc">Predicts heart-disease risk from clinical data, comparing five classification algorithms and deploying a K-Nearest Neighbors model in a Streamlit web app.</p>
-            <div class="dstags"><span class="dstag">Python</span><span class="dstag">scikit-learn</span><span class="dstag">Streamlit</span></div>
-          </a>
-          <div class="dsfoot">
-            <a class="dsfootbtn primary" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View Project</a>
-            <a class="dsfootbtn outline" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View GitHub</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="dashboards" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Dashboards</h2></div>
-      <p class="lede reveal">Business-intelligence dashboards built in Power BI and Excel — turning raw operational data into decision-ready visuals.</p>
-      <div class="dashgrid">
-        <article class="mlcard dashcard reveal">
-          <a class="mllink-main" href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer">
-            <div class="mlimg"><img src="public/images/projects/Health-Analytics.JPG" alt="Hospital Monitoring Power BI dashboard preview" loading="lazy"></div>
-            <div class="mlbody">
-              <p class="mlrepo">Hospital-Monitoring-PowerBI-Dashboard</p>
-              <p class="mlrel">Business Intelligence · Healthcare Analytics</p>
-              <p class="mldesc">An interactive Power BI dashboard analyzing hospital operations and healthcare performance metrics from patient-level data.</p>
-              <div class="mltags"><span class="mltag">Power BI</span><span class="mltag">Dashboard</span><span class="mltag">DAX</span></div>
-            </div>
-          </a>
-          <div class="mlfoot">
-            <a class="mllink" href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
-            <a class="mllink demo" href="https://app.powerbi.com/view?r=eyJrIjoiZDY5NjdiMmYtMzQ0ZS00N2E4LWE4MTUtYjExMGE0OTQxMmEyIiwidCI6ImZkOGY0MWFiLWVlZDEtNDMwZC05ZTE0LTY3M2NhOGQ0NzBjNiIsImMiOjEwfQ%3D%3D" target="_blank" rel="noreferrer">Live Dashboard</a>
-          </div>
-        </article>
-
-        <article class="mlcard dashcard reveal" style="transition-delay:.06s">
-          <a class="mllink-main" href="https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard" target="_blank" rel="noreferrer">
-            <div class="mlimg"><img src="public/images/projects/dengue-dashboard.jpg" alt="Dengue Phenomenon in Bangladesh dashboard preview" loading="lazy"></div>
-            <div class="mlbody">
-              <p class="mlrepo">Dengue-Phenomenon-in-Bangladesh-Dashboard</p>
-              <p class="mlrel">Public Health Analytics · Dashboard</p>
-              <p class="mldesc">A dashboard visualizing dengue outbreak trends and patterns across Bangladesh to support public-health monitoring and awareness.</p>
-              <div class="mltags"><span class="mltag">Dashboard</span><span class="mltag">Data Visualization</span><span class="mltag">Public Health</span></div>
-            </div>
-          </a>
-          <div class="mlfoot">
-            <a class="mllink" href="https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="mlcard dashcard reveal" style="transition-delay:.12s">
-          <a class="mllink-main" href="https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard" target="_blank" rel="noreferrer">
-            <div class="mlimg"><img src="public/images/projects/hotel-dashboard.png" alt="Hotel Monitoring Excel dashboard preview" loading="lazy"></div>
-            <div class="mlbody">
-              <p class="mlrepo">Hotel-Monitoring-Excel-Dashboard</p>
-              <p class="mlrel">Business Intelligence · Hospitality Analytics</p>
-              <p class="mldesc">An Excel dashboard tracking hotel booking, occupancy, and revenue performance for hospitality management.</p>
-              <div class="mltags"><span class="mltag">Excel</span><span class="mltag">Dashboard</span><span class="mltag">Data Visualization</span></div>
-            </div>
-          </a>
-          <div class="mlfoot">
-            <a class="mllink" href="https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="sec-copper">
-    <div class="sec-glow" style="background:rgba(44,74,110,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(140,47,57,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Academic Projects</h2></div>
-      <div class="pgrid">
-        <article class="pcard reveal">
-          <div class="pmedia">
-            <img src="public/images/projects/dust-detection.jpg" alt="Dust Detection using IR &amp; Photo Sensor prototype" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          </div>
-          <div class="pbody">
-            <h3>Dust Detection using IR &amp; Photo Sensor</h3>
-            <p>Designed an engineering prototype concept for dust accumulation detection using infrared and photo sensor behavior, with emphasis on sensing logic, calibration, and practical monitoring potential.</p>
-            <div class="tags"><span class="tag">Sensors</span><span class="tag">Prototype</span><span class="tag">Industrial Monitoring</span></div>
-          </div>
-        </article>
-        <article class="pcard reveal" style="transition-delay:.09s">
-          <div class="pmedia">
-            <img src="public/images/projects/portable-dishwasher.jpg" alt="Portable Dishwasher with Liquid Dispenser team" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">
-          </div>
-          <div class="pbody">
-            <h3>Portable Dishwasher with Liquid Dispenser</h3>
-            <p>Developed a compact cleaning automation concept focused on dispensing control, ergonomic usability, product design, and manufacturability considerations.</p>
-            <div class="tags"><span class="tag">Product Design</span><span class="tag">Automation</span><span class="tag">Manufacturing</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="tint sec-teal">
-    <div class="sec-glow" style="background:rgba(140,47,57,.07)"></div>
-    <div class="sec-glow b" style="background:rgba(44,74,110,.06)"></div>
-    <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
-    <div class="inner">
-      <div class="stitle reveal"><span class="tick"></span><h2>Contact</h2></div>
-      <div class="cgrid">
-        <div class="reveal">
-          <h3>Let&rsquo;s connect about graduate research, collaboration, or academic opportunities.</h3>
-          <p>I am open to professor outreach, MS/PhD research conversations, and opportunities related to supply chain analytics, smart manufacturing, sustainable operations, and data-driven industrial systems.</p>
-          <div class="dl">
-            <div class="drow"><span class="dt">Email</span><a class="dd" href="mailto:onomytasnim@gmail.com?subject=Hello%20from%20your%20portfolio">onomytasnim@gmail.com</a></div>
-            <div class="drow"><span class="dt">Phone</span><a class="dd" href="tel:+8801725428973">+8801725428973</a></div>
-            <div class="drow"><span class="dt">Location</span><span class="dd">Bangladesh</span></div>
-          </div>
-        </div>
-        <div class="actions reveal" style="transition-delay:.12s">
-          <a href="mailto:onomytasnim@gmail.com?subject=Hello%20from%20your%20portfolio">Send email <span>&#8594;</span></a>
-          <a href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar <span>&#8594;</span></a>
-          <a href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn <span>&#8594;</span></a>
-          <a href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub <span>&#8594;</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="about" class="sec sec-brand tint">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">01</span><span class="tick"></span></div>
+<h2>About</h2>
+</div>
+<div class="about-grid reveal">
+<div class="about-copy"><p>Industrial and Production Engineering graduate from Shahjalal University of Science and Technology, working at the intersection of supply chain analytics, smart manufacturing, and operations research.</p><p>My research applies Industry 4.0 adoption modelling, PLS-SEM, ISM-MICMAC, optimization, and simulation to industrial systems and sustainable operations.</p></div>
+<div class="areas"><p class="lbl">Research areas</p><div class="row"><span>Industry 4.0</span><span>Smart Manufacturing</span><span>Supply Chain Analytics</span><span>Operations Research</span><span>Sustainable Operations</span><span>Digital Twin</span></div></div>
+</div>
+</div>
+</section>
+<section id="education" class="sec sec-teal">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">02</span><span class="tick"></span></div>
+<h2>Education</h2>
+</div>
+<div class="tl tl-teal"><ol>
+<li class="reveal">
+<span class="dot current pulse-dot"></span>
+<p class="status">Graduated</p>
+<h3>BSc in Industrial &amp; Production Engineering</h3>
+<p class="org">Shahjalal University of Science and Technology, Bangladesh</p>
+<p class="date">CGPA: 3.68 / 4.00</p>
+<ul class="meta"><li>Merit Position: 5th out of 71</li><li>IELTS: 7.0</li></ul>
+</li>
+<li class="reveal">
+<span class="dot"></span>
+<p class="status">Graduate Applicant</p>
+<h3>Prospective MS / PhD Student</h3>
+<p class="org">Industrial Engineering — Supply Chain Analytics, Smart Manufacturing, Sustainable Operations</p>
+<p class="date">Seeking Fall admission opportunities</p>
+</li>
+</ol></div>
+</div>
+</section>
+<section id="research" class="sec sec-amber tint">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">03</span><span class="tick"></span></div>
+<h2>Research &amp; Publications</h2>
+</div>
+<div class="stack">
+<article class="card reveal">
+<span class="rail" style="background:var(--amber)"></span>
+<div class="pad">
+<span class="badge b-amber">Journal</span> <span class="mono" style="font-size:11.5px;color:var(--faint)">December 2025</span>
+<h3>Technological capability and information exchange through adopting advanced technology in food processing: A model-based study of Bangladesh</h3>
+<p class="venue">Journal of Open Innovation: Technology, Market &amp; Complexity [Q1]</p>
+<p class="summary">Modelled Industry 4.0 adoption in Bangladesh&#x27;s food processing sector, identifying technological capability and information exchange as the key drivers and insufficient capital as the critical barrier.</p>
+<a class="paperlink link-underline" style="color:var(--amber)" href="https://doi.org/10.1016/j.joitmc.2025.100674" target="_blank" rel="noreferrer">Read the paper &#8594;</a>
+</div></article>
+<article class="card reveal">
+<span class="rail" style="background:var(--brand)"></span>
+<div class="pad">
+<span class="badge b-brand">Conference</span> <span class="mono" style="font-size:11.5px;color:var(--faint)">December 2021</span>
+<h3>Development of a Linear Programming Model for the Diet Plan of University Students</h3>
+<p class="venue">IMEOM 2022, Dhaka</p>
+<p class="summary">A linear programming diet model solved by the simplex method, exposing protein intake gaps and reallocating cost toward protein-rich items.</p>
+<a class="paperlink link-underline" style="color:var(--amber)" href="https://doi.org/10.46254/BD05.20220175" target="_blank" rel="noreferrer">Read the paper &#8594;</a>
+</div></article>
+</div>
+</div>
+</section>
+<section id="ongoing-research" class="sec sec-brand">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">04</span><span class="tick"></span></div>
+<h2>Ongoing &amp; Submitted Research</h2>
+</div>
+<div style="margin-bottom:48px">
+<div class="subhead reveal"><h3>Submitted</h3><span class="cap">Under review &middot; 2</span></div>
+<div class="stack">
+<article class="card reveal">
+<span class="rail" style="background:var(--brand)"></span>
+<div class="pad">
+<span class="badge b-brand">Submitted</span>
+<h3>Calibrate, Certify, or Learn? Deciding When a Language Model Should Defer to a Human</h3>
+<p class="authors">Tushy Tasnim, Rifat Faruk Zitu</p>
+<p class="summary">Decides when a language model should answer and when to defer to a human, combining Bayesian uncertainty estimation, conformal risk control, and value-of-information to balance accuracy, risk, and review cost.</p>
+<p class="grouplbl">Tools</p><div class="chips"><span class="chip-tool b-brand">Python</span><span class="chip-tool b-brand">Qwen2.5-Instruct</span><span class="chip-tool b-brand">vLLM</span><span class="chip-tool b-brand">Bayesian Logistic Regression</span><span class="chip-tool b-brand">Conformal Risk Control</span></div>
+<p class="grouplbl">Key focus</p><div class="chips"><span class="chip-focus">LLM reliability</span><span class="chip-focus">Uncertainty calibration</span><span class="chip-focus">Human–AI collaboration</span></div>
+</div></article>
+<article class="card reveal">
+<span class="rail" style="background:var(--brand)"></span>
+<div class="pad">
+<span class="badge b-brand">Submitted</span>
+<h3>Uncertainty-Aware Preferential Bayesian Optimization under Noisy Human Preferences: A Controlled Test of Ambiguity-Seeking Acquisition</h3>
+<p class="authors">Rifat Faruk Zitu, Tushy Tasnim</p>
+<p class="summary">Tests whether modelling uncertainty over preference rankings improves Bayesian optimization under noisy human feedback. The proposed UA-EUBO acquisition adds an ambiguity bonus to expected utility, but shows no consistent gain over standard EUBO on synthetic benchmarks or the UT-Zappos50K dataset.</p>
+<p class="grouplbl">Tools</p><div class="chips"><span class="chip-tool b-brand">Python</span><span class="chip-tool b-brand">BoTorch</span><span class="chip-tool b-brand">Pairwise Gaussian Process</span><span class="chip-tool b-brand">Bayesian Optimization</span></div>
+<p class="grouplbl">Key focus</p><div class="chips"><span class="chip-focus">Preferential Bayesian optimization</span><span class="chip-focus">Noisy human feedback</span><span class="chip-focus">Active learning</span></div>
+</div></article>
+</div></div>
+<div style="margin-bottom:48px">
+<div class="subhead reveal"><h3>Ongoing</h3><span class="cap">In progress &middot; 3</span></div>
+<div class="stack">
+<article class="card reveal">
+<span class="rail" style="background:var(--teal)"></span>
+<div class="pad">
+<span class="badge b-teal">Ongoing</span>
+<h3>Bottleneck Forecasting Under a Stricter Evaluation: A Leakage-Controlled, Rolling-Origin Comparison of Statistical and Machine Learning Models</h3>
+<p class="authors">Rifat Faruk Zitu, Tushy Tasnim</p>
+<p class="summary">Compares six forecasting models for bottlenecks in a simulated five-station steel line under leakage-controlled, rolling-origin evaluation across 25 origins and four horizons. Recursive XGBoost gave the lowest scaled error at every horizon, but beat the best classical model significantly at only two.</p>
+<p class="grouplbl">Tools</p><div class="chips"><span class="chip-tool b-teal">Python</span><span class="chip-tool b-teal">Discrete-Event Simulation</span><span class="chip-tool b-teal">SARIMA</span><span class="chip-tool b-teal">XGBoost</span><span class="chip-tool b-teal">Conformal Prediction</span><span class="chip-tool b-teal">Diebold–Mariano Test</span></div>
+<p class="grouplbl">Key focus</p><div class="chips"><span class="chip-focus">Bottleneck prediction</span><span class="chip-focus">Time-series forecasting</span><span class="chip-focus">Uncertainty quantification</span></div>
+</div></article>
+<article class="card reveal">
+<span class="rail" style="background:var(--teal)"></span>
+<div class="pad">
+<span class="badge b-teal">Ongoing</span>
+<h3>A Two-Stage Experimental Framework for Industrial Defect Detection and Inspection Decisions Using Classical Machine Learning and Q-Learning</h3>
+<p class="authors">Tushy Tasnim, Rifat Faruk Zitu</p>
+<p class="summary">Pairs anomaly detection with cost-sensitive inspection decisions on MVTec bottle images. Handcrafted colour, texture, and shape features with an Isolation Forest reach 0.947 ROC-AUC; tabular Q-learning then chooses Accept, Reject, or Human Review, lifting average reward from 0.143 to 0.405 and cutting missed defects from three to zero.</p>
+<p class="grouplbl">Tools</p><div class="chips"><span class="chip-tool b-teal">Python</span><span class="chip-tool b-teal">Isolation Forest</span><span class="chip-tool b-teal">Tabular Q-Learning</span><span class="chip-tool b-teal">Feature Engineering</span></div>
+<p class="grouplbl">Key focus</p><div class="chips"><span class="chip-focus">Industrial defect detection</span><span class="chip-focus">Anomaly detection</span><span class="chip-focus">Human-in-the-loop decisions</span></div>
+</div></article>
+<article class="card reveal">
+<span class="rail" style="background:var(--teal)"></span>
+<div class="pad">
+<span class="badge b-teal">Ongoing</span>
+<h3>Evaluating Digital Twin Readiness and Prioritizing Adoption Barriers in Bangladesh&#x27;s Ready-Made Garment Industry: A Fuzzy DEMATEL Approach</h3>
+<p class="summary">A fuzzy DEMATEL model mapping causal relationships among digital-twin readiness factors and ranking adoption barriers in Bangladesh&#x27;s ready-made garment sector.</p>
+<p class="grouplbl">Tools</p><div class="chips"><span class="chip-tool b-teal">Python</span><span class="chip-tool b-teal">Fuzzy DEMATEL</span><span class="chip-tool b-teal">Digital Twin</span></div>
+<p class="grouplbl">Key focus</p><div class="chips"><span class="chip-focus">Digital twin readiness</span><span class="chip-focus">Barrier prioritization</span></div>
+</div></article>
+</div></div>
+</div>
+</section>
+<section id="experience" class="sec sec-teal tint">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">05</span><span class="tick"></span></div>
+<h2>Work Experience</h2>
+</div>
+<div class="tl tl-teal"><ol>
+<li class="reveal">
+<span class="dot current pulse-dot"></span>
+<p class="status">Operations</p>
+<h3>Associate Operations Engineer</h3>
+<p class="org">Algorizin Inc.</p>
+<p class="date">Jan 2023 – Nov 2024 · Remote</p>
+<ul class="bullets"><li>Redesigned workflows from data-driven process analysis, cutting process cycle time by 70%.</li><li>Built an automated expense tracking system, improving data accuracy and reporting efficiency.</li><li>Turned operational datasets into analytical reports that supported evidence-based decisions.</li></ul>
+</li>
+<li class="reveal">
+<span class="dot"></span>
+<p class="status">Industrial Attachment</p>
+<h3>Training Institute for Chemical Industries</h3>
+<p class="date">Dec 2023</p>
+<ul class="bullets"><li>Mechanical engineering principles applied in a live manufacturing facility.</li></ul>
+</li>
+<li class="reveal">
+<span class="dot"></span>
+<p class="status">Industrial Attachment</p>
+<h3>Bangladesh Industrial Technical Assistance Centre</h3>
+<p class="date">Jan 2023</p>
+<ul class="bullets"><li>Hands-on process improvement, product testing, and data analysis.</li></ul>
+</li>
+</ol></div>
+</div>
+</section>
+<section id="skills" class="sec sec-amber">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">06</span><span class="tick"></span></div>
+<h2>Technical Skills</h2>
+</div>
+<div class="grid3">
+<div class="card skillcard reveal"><p class="lbl">Data Analysis</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>MS Excel</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 13h2"/><path d="M14 13h2"/><path d="M8 17h2"/><path d="M14 17h2"/></svg>Google Sheets</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>Power BI</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>SmartPLS</span></div></div>
+<div class="card skillcard reveal"><p class="lbl">Research Methods</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg>PLS-SEM</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>ISM-MICMAC</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg>Linear Programming</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Simulation</span></div></div>
+<div class="card skillcard reveal"><p class="lbl">Programming</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>Python</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>C Language</span></div></div>
+<div class="card skillcard reveal"><p class="lbl">Python Libraries</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>NumPy</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Pandas</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5"/><path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/><path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/><path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/><path d="M18 18a4 4 0 0 0 2-7.464"/><path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/><path d="M6 18a4 4 0 0 1-2-7.464"/><path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/></svg>scikit-learn</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>Matplotlib</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/></svg>Seaborn</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Gurobipy</span></div></div>
+<div class="card skillcard reveal"><p class="lbl">Web Development</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>WordPress</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>Webflow</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>Squarespace</span></div></div>
+<div class="card skillcard reveal"><p class="lbl">Automation Tools</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></svg>Zapier</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>Pabbly Connect</span></div></div>
+<div class="card skillcard reveal"><p class="lbl">Simulation &amp; Drafting</p><div class="row"><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>Arena</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>AutoCAD</span><span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>Adobe Illustrator</span></div></div>
+</div>
+</div>
+</section>
+<section id="ml-projects" class="sec sec-brand tint">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">07</span><span class="tick"></span></div>
+<h2>Projects</h2>
+<p class="sec-intro">Data science, machine learning, and simulation projects built end to end — all published on GitHub.</p>
+</div>
+<div class="grid3">
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></svg></span><span class="rel">Digital Twin</span></div>
+<h3>production line digital twin</h3>
+<p>A discrete-event digital twin of a four-station line that simulates wear and breakdowns, computes OEE and MTBF/MTTR, and predicts failures 30 minutes ahead.</p>
+<div class="tags"><span>Python</span><span>SimPy</span><span>Predictive Maintenance</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/production-line-digital-twin" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><span class="rel">Simulation</span></div>
+<h3>lean green sewing line</h3>
+<p>A SimPy model of a ten-operation sewing line measuring how takt-based balancing and servo motors affect output, WIP, lead time, and CO₂ per garment.</p>
+<div class="tags"><span>Python</span><span>SimPy</span><span>Sustainability</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/lean-green-sewing-line" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span><span class="rel">Supply Chain Analytics</span></div>
+<h3>last mile delivery</h3>
+<p>An emissions-aware routing study for two Bangladeshi cities, solving the same capacitated VRP for minimum distance and for modelled CO₂.</p>
+<div class="tags"><span>Python</span><span>Vehicle Routing</span><span>Optimization</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/last-mile-delivery" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span><span class="rel">Predictive Maintenance</span></div>
+<h3>XGBoost Based Predictive Maintenance System</h3>
+<p>Predicts machine failure from sensor data with XGBoost, surfacing downtime risk scores in an interactive Streamlit dashboard.</p>
+<div class="tags"><span>Python</span><span>XGBoost</span><span>Streamlit</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/XGBoost-Based-Predictive-Maintenance-System" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></span><span class="rel">Supply Chain Analytics</span></div>
+<h3>supply chain optimization projects</h3>
+<p>End-to-end supply chain analytics: demand forecasting, inventory and route optimization, and Monte Carlo simulation.</p>
+<div class="tags"><span>Python</span><span>Simulation</span><span>Optimization</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/supply_chain_optimization_projects" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span><span class="rel">Supply Chain Analytics</span></div>
+<h3>late delivery predictive analytics in supply chain using ML HistGradientBoostingModel</h3>
+<p>Predicts late-delivery risk with a HistGradientBoosting model, with a Streamlit dashboard exploring the drivers of delay.</p>
+<div class="tags"><span>Python</span><span>HistGradientBoosting</span><span>Streamlit</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/late-delivery-predictive-analytics-in-supply-chain-using-ML-HistGradientBoostingModel" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span><span class="rel">Demand Forecasting</span></div>
+<h3>Demand Forecasting App</h3>
+<p>Forecasts retail demand with XGBoost, deployed as a Streamlit app with pricing, promotion, and inventory scenarios.</p>
+<div class="tags"><span>Python</span><span>XGBoost</span><span>Streamlit</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/Demand-Forecasting-App" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg></span><span class="rel">NLP</span></div>
+<h3>Emotion Detection NLP and ML</h3>
+<p>Classifies emotion in text, comparing machine learning models across an NLP preprocessing and feature-extraction pipeline.</p>
+<div class="tags"><span>Python</span><span>NLP</span><span>scikit-learn</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/Emotion-Detection-NLP-and-ML" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard reveal">
+<div class="body">
+<div class="top"><span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></span><span class="rel">Healthcare</span></div>
+<h3>heart disease prediction</h3>
+<p>Predicts heart-disease risk from clinical data, comparing five classifiers and deploying K-Nearest Neighbors in a Streamlit app.</p>
+<div class="tags"><span>Python</span><span>scikit-learn</span><span>Streamlit</span></div>
+</div>
+<div class="foot">
+<a class="fill-brand" href="https://github.com/TushyTasnim/heart-disease-prediction" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+</div>
+</div>
+</section>
+<section id="dashboards" class="sec sec-teal">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">08</span><span class="tick"></span></div>
+<h2>Dashboards</h2>
+<p class="sec-intro">Business-intelligence dashboards that turn operational data into decision-ready visuals.</p>
+</div>
+<div class="grid3">
+<article class="card pcard dcard reveal">
+<a href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer" style="display:flex;flex-direction:column;flex:1">
+<div class="shotwrap ratio-og"><img src="public/images/projects/Health-Analytics.JPG" alt="Hospital-Monitoring-PowerBI-Dashboard preview" loading="lazy"></div>
+<div class="body">
+<p class="rel">Business Intelligence · Healthcare Analytics</p>
+<h3>Hospital Monitoring PowerBI Dashboard</h3>
+<p>A Power BI dashboard on hospital operations and healthcare performance, built from patient-level data.</p>
+<div class="tags"><span>Power BI</span><span>Dashboard</span><span>DAX</span></div>
+</div></a>
+<div class="foot">
+<a class="fill-teal" href="https://app.powerbi.com/view?r=eyJrIjoiZDY5NjdiMmYtMzQ0ZS00N2E4LWE4MTUtYjExMGE0OTQxMmEyIiwidCI6ImZkOGY0MWFiLWVlZDEtNDMwZC05ZTE0LTY3M2NhOGQ0NzBjNiIsImMiOjEwfQ%3D%3D" target="_blank" rel="noreferrer">Live Dashboard</a>
+<a class="out" href="https://github.com/TushyTasnim/Hospital-Monitoring-PowerBI-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard dcard reveal">
+<a href="https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard" target="_blank" rel="noreferrer" style="display:flex;flex-direction:column;flex:1">
+<div class="shotwrap ratio-og"><img src="public/images/projects/dengue-dashboard.jpg" alt="Dengue-Phenomenon-in-Bangladesh-Dashboard preview" loading="lazy"></div>
+<div class="body">
+<p class="rel">Public Health Analytics · Dashboard</p>
+<h3>Dengue Phenomenon in Bangladesh Dashboard</h3>
+<p>Dengue outbreak trends and patterns across Bangladesh, for public-health monitoring.</p>
+<div class="tags"><span>Dashboard</span><span>Data Visualization</span><span>Public Health</span></div>
+</div></a>
+<div class="foot">
+<a class="out" href="https://github.com/TushyTasnim/Dengue-Phenomenon-in-Bangladesh-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+<article class="card pcard dcard reveal">
+<a href="https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard" target="_blank" rel="noreferrer" style="display:flex;flex-direction:column;flex:1">
+<div class="shotwrap ratio-og"><img src="public/images/projects/hotel-dashboard.png" alt="Hotel-Monitoring-Excel-Dashboard preview" loading="lazy"></div>
+<div class="body">
+<p class="rel">Business Intelligence · Hospitality Analytics</p>
+<h3>Hotel Monitoring Excel Dashboard</h3>
+<p>An Excel dashboard tracking hotel booking, occupancy, and revenue performance.</p>
+<div class="tags"><span>Excel</span><span>Dashboard</span><span>Data Visualization</span></div>
+</div></a>
+<div class="foot">
+<a class="out" href="https://github.com/TushyTasnim/Hotel-Monitoring-Excel-Dashboard" target="_blank" rel="noreferrer">View on GitHub</a>
+</div></article>
+</div>
+</div>
+</section>
+<section id="projects" class="sec sec-amber tint">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">09</span><span class="tick"></span></div>
+<h2>Academic Projects</h2>
+</div>
+<div class="grid2">
+<article class="card pcard acard reveal">
+<div class="shotwrap ratio-wide"><img src="public/images/projects/dust-detection.jpg" alt="Dust Detection using IR &amp; Photo Sensor" loading="lazy"></div>
+<div class="body" style="padding:24px">
+<h3>Dust Detection using IR &amp; Photo Sensor</h3>
+<p>A prototype for detecting dust accumulation from infrared and photo sensor behaviour, focused on sensing logic and calibration.</p>
+<div class="tags"><span>Sensors</span><span>Prototype</span><span>Industrial Monitoring</span></div>
+</div></article>
+<article class="card pcard acard reveal">
+<div class="shotwrap ratio-wide"><img src="public/images/projects/portable-dishwasher.jpg" alt="Portable Dishwasher with Liquid Dispenser" loading="lazy"></div>
+<div class="body" style="padding:24px">
+<h3>Portable Dishwasher with Liquid Dispenser</h3>
+<p>A compact cleaning automation concept focused on dispensing control, ergonomics, and manufacturability.</p>
+<div class="tags"><span>Product Design</span><span>Automation</span><span>Manufacturing</span></div>
+</div></article>
+</div>
+</div>
+</section>
+<section id="contact" class="sec sec-brand">
+<div class="sec-rule"></div>
+<div class="ambient-glow glow-a"></div><div class="ambient-glow slow glow-b"></div>
+<div class="wrap">
+<div class="sec-head reveal">
+<div class="sec-eyebrow"><span class="mono num">10</span><span class="tick"></span></div>
+<h2>Contact</h2>
+</div>
+<div class="contact-grid">
+<div class="reveal"><h3>Open to MS / PhD research conversations and collaboration.</h3>
+<dl class="dl">
+<div class="row"><dt>Email</dt><dd><a class="link-underline" href="mailto:onomytasnim@gmail.com?subject=Hello%20from%20your%20portfolio">onomytasnim@gmail.com</a></dd></div>
+<div class="row"><dt>Phone</dt><dd><a class="link-underline" href="tel:+8801725428973">+8801725428973</a></dd></div>
+<div class="row"><dt>Location</dt><dd>Bangladesh</dd></div>
+</dl></div>
+<div class="actions reveal">
+<a class="primary" href="mailto:onomytasnim@gmail.com?subject=Hello%20from%20your%20portfolio">Send email<span>&#8594;</span></a>
+<a class="" href="https://scholar.google.com/citations?user=TQI66zcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar<span>&#8594;</span></a>
+<a class="" href="https://www.linkedin.com/in/tushytasnim/" target="_blank" rel="noreferrer">LinkedIn<span>&#8594;</span></a>
+<a class="" href="https://github.com/TushyTasnim" target="_blank" rel="noreferrer">GitHub<span>&#8594;</span></a>
+</div></div>
+</div>
+</section>
 
   <footer>
     <div class="wrap">
-      <p>&copy; 2026 Tushy Tasnim. All rights reserved.</p>
-      <a href="#hero">Back to top</a>
+      <p style="margin:0">&copy; <span id="year"></span> <strong>Tushy Tasnim</strong>. All rights reserved.</p>
+      <a class="link-underline" href="#hero" style="font-weight:600">Back to top</a>
     </div>
   </footer>
 
   <script>
-    var progressBar = document.querySelector('#scroll-progress .bar');
-    function updateProgress(){
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var bar = document.querySelector('#scroll-progress .bar');
+    function onScroll(){
       var doc = document.documentElement;
       var max = doc.scrollHeight - doc.clientHeight;
-      var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
-      if(progressBar) progressBar.style.width = pct + '%';
+      bar.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + '%';
     }
-    updateProgress();
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    window.addEventListener('resize', updateProgress);
+    onScroll();
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
 
-    var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav.links a'));
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll('.links a'));
     var navSections = navLinks
       .map(function(a){ return document.querySelector(a.getAttribute('href')); })
       .filter(Boolean);
@@ -874,31 +752,7 @@
       });
     }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
     items.forEach(function(el){ io.observe(el); });
-
-    var countEl = document.getElementById('award-count');
-    if(countEl){
-      var target = parseInt(countEl.dataset.target, 10);
-      var done = false;
-      var cio = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if(e.isIntersecting && !done){
-            done = true;
-            var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if(reduced){ countEl.textContent = target; cio.disconnect(); return; }
-            var start = performance.now(), dur = 900;
-            function tick(now){
-              var p = Math.min((now - start) / dur, 1);
-              var eased = 1 - Math.pow(1 - p, 3);
-              countEl.textContent = Math.round(eased * target);
-              if(p < 1) requestAnimationFrame(tick);
-            }
-            requestAnimationFrame(tick);
-            cio.disconnect();
-          }
-        });
-      }, {threshold:.4});
-      cio.observe(countEl);
-    }
   </script>
 </body>
 </html>
+
