@@ -5,7 +5,7 @@ export default function About() {
   return (
     <Section id="about" title="About" index={1} accent="brand" tint>
       <div className="grid gap-10 md:grid-cols-[1.4fr_1fr]">
-        <div className="max-w-prose space-y-4 text-[16px] leading-[1.75] text-ink/85">
+        <div className="space-y-4 text-[16px] leading-[1.75] text-ink/85">
           {about.paragraphs.map((p) => (
             <p key={p.slice(0, 20)}>{p}</p>
           ))}

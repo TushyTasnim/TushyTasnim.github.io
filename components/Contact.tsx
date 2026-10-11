@@ -23,7 +23,7 @@ export default function Contact() {
     <Section id="contact" title="Contact" index={10} accent="brand">
       <div className="grid gap-8 md:grid-cols-[1.2fr_1fr]">
         <Reveal>
-          <h3 className="max-w-prose font-display text-[22px] font-extrabold leading-snug tracking-tight text-ink md:text-[26px]">
+          <h3 className="font-display text-[22px] font-extrabold leading-snug tracking-tight text-ink md:text-[26px]">
             Open to MS / PhD research conversations and collaboration.
           </h3>
           <dl className="mt-7 space-y-3">

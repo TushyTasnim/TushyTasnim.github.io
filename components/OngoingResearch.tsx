@@ -47,7 +47,7 @@ function ResearchEntry({ item, delay }: { item: OngoingResearchItem; delay: numb
         {item.authors ? (
           <p className="mt-2 font-mono text-[11.5px] text-faint">{item.authors}</p>
         ) : null}
-        <p className="mt-3 max-w-prose text-[15px] leading-[1.7] text-muted">
+        <p className="mt-3 text-[15px] leading-[1.7] text-muted">
           {item.summary}
         </p>
         {item.tools?.length ? (

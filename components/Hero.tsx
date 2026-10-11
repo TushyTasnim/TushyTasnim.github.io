@@ -39,10 +39,10 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="rise-in mt-5 max-w-prose text-[17px] font-medium leading-relaxed text-ink/80 [animation-delay:180ms] md:text-[19px]">
+          <p className="rise-in mt-5 text-[17px] font-medium leading-relaxed text-ink/80 [animation-delay:180ms] md:text-[19px]">
             {profile.role}
           </p>
-          <p className="rise-in mt-2 max-w-prose text-[15.5px] leading-relaxed text-muted [animation-delay:200ms]">
+          <p className="rise-in mt-2 text-[15.5px] leading-relaxed text-muted [animation-delay:200ms]">
             {profile.tagline}
           </p>
 

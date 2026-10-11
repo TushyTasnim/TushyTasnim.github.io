@@ -105,7 +105,7 @@ export default function Section({
               {title}
             </h2>
             {intro ? (
-              <p className="mt-4 max-w-prose text-[15px] leading-relaxed text-muted">
+              <p className="mt-4 text-[15px] leading-relaxed text-muted">
                 {intro}
               </p>
             ) : null}

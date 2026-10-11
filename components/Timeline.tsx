@@ -47,7 +47,7 @@ export default function Timeline({
               </ul>
             ) : null}
             {item.bullets?.length ? (
-              <ul className="mt-3 max-w-prose list-disc space-y-1.5 pl-4 text-[14.5px] leading-relaxed text-muted">
+              <ul className="mt-3 list-disc space-y-1.5 pl-4 text-[14.5px] leading-relaxed text-muted">
                 {item.bullets.map((b) => (
                   <li key={b.slice(0, 24)}>{b}</li>
                 ))}

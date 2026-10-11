@@ -37,7 +37,7 @@ export default function Research() {
                 {pub.title}
               </h3>
               <p className="mt-2 text-[13px] font-semibold text-muted">{pub.venue}</p>
-              <p className="mt-3 max-w-prose text-[15px] leading-[1.7] text-muted">
+              <p className="mt-3 text-[15px] leading-[1.7] text-muted">
                 {pub.summary}
               </p>
               <a
